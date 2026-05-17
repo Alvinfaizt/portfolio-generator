@@ -15,10 +15,10 @@
     <nav class="modern-navbar">
         <div class="nav-brand">alvin.dev</div>
         <ul class="nav-menu">
-            <li><a href="#" data-tab="tab-home" class="active">Home</a></li>
-            <li><a href="#" data-tab="tab-portfolio">Portfolio</a></li>
-            <li><a href="#" data-tab="tab-about">About</a></li>
-            <li><a href="#" data-tab="tab-contact">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <!-- MODERN TOP NAVBAR END -->
@@ -26,8 +26,8 @@
     <!-- KONTENER UTAMA APLIKASI START -->
     <main class="app-container">
         
-        <!-- TAB HOME START -->
-        <section id="tab-home" class="tab-content active">
+        <!-- SECTION HOME START -->
+        <section id="home" class="page-section">
             <div class="home-layout">
                 <div class="home-content">
                     <h1 class="hero-title">Frontend Developer</h1>
@@ -39,7 +39,7 @@
                     </div>
                     <!-- STATUS INDICATOR END -->
 
-                    <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur Vanilla JS yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
+                    <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur murni yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
                 </div>
 
                 <!-- DECORATIVE TEXT START -->
@@ -47,10 +47,10 @@
                 <!-- DECORATIVE TEXT END -->
             </div>
         </section>
-        <!-- TAB HOME END -->
+        <!-- SECTION HOME END -->
 
-        <!-- TAB PORTFOLIO START -->
-        <section id="tab-portfolio" class="tab-content" hidden>
+        <!-- SECTION PORTFOLIO START -->
+        <section id="portfolio" class="page-section">
             <div class="portfolio-layout">
                 <!-- KOLOM KIRI: FORM INPUT START -->
                 <section class="form-section">
@@ -160,56 +160,83 @@
                 <!-- KOLOM KANAN: LIVE PREVIEW END -->
             </div>
         </section>
-        <!-- TAB PORTFOLIO END -->
+        <!-- SECTION PORTFOLIO END -->
 
-        <!-- TAB ABOUT START -->
-        <section id="tab-about" class="tab-content" hidden>
-            <!-- SEKSI TENTANG SAYA START -->
+        <!-- SECTION ABOUT START -->
+        <section id="about" class="page-section">
             <div class="about-layout">
                 <div class="about-content">
                     <h2 class="section-title">Timeline & Fokus</h2>
-                    <div class="timeline-container">
-                        <!-- Akademis -->
-                        <div class="timeline-item">
-                            <h3 class="timeline-title">Universitas Muhammadiyah Makassar</h3>
-                            <p class="timeline-desc">Mahasiswa Program Studi Teknik Informatika. Mempelajari fundamental ilmu komputer, algoritma struktur data, dan rekayasa perangkat lunak.</p>
+                    
+                    <div class="about-grid">
+                        <!-- Kolom 1: Timeline -->
+                        <div class="about-col">
+                            <div class="timeline-container">
+                                <div class="timeline-item">
+                                    <h3 class="timeline-title">Universitas Muhammadiyah Makassar</h3>
+                                    <p class="timeline-desc">Mahasiswa Program Studi Teknik Informatika. Mempelajari fundamental ilmu komputer, algoritma struktur data, dan rekayasa perangkat lunak modern.</p>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Fokus Teknologi -->
-                        <div class="timeline-item">
-                            <h3 class="timeline-title">Frontend Web Development</h3>
-                            <p class="timeline-desc">Fokus merancang antarmuka pengguna (UI) yang bersih dan berpusat pada interaktivitas menggunakan Vanilla JavaScript dan CSS Modern.</p>
-                        </div>
-                        <!-- Ekosistem Web3 -->
-                        <div class="timeline-item">
-                            <h3 class="timeline-title">Web3 & Crypto Protocol Ecosystem</h3>
-                            <p class="timeline-desc">Memiliki ketertarikan mendalam pada teknologi terdesentralisasi, integrasi dompet kripto, dan desain antarmuka dApps (Decentralized Applications).</p>
+
+                        <!-- Kolom 2: Fokus -->
+                        <div class="about-col">
+                            <div class="timeline-container">
+                                <div class="timeline-item">
+                                    <h3 class="timeline-title">Frontend Web Development</h3>
+                                    <p class="timeline-desc">Merancang antarmuka pengguna (UI) yang bersih, berpusat pada interaktivitas tinggi tanpa framework berlebih, memanfaatkan Vanilla JS murni.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-title">Web3 Ecosystem</h3>
+                                    <p class="timeline-desc">Eksplorasi mendalam pada teknologi terdesentralisasi, integrasi dompet kripto pintar, dan perancangan antarmuka dApps.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <!-- SEKSI TENTANG SAYA END -->
         </section>
-        <!-- TAB ABOUT END -->
+        <!-- SECTION ABOUT END -->
 
-        <!-- TAB CONTACT START -->
-        <section id="tab-contact" class="tab-content" hidden>
-            <!-- SEKSI KONTAK START -->
+        <!-- SECTION CONTACT START -->
+        <section id="contact" class="page-section">
             <div class="contact-layout">
                 <div class="contact-content">
                     <h2 class="section-title">Mari Terhubung</h2>
-                    <p class="contact-subtitle">Pilih salah satu platform profesional di bawah ini untuk berdiskusi lebih lanjut.</p>
                     
-                    <div class="contact-badges-container">
-                        <a href="#" class="contact-badge">GitHub</a>
-                        <a href="#" class="contact-badge">LinkedIn</a>
-                        <a href="#" class="contact-badge">Discord</a>
-                        <a href="#" class="contact-badge">Email</a>
+                    <div class="contact-grid">
+                        <!-- Kolom Kiri: Form -->
+                        <div class="contact-form-container">
+                            <form class="contact-form" onsubmit="event.preventDefault();">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Alamat Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Pesan Anda..." rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-button">Kirim Pesan</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Kolom Kanan: Badges -->
+                        <div class="contact-badges-container">
+                            <p class="contact-subtitle">Pilih alternatif platform untuk berdiskusi lebih lanjut.</p>
+                            <div class="badges-wrapper">
+                                <a href="#" class="contact-badge">GitHub</a>
+                                <a href="#" class="contact-badge">LinkedIn</a>
+                                <a href="#" class="contact-badge">Discord</a>
+                                <a href="#" class="contact-badge">Email</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- SEKSI KONTAK END -->
         </section>
-        <!-- TAB CONTACT END -->
+        <!-- SECTION CONTACT END -->
         
     </main>
     <!-- KONTENER UTAMA APLIKASI END -->
