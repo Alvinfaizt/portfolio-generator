@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="minimalist">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Student Portfolio Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+
+<body>
+
+    <!-- MODERN TOP NAVBAR START -->
+    <nav class="modern-navbar">
+        <div class="nav-brand">alvin.dev</div>
+        <ul class="nav-menu">
+            <li><a href="#" data-tab="tab-home" class="active">Home</a></li>
+            <li><a href="#" data-tab="tab-portfolio">Portfolio</a></li>
+            <li><a href="#" data-tab="tab-about">About</a></li>
+            <li><a href="#" data-tab="tab-contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- MODERN TOP NAVBAR END -->
+
+    <!-- KONTENER UTAMA APLIKASI START -->
+    <main class="app-container">
+        
+        <!-- TAB HOME START -->
+        <section id="tab-home" class="tab-content active">
+            <div class="home-layout">
+                <div class="home-content">
+                    <h1 class="hero-title">Frontend Developer</h1>
+                    
+                    <!-- STATUS INDICATOR START -->
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">✦ AVAILABLE FOR WORK</span>
+                    </div>
+                    <!-- STATUS INDICATOR END -->
+
+                    <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur Vanilla JS yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
+                </div>
+
+                <!-- DECORATIVE TEXT START -->
+                <div class="decorative-text">↓ explore my work / ↗ open to full-time opportunities</div>
+                <!-- DECORATIVE TEXT END -->
+            </div>
+        </section>
+        <!-- TAB HOME END -->
+
+        <!-- TAB PORTFOLIO START -->
+        <section id="tab-portfolio" class="tab-content" hidden>
+            <div class="portfolio-layout">
+                <!-- KOLOM KIRI: FORM INPUT START -->
+                <section class="form-section">
+                    <header class="form-header">
+                        <h1>Portfolio Generator</h1>
+                        <p>Isi data diri kamu untuk membuat portfolio instan bergaya Tech-Noir.</p>
+
+                        <!-- THEME SELECTOR START -->
+                        <div class="theme-selector">
+                            <label for="theme-select">Pilih Varian Tema:</label>
+                            <select id="theme-select">
+                                <option value="minimalist">Tech-Noir (Aksen Abu-abu)</option>
+                                <option value="tech">Cyber-Dark (Aksen Cyan)</option>
+                                <option value="monochrome">Monochrome (High Contrast Solid)</option>
+                            </select>
+                        </div>
+                        <!-- THEME SELECTOR END -->
+
+                        <!-- TOMBOL AKSI START -->
+                        <div class="action-buttons">
+                            <button id="btn-print" class="print-button">
+                                🖨️ Cetak / Ekspor PDF
+                            </button>
+                        </div>
+                        <!-- TOMBOL AKSI END -->
+                    </header>
+
+                    <form id="portfolio-form" onsubmit="event.preventDefault();">
+                        <!-- FORM KELOMPOK DATA PRIBADI START -->
+                        <fieldset>
+                            <legend>Data Pribadi</legend>
+                            <div class="form-group">
+                                <label for="input-nama">Nama Lengkap</label>
+                                <input type="text" id="input-nama" placeholder="Contoh: Akhmad Alvin">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-jurusan">Jurusan / Program Studi</label>
+                                <input type="text" id="input-jurusan" placeholder="Contoh: Teknik Informatika">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-kampus">Universitas / Kampus</label>
+                                <input type="text" id="input-kampus" placeholder="Contoh: Universitas Cyber Nusantara">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-bio">Bio Singkat</label>
+                                <textarea id="input-bio" rows="3"
+                                    placeholder="Ceritakan singkat tentang fokus atau minat kuliahmu..."></textarea>
+                            </div>
+                        </fieldset>
+                        <!-- FORM KELOMPOK DATA PRIBADI END -->
+
+                        <!-- FORM KELOMPOK KEAHLIAN START -->
+                        <fieldset>
+                            <legend>Keahlian (Pisahkan dengan koma)</legend>
+                            <div class="form-group">
+                                <label for="input-skills">Daftar Skill</label>
+                                <input type="text" id="input-skills"
+                                    placeholder="Contoh: Python, HTML, UI Design">
+                            </div>
+                        </fieldset>
+                        <!-- FORM KELOMPOK KEAHLIAN END -->
+                    </form>
+                </section>
+                <!-- KOLOM KIRI: FORM INPUT END -->
+
+                <!-- KOLOM KANAN: LIVE PREVIEW START -->
+                <section class="preview-section">
+                    <!-- NAVIGASI MOBILE START -->
+                    <div class="mobile-tabs">
+                        <button id="btn-show-form" class="active">Edit Data</button>
+                        <button id="btn-show-preview">Lihat Hasil</button>
+                    </div>
+                    <!-- NAVIGASI MOBILE END -->
+
+                    <!-- KARTU PORTFOLIO UTAMA START -->
+                    <div class="portfolio-card" id="portfolio-preview">
+                        <!-- HEADER PREVIEW START -->
+                        <div class="preview-header">
+                            <h2 id="view-nama">Nama Mahasiswa</h2>
+                            <p class="subtitle"><span id="view-jurusan">Jurusan</span> @ <span id="view-kampus">Kampus</span>
+                            </p>
+                        </div>
+                        <!-- HEADER PREVIEW END -->
+
+                        <!-- KONTEN PREVIEW START -->
+                        <div class="preview-body">
+                            <!-- SEKSI TENTANG SAYA START -->
+                            <div class="preview-section-block">
+                                <h3>Tentang Saya</h3>
+                                <p id="view-bio">Deskripsi diri anda akan muncul di sini setelah form diisi secara real-time.</p>
+                            </div>
+                            <!-- SEKSI TENTANG SAYA END -->
+
+                            <!-- SEKSI KEAHLIAN START -->
+                            <div class="preview-section-block">
+                                <h3>Keahlian Utama</h3>
+                                <div id="view-skills" class="skills-tag-container">
+                                    <span class="skill-tag">Skill Anda</span>
+                                </div>
+                            </div>
+                            <!-- SEKSI KEAHLIAN END -->
+                        </div>
+                        <!-- KONTEN PREVIEW END -->
+                    </div>
+                    <!-- KARTU PORTFOLIO UTAMA END -->
+                </section>
+                <!-- KOLOM KANAN: LIVE PREVIEW END -->
+            </div>
+        </section>
+        <!-- TAB PORTFOLIO END -->
+
+        <!-- TAB ABOUT START -->
+        <section id="tab-about" class="tab-content" hidden>
+            <!-- SEKSI TENTANG SAYA START -->
+            <div class="about-layout">
+                <div class="about-content">
+                    <h2 class="section-title">Timeline & Fokus</h2>
+                    <div class="timeline-container">
+                        <!-- Akademis -->
+                        <div class="timeline-item">
+                            <h3 class="timeline-title">Universitas Muhammadiyah Makassar</h3>
+                            <p class="timeline-desc">Mahasiswa Program Studi Teknik Informatika. Mempelajari fundamental ilmu komputer, algoritma struktur data, dan rekayasa perangkat lunak.</p>
+                        </div>
+                        <!-- Fokus Teknologi -->
+                        <div class="timeline-item">
+                            <h3 class="timeline-title">Frontend Web Development</h3>
+                            <p class="timeline-desc">Fokus merancang antarmuka pengguna (UI) yang bersih dan berpusat pada interaktivitas menggunakan Vanilla JavaScript dan CSS Modern.</p>
+                        </div>
+                        <!-- Ekosistem Web3 -->
+                        <div class="timeline-item">
+                            <h3 class="timeline-title">Web3 & Crypto Protocol Ecosystem</h3>
+                            <p class="timeline-desc">Memiliki ketertarikan mendalam pada teknologi terdesentralisasi, integrasi dompet kripto, dan desain antarmuka dApps (Decentralized Applications).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SEKSI TENTANG SAYA END -->
+        </section>
+        <!-- TAB ABOUT END -->
+
+        <!-- TAB CONTACT START -->
+        <section id="tab-contact" class="tab-content" hidden>
+            <!-- SEKSI KONTAK START -->
+            <div class="contact-layout">
+                <div class="contact-content">
+                    <h2 class="section-title">Mari Terhubung</h2>
+                    <p class="contact-subtitle">Pilih salah satu platform profesional di bawah ini untuk berdiskusi lebih lanjut.</p>
+                    
+                    <div class="contact-badges-container">
+                        <a href="#" class="contact-badge">GitHub</a>
+                        <a href="#" class="contact-badge">LinkedIn</a>
+                        <a href="#" class="contact-badge">Discord</a>
+                        <a href="#" class="contact-badge">Email</a>
+                    </div>
+                </div>
+            </div>
+            <!-- SEKSI KONTAK END -->
+        </section>
+        <!-- TAB CONTACT END -->
+        
+    </main>
+    <!-- KONTENER UTAMA APLIKASI END -->
+
+    <!-- SCRIPT MODULAR IMPOR START -->
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/main.js"></script>
+    <!-- SCRIPT MODULAR IMPOR END -->
+</body>
+
+</html>

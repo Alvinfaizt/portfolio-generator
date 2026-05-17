@@ -1,0 +1,631 @@
+/* Import Font Modern untuk Seluruh Aplikasi */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* ==========================================================================
+   [1. RESET & VARIABEL GLOBAL (TECH-NOIR GLOBAL BACKGROUND)]
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0d0e10; /* Hitam pekat/deep charcoal */
+    color: #ffffff; /* Teks utama putih solid */
+}
+
+/* Pola Cyber-Grid murni via CSS Gradient matematika */
+.app-container {
+    min-height: 100vh;
+    width: 100%;
+    /* Menerapkan pola kotak-kotak digital (Cyber-Grid) */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* SPA Tab Navigation */
+.tab-content {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   [2. TAB HOME (LANDING PAGE)]
+   ========================================================================== */
+.home-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 7rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4.5rem;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-bio {
+    font-size: 1.15rem;
+    color: #8e94a0;
+    max-width: 650px;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   [3. SISI KIRI: FORM TEMPAT PENGISIAN DATA (TAB PORTFOLIO)]
+   ========================================================================== */
+.portfolio-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.form-section {
+    width: 40%;
+    /* Latar Form transparan gelap dengan efek kaca */
+    background-color: rgba(16, 17, 20, 0.75);
+    padding: 7rem 2.5rem 3rem 2.5rem; /* Padding top ekstra untuk Navbar */
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    /* Efek Glassmorphism gelap */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.form-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #8e94a0; /* Abu-abu taktil */
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   [3.1 KOMPONEN DROPDOWN THEME SELECTOR]
+   ========================================================================== */
+.theme-selector label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #64748b; /* Teks pendukung */
+    margin-bottom: 0.5rem;
+}
+
+.theme-selector select {
+    padding: 0.75rem;
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    /* Minimalist line untuk select */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-selector select:focus {
+    border-bottom-color: #ffffff;
+}
+
+.theme-selector select option {
+    background-color: #0d0e10;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   [3.2 KOMPONEN FORM INPUT (MINIMALIST FLOATING LINE)]
+   ========================================================================== */
+fieldset {
+    border: none;
+    margin-top: 2.5rem;
+}
+
+legend {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.3rem;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #8e94a0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Menghilangkan kotak jadul, menggunakan garis bawah tipis murni */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem 0;
+    background: transparent;
+    border: none;
+    /* Minimalist Floating Line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+/* Efek transisi geser halus ke kanan dan penebalan putih solid saat fokus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #ffffff;
+    transform: translateX(0.25rem); /* Efek geser ke kanan */
+}
+
+.form-group textarea {
+    resize: none;
+    height: 60px;
+}
+
+/* ==========================================================================
+   [3.3 TOMBOL AKSI CETAK / EKSPOR PDF]
+   ========================================================================== */
+.action-buttons {
+    margin-top: 2rem;
+}
+
+/* Blok kontras tinggi: Putih solid, teks hitam pekat, font tebal */
+.print-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.print-button:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   [4. SISI KANAN: AREA LIVE PREVIEW KARTU]
+   ========================================================================== */
+.preview-section {
+    width: 60%;
+    padding: 7rem 3rem 3rem 3rem; /* Padding top ekstra untuk Navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.portfolio-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+.preview-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+}
+
+.preview-section-block {
+    margin-bottom: 2rem;
+}
+
+.skills-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.mobile-tabs {
+    display: none;
+}
+
+/* ==========================================================================
+   [5. TABS ABOUT & CONTACT (KONTEN UTAMA)]
+   ========================================================================== */
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+/* About Layout & Timeline */
+.about-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 7rem 2rem 3rem 2rem;
+}
+
+.about-content {
+    max-width: 700px;
+    width: 100%;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem; /* Menyesuaikan posisi titik dengan border-left container */
+    top: 0.3rem;
+    width: 10px;
+    height: 10px;
+    background-color: #8e94a0;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    background-color: #ffffff;
+}
+
+.timeline-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+    font-size: 1rem;
+    color: #8e94a0;
+    line-height: 1.6;
+}
+
+/* Contact Layout & Badges */
+.contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 7rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-subtitle {
+    font-size: 1.05rem;
+    color: #8e94a0;
+    margin-bottom: 3rem;
+}
+
+.contact-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.contact-badge {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #8e94a0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.contact-badge:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================================================
+   [6. KOMPONEN NAVBAR & ELEMEN DEKORATIF (TECH-NOIR)]
+   ========================================================================== */
+.modern-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    z-index: 1000 !important;
+    background-color: rgba(13, 14, 16, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-brand {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    color: #8e94a0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #ffffff;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+    width: 100%;
+}
+
+/* Status Indicator */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981; /* Neon green */
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.status-text {
+    font-size: 0.75rem;
+    color: #8e94a0;
+    letter-spacing: 0.1em;
+}
+
+/* Decorative Text */
+.decorative-text {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   [7. LOGIKA CSS MEDIA QUERY KHUSUS CETAK (PRINT)]
+   ========================================================================== */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    /* Menyembunyikan seluruh tab SELAIN portfolio, dan seluruh dekorasi/navbar */
+    .modern-navbar,
+    .tab-content:not(#tab-portfolio),
+    .form-section,
+    .action-buttons,
+    .mobile-tabs,
+    .status-indicator,
+    .decorative-text {
+        display: none !important;
+    }
+
+    /* Paksa render portfolio saat print */
+    #tab-portfolio {
+        display: block !important;
+    }
+
+    /* Mempertahankan background grid pada kertas */
+    body,
+    html {
+        background-color: #0d0e10 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .app-container, .portfolio-layout {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        /* Memastikan grid background tetap dirender browser saat diprint */
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+        background-size: 30px 30px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .preview-section {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Kartu preview di kanan tercetak UTUH tepat di tengah halaman kertas A4 */
+    .portfolio-card {
+        display: block !important;
+        width: 180mm !important;
+        max-width: 180mm !important;
+        padding: 2.5rem !important;
+        box-sizing: border-box !important;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* ==========================================================================
+   [8. RESPONSIVE MOBILE BREAKPOINT LAYOUT]
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Otomatis menumpuk secara vertikal */
+    .portfolio-layout {
+        flex-direction: column;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .form-section {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .preview-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .mobile-tabs {
+        display: flex;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .mobile-tabs button {
+        flex: 1;
+        padding: 1rem;
+        background: transparent;
+        color: #8e94a0;
+        border: none;
+        border-bottom: 2px solid transparent;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+    }
+    
+    .mobile-tabs button.active {
+        color: #ffffff;
+        border-bottom: 2px solid #ffffff;
+    }
+}

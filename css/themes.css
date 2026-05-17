@@ -1,0 +1,123 @@
+/* ==========================================================================
+   [MANAJEMEN TEMA BERBASIS CSS VARIABLES (TECH-NOIR CORE)]
+   ========================================================================== */
+
+/* 1. TEMA TECH-NOIR (Default / Minimalist variant) 
+   Aksen abu-abu terang elegan untuk netralitas. */
+:root,
+html[data-theme="minimalist"] {
+    --card-bg: rgba(16, 17, 20, 0.85); /* Kartu semi-transparan gelap */
+    --card-text: #ffffff;
+    --accent-color: #e2e8f0; /* Putih keabu-abuan terang */
+    --tag-bg: rgba(255, 255, 255, 0.03); /* Latar transparan gelap sangat minim */
+    --tag-text: #8e94a0;
+    --border-style: 1px solid rgba(255, 255, 255, 0.08); /* Garis batas grid/kartu maksimal 0.08 */
+    
+    /* Tipografi Dasar */
+    --font-style: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+}
+
+/* 2. TEMA CYBER-DARK (Tech variant)
+   Aksen Cyan khas cyberpunk/teknologi. */
+html[data-theme="tech"] {
+    --card-bg: rgba(10, 15, 24, 0.85);
+    --card-text: #ffffff;
+    --accent-color: #38bdf8; /* Biru Cyan terang */
+    --tag-bg: rgba(56, 189, 248, 0.05);
+    --tag-text: #7dd3fc;
+    --border-style: 1px solid rgba(56, 189, 248, 0.15);
+    
+    --font-style: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+}
+
+/* 3. TEMA MONOCHROME (High Contrast Solid variant)
+   Kontras sangat tajam, hanya hitam dan putih murni. */
+html[data-theme="monochrome"] {
+    --card-bg: rgba(0, 0, 0, 0.95);
+    --card-text: #ffffff;
+    --accent-color: #ffffff; /* Putih solid */
+    --tag-bg: transparent;
+    --tag-text: #ffffff;
+    --border-style: 1px solid rgba(255, 255, 255, 0.2);
+    
+    --font-style: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+}
+
+
+/* ==========================================================================
+   [PENERAPAN VARIABEL PADA ELEMEN PREVIEW KARTU]
+   ========================================================================== */
+
+/* Kode di bawah ini memaksa elemen preview tunduk pada tema Tech-Noir */
+#portfolio-preview {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border: var(--border-style);
+    font-family: var(--font-style);
+    backdrop-filter: blur(12px); /* Efek kaca buram (glassmorphism) */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+}
+
+/* Judul Utama (Nama) */
+#portfolio-preview h2 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.2rem;
+}
+
+/* Sub-deskripsi (Jurusan & Universitas) */
+#portfolio-preview .subtitle {
+    font-family: monospace; /* Font bawaan khusus sub-info */
+    color: #8e94a0;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* Judul Seksi (Tentang Saya, Keahlian) */
+#portfolio-preview h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    border-bottom: none; /* Menghilangkan garis bawah lawas */
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   [DESAIN BENTUK KAPSUL / PILL UNTUK TAG KEAHLIAN]
+   ========================================================================== */
+#portfolio-preview .skill-tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    /* Border tipis maksimal 0.08 */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.4rem 1.2rem;
+    /* Bentuk pil kapsul sempit (memanjang) */
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-style);
+    transition: all 0.3s ease;
+}
+
+#portfolio-preview .skill-tag:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Modifikasi pada saat tema Monochrome aktif untuk tombol tag */
+html[data-theme="monochrome"] #portfolio-preview .skill-tag {
+    border: 1px solid #ffffff;
+}
+html[data-theme="monochrome"] #portfolio-preview .skill-tag:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
