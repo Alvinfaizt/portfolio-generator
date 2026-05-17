@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 6. LOGIKA EVENT: Comment Image Upload Preview
     const imageUpload = document.getElementById("comment-image-upload");
+    const placeholderBox = document.getElementById("upload-placeholder-box");
     const previewContainer = document.getElementById("image-preview-container");
     const previewImage = document.getElementById("comment-image-preview");
     const removeImageBtn = document.getElementById("btn-remove-image");
@@ -105,20 +106,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 reader.onload = function(e) {
                     previewImage.src = e.target.result;
                     previewContainer.removeAttribute("hidden");
+                    placeholderBox.setAttribute("hidden", "true"); // Sembunyikan placeholder
                 };
                 reader.readAsDataURL(file);
             }
         });
 
-        // Hapus pratinjau gambar
+        // Hapus pratinjau gambar dan kembalikan placeholder
         removeImageBtn.addEventListener("click", function() {
             imageUpload.value = "";
             previewImage.src = "";
             previewContainer.setAttribute("hidden", "true");
+            placeholderBox.removeAttribute("hidden"); // Tampilkan kembali placeholder
         });
     }
 
 });
+
+// ==========================================================================
+// FUNGSI GLOBAL: LIGHTBOX MODAL MURNI
+// ==========================================================================
+function openLightbox(imgSrc) {
+    const lightbox = document.getElementById("certificate-lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    if (lightbox && lightboxImg) {
+        lightboxImg.src = imgSrc;
+        lightbox.removeAttribute("hidden");
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById("certificate-lightbox");
+    if (lightbox) {
+        lightbox.setAttribute("hidden", "true");
+    }
+}
 
 /**
  * Fungsi Pembantu (Helper) untuk mengubah teks koma menjadi Array murni.

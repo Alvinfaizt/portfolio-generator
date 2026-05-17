@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 3rem;
+    padding: 0.6rem 3rem;
     z-index: 1000 !important;
     background-color: rgba(13, 14, 16, 0.95);
     backdrop-filter: blur(12px);
@@ -458,6 +458,27 @@ legend {
     transform: translateY(-3px);
 }
 
+/* Showcase Header */
+.showcase-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.showcase-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.showcase-header p {
+    color: #8e94a0;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Sub-Navigasi 3 Kolom */
 .about-subnav {
     display: flex;
@@ -527,9 +548,89 @@ legend {
     color: #8e94a0;
 }
 
+/* Certificate Preview Lightbox Interactivity */
+.cert-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.view-cert-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #10b981;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.cert-card:hover .view-cert-label {
+    color: #ffffff;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   [5.5 LIGHTBOX MODAL MURNI]
+   ========================================================================== */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal[hidden] {
+    display: none !important;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    animation: zoomIn 0.3s ease forwards;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    color: #ef4444;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 /* ==========================================================================
@@ -604,24 +705,26 @@ legend {
 }
 
 .social-links-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .social-link-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.6rem;
     text-decoration: none;
     color: #8e94a0;
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.2rem;
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 50px;
     transition: all 0.3s ease;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    width: 100%;
 }
 
 .social-link-item i {
@@ -663,20 +766,38 @@ legend {
     margin-bottom: 0;
 }
 
-.upload-label {
-    display: inline-flex;
+.upload-placeholder-box {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    color: #10b981;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    min-height: 120px;
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.01);
+    color: #64748b;
     cursor: pointer;
+    transition: all 0.3s ease;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-    text-transform: none !important; /* Menimpa uppercasenya form-group label */
+    font-size: 0.95rem;
 }
 
-.upload-label:hover {
+.upload-placeholder-box i {
+    font-size: 2.2rem;
+    color: #8e94a0;
+    transition: color 0.3s ease;
+}
+
+.upload-placeholder-box:hover {
+    border-color: #10b981;
     color: #ffffff;
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.upload-placeholder-box:hover i {
+    color: #10b981;
 }
 
 .image-preview-container {
@@ -719,7 +840,7 @@ legend {
 @media print {
     @page { size: A4; margin: 0; }
 
-    #home, #about, #contact, .modern-navbar, .form-section, .action-buttons, .mobile-tabs {
+    #home, #about, #contact, .modern-navbar, .form-section, .action-buttons, .mobile-tabs, .lightbox-modal {
         display: none !important;
     }
 
