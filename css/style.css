@@ -816,6 +816,7 @@ legend {
 }
 
 .upload-placeholder-box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -850,54 +851,36 @@ legend {
     color: #10b981;
 }
 
-.image-preview-container {
-    margin-top: 1rem;
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    flex: 1; /* Tumbuh secara vertikal */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.2); /* Latar gelap estetik */
-}
-
-.image-preview-container img {
-    width: 100%;
-    height: 100%;
-    max-height: 200px;
-    object-fit: contain; /* Gambar utuh, tidak terpotong */
-    border-radius: 8px;
-    display: block;
-}
-
-.uploaded-file-name {
-    margin-top: 0.8rem;
-    font-size: 0.85rem;
+.upload-placeholder-box.success {
+    border: 2px solid rgba(16, 185, 129, 0.5);
+    background-color: rgba(16, 185, 129, 0.05);
     color: #10b981;
-    font-family: 'Space Grotesk', sans-serif;
-    word-break: break-all;
-    text-align: center;
+}
+
+.upload-placeholder-box.success i {
+    color: #10b981;
 }
 
 .btn-remove-image {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 15px;
+    right: 15px;
     background-color: #ef4444;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-remove-image:hover {
+    background-color: #dc2626;
+    transform: scale(1.1);
 }
 
 /* ==========================================================================

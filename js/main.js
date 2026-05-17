@@ -95,33 +95,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // 6. LOGIKA EVENT: Comment Image Upload Preview
     const imageUpload = document.getElementById("comment-image-upload");
     const placeholderBox = document.getElementById("upload-placeholder-box");
-    const previewContainer = document.getElementById("image-preview-container");
-    const previewImage = document.getElementById("comment-image-preview");
+    const uploadIcon = document.getElementById("upload-icon");
+    const uploadText = document.getElementById("upload-text");
     const removeImageBtn = document.getElementById("btn-remove-image");
-    const imageName = document.getElementById("comment-image-name");
 
     if (imageUpload) {
+        // Klik pada box akan memicu input file, KECUALI jika klik pada tombol remove
+        placeholderBox.addEventListener("click", function(event) {
+            if (event.target.closest("#btn-remove-image")) return;
+            imageUpload.click();
+        });
+
         imageUpload.addEventListener("change", function(event) {
             const file = event.target.files[0];
             if (file && file.type.startsWith("image/")) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    previewImage.src = e.target.result;
-                    if(imageName) imageName.textContent = file.name;
-                    previewContainer.removeAttribute("hidden");
-                    placeholderBox.setAttribute("hidden", "true"); // Sembunyikan placeholder
-                };
-                reader.readAsDataURL(file);
+                // Terapkan state sukses yang estetik
+                placeholderBox.classList.add("success");
+                uploadIcon.className = "bx bx-check-circle";
+                uploadText.textContent = file.name;
+                removeImageBtn.removeAttribute("hidden");
             }
         });
 
-        // Hapus pratinjau gambar dan kembalikan placeholder
-        removeImageBtn.addEventListener("click", function() {
+        // Hapus file dan kembalikan ke state awal
+        removeImageBtn.addEventListener("click", function(event) {
+            event.stopPropagation(); // Mencegah terpicunya klik placeholder
             imageUpload.value = "";
-            previewImage.src = "";
-            if(imageName) imageName.textContent = "";
-            previewContainer.setAttribute("hidden", "true");
-            placeholderBox.removeAttribute("hidden"); // Tampilkan kembali placeholder
+            placeholderBox.classList.remove("success");
+            uploadIcon.className = "bx bx-cloud-upload";
+            uploadText.textContent = "Click to Upload Image (Optional)";
+            removeImageBtn.setAttribute("hidden", "true");
         });
     }
 
