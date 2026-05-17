@@ -84,8 +84,7 @@ body {
     /* Efek Glassmorphism gelap */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    overflow-y: auto;
-    height: 100vh;
+    height: auto;
 }
 
 .form-header h1 {
@@ -240,8 +239,7 @@ legend {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
-    height: 100vh;
+    height: auto;
 }
 
 .portfolio-card {
@@ -351,6 +349,67 @@ legend {
     line-height: 1.6;
 }
 
+/* About Komponen Profil & Prestasi */
+.profile-photo-wrapper {
+    margin-bottom: 3rem;
+    display: flex;
+}
+
+.profile-photo-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+}
+
+.profile-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.profile-photo-frame:hover img {
+    filter: grayscale(0%);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.achievement-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+    font-size: 0.85rem;
+    color: #8e94a0;
+}
+
 /* Contact Layout & Dual-Panel Grid */
 .contact-layout {
     display: flex;
@@ -436,7 +495,14 @@ legend {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     transition: all 0.3s ease;
+}
+
+.contact-badge i {
+    font-size: 1.3rem;
 }
 
 .contact-badge:hover {

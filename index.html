@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Student Portfolio Generator</title>
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
 </head>
@@ -169,19 +171,30 @@
                     <h2 class="section-title">Timeline & Fokus</h2>
                     
                     <div class="about-grid">
-                        <!-- Kolom 1: Timeline -->
+                        <!-- Kolom 1: Profil & Timeline Akademis -->
                         <div class="about-col">
+                            <!-- KOMPONEN FOTO PROFIL START -->
+                            <div class="profile-photo-wrapper">
+                                <div class="profile-photo-frame">
+                                    <img src="https://ui-avatars.com/api/?name=FD&background=0d0e10&color=fff&size=200" alt="Foto Profil" />
+                                </div>
+                            </div>
+                            <!-- KOMPONEN FOTO PROFIL END -->
+
+                            <!-- KOMPONEN RIWAYAT AKADEMIS START -->
                             <div class="timeline-container">
                                 <div class="timeline-item">
                                     <h3 class="timeline-title">Universitas Muhammadiyah Makassar</h3>
                                     <p class="timeline-desc">Mahasiswa Program Studi Teknik Informatika. Mempelajari fundamental ilmu komputer, algoritma struktur data, dan rekayasa perangkat lunak modern.</p>
                                 </div>
                             </div>
+                            <!-- KOMPONEN RIWAYAT AKADEMIS END -->
                         </div>
 
-                        <!-- Kolom 2: Fokus -->
+                        <!-- Kolom 2: Fokus & Prestasi -->
                         <div class="about-col">
-                            <div class="timeline-container">
+                            <!-- KOMPONEN FOKUS TEKNOLOGI START -->
+                            <div class="timeline-container" style="margin-bottom: 3rem;">
                                 <div class="timeline-item">
                                     <h3 class="timeline-title">Frontend Web Development</h3>
                                     <p class="timeline-desc">Merancang antarmuka pengguna (UI) yang bersih, berpusat pada interaktivitas tinggi tanpa framework berlebih, memanfaatkan Vanilla JS murni.</p>
@@ -191,6 +204,27 @@
                                     <p class="timeline-desc">Eksplorasi mendalam pada teknologi terdesentralisasi, integrasi dompet kripto pintar, dan perancangan antarmuka dApps.</p>
                                 </div>
                             </div>
+                            <!-- KOMPONEN FOKUS TEKNOLOGI END -->
+
+                            <!-- KOMPONEN PRESTASI START -->
+                            <div class="achievements-section">
+                                <h3 class="timeline-title" style="margin-bottom: 1.5rem;">Galeri Prestasi & Sertifikat</h3>
+                                <div class="achievements-grid">
+                                    <div class="achievement-card">
+                                        <h4>Juara 1 Web Design</h4>
+                                        <p>Kompetisi IT Nasional 2023</p>
+                                    </div>
+                                    <div class="achievement-card">
+                                        <h4>Sertifikasi Frontend</h4>
+                                        <p>Platform Belajar Online</p>
+                                    </div>
+                                    <div class="achievement-card">
+                                        <h4>Open Source Contributor</h4>
+                                        <p>GitHub Campus Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- KOMPONEN PRESTASI END -->
                         </div>
                     </div>
 
@@ -226,10 +260,10 @@
                         <div class="contact-badges-container">
                             <p class="contact-subtitle">Pilih alternatif platform untuk berdiskusi lebih lanjut.</p>
                             <div class="badges-wrapper">
-                                <a href="#" class="contact-badge">GitHub</a>
-                                <a href="#" class="contact-badge">LinkedIn</a>
-                                <a href="#" class="contact-badge">Discord</a>
-                                <a href="#" class="contact-badge">Email</a>
+                                <a href="#" class="contact-badge"><i class='bx bxl-github'></i> GitHub</a>
+                                <a href="#" class="contact-badge"><i class='bx bxl-linkedin-square'></i> LinkedIn</a>
+                                <a href="#" class="contact-badge"><i class='bx bxl-discord-alt'></i> Discord</a>
+                                <a href="#" class="contact-badge"><i class='bx bx-envelope'></i> Email</a>
                             </div>
                         </div>
                     </div>
