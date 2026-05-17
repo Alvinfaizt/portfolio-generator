@@ -2,7 +2,7 @@
 
 Aplikasi web berbasis Vanilla Code untuk membantu mahasiswa dari segala jurusan membuat halaman portfolio/cv interaktif secara instan dan responsif. Proyek ini dibangun murni menggunakan HTML, CSS, dan JavaScript tanpa framework untuk memperkuat logika pemrograman dasar.
 
----
+
 
 ## Fitur Utama
 
@@ -12,7 +12,7 @@ Aplikasi web berbasis Vanilla Code untuk membantu mahasiswa dari segala jurusan 
 * **Responsive Design:** Tampilan optimal baik di akses melalui Desktop maupun Smartphone.
 * **Local Storage Persistence:** Data tidak hilang meskipun halaman di-refresh.
 
----
+
 
 ## Struktur Folder
 
