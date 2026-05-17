@@ -91,6 +91,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // 6. LOGIKA EVENT: Comment Image Upload Preview
+    const imageUpload = document.getElementById("comment-image-upload");
+    const previewContainer = document.getElementById("image-preview-container");
+    const previewImage = document.getElementById("comment-image-preview");
+    const removeImageBtn = document.getElementById("btn-remove-image");
+
+    if (imageUpload) {
+        imageUpload.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewContainer.removeAttribute("hidden");
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Hapus pratinjau gambar
+        removeImageBtn.addEventListener("click", function() {
+            imageUpload.value = "";
+            previewImage.src = "";
+            previewContainer.setAttribute("hidden", "true");
+        });
+    }
+
 });
 
 /**
