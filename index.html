@@ -27,13 +27,13 @@
 
     <!-- KONTENER UTAMA APLIKASI START -->
     <main class="app-container">
-        
+
         <!-- SECTION HOME START -->
         <section id="home" class="page-section">
             <div class="home-layout">
                 <div class="home-content">
                     <h1 class="hero-title">Frontend Developer</h1>
-                    
+
                     <!-- STATUS INDICATOR START -->
                     <div class="status-indicator">
                         <span class="status-dot"></span>
@@ -41,7 +41,8 @@
                     </div>
                     <!-- STATUS INDICATOR END -->
 
-                    <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur murni yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
+                    <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur
+                        murni yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
                 </div>
 
                 <!-- DECORATIVE TEXT START -->
@@ -111,8 +112,7 @@
                             <legend>Keahlian (Pisahkan dengan koma)</legend>
                             <div class="form-group">
                                 <label for="input-skills">Daftar Skill</label>
-                                <input type="text" id="input-skills"
-                                    placeholder="Contoh: Python, HTML, UI Design">
+                                <input type="text" id="input-skills" placeholder="Contoh: Python, HTML, UI Design">
                             </div>
                         </fieldset>
                         <!-- FORM KELOMPOK KEAHLIAN END -->
@@ -134,7 +134,8 @@
                         <!-- HEADER PREVIEW START -->
                         <div class="preview-header">
                             <h2 id="view-nama">Nama Mahasiswa</h2>
-                            <p class="subtitle"><span id="view-jurusan">Jurusan</span> @ <span id="view-kampus">Kampus</span>
+                            <p class="subtitle"><span id="view-jurusan">Jurusan</span> @ <span
+                                    id="view-kampus">Kampus</span>
                             </p>
                         </div>
                         <!-- HEADER PREVIEW END -->
@@ -144,7 +145,8 @@
                             <!-- SEKSI TENTANG SAYA START -->
                             <div class="preview-section-block">
                                 <h3>Tentang Saya</h3>
-                                <p id="view-bio">Deskripsi diri anda akan muncul di sini setelah form diisi secara real-time.</p>
+                                <p id="view-bio">Deskripsi diri anda akan muncul di sini setelah form diisi secara
+                                    real-time.</p>
                             </div>
                             <!-- SEKSI TENTANG SAYA END -->
 
@@ -170,18 +172,21 @@
         <section id="about" class="page-section">
             <div class="about-layout">
                 <div class="about-content">
-                    
+
                     <!-- KOMPONEN ABOUT HERO START -->
                     <!-- Background dihapus agar menyatu. Posisi: Kiri Teks, Kanan Foto -->
                     <div class="about-hero">
                         <div class="about-hero-text">
                             <span class="about-label">ABOUT ME</span>
                             <h2 class="about-name">Akhmad Alvin</h2>
-                            <p class="about-desc">Mahasiswa Teknik Informatika Universitas Muhammadiyah Makassar. Fokus mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS) serta ekosistem teknologi Web3 terdesentralisasi.</p>
+                            <p class="about-desc">Mahasiswa Teknik Informatika Universitas Muhammadiyah Makassar. Fokus
+                                mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS)
+                                serta ekosistem teknologi Web3 terdesentralisasi.</p>
                             <a href="#" class="btn-cv">Download CV <i class='bx bx-download'></i></a>
                         </div>
                         <div class="about-photo">
-                            <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300" alt="Foto Profil" />
+                            <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300"
+                                alt="Foto Profil" />
                         </div>
                     </div>
                     <!-- KOMPONEN ABOUT HERO END -->
@@ -189,16 +194,19 @@
                     <!-- SHOWCASE HEADER START -->
                     <div class="showcase-header">
                         <h2>Portfolio Showcase</h2>
-                        <p>A curated collection of my digital creations, verified credentials, and academic milestones.</p>
+                        <p>A curated collection of my digital creations, verified credentials, and academic milestones.
+                        </p>
                     </div>
                     <!-- SHOWCASE HEADER END -->
 
                     <!-- KOMPONEN ABOUT SUB-TABS START -->
-                    <!-- Center aligned, menu dalam bahasa inggris -->
-                    <div class="about-subnav">
-                        <button class="subnav-btn active" data-target="panel-projects">Projects</button>
-                        <button class="subnav-btn" data-target="panel-certificates">Certificates</button>
-                        <button class="subnav-btn" data-target="panel-achievements">Achievements</button>
+                    <!-- Center aligned, menu dalam bahasa inggris, disatukan dalam bilah kapsul -->
+                    <div class="about-subnav-wrapper">
+                        <div class="about-subnav">
+                            <button class="subnav-btn active" data-target="panel-projects">Certificates</button>
+                            <button class="subnav-btn" data-target="panel-certificates">Projects</button>
+                            <button class="subnav-btn" data-target="panel-achievements">Achievements</button>
+                        </div>
                     </div>
 
                     <div class="about-panels-container">
@@ -219,15 +227,19 @@
                         <!-- Panel Certificates -->
                         <div id="panel-certificates" class="about-panel" hidden>
                             <div class="achievements-grid">
-                                <div class="achievement-card cert-card" onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80')">
+                                <div class="achievement-card cert-card"
+                                    onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80')">
                                     <h4>Frontend Web Developer</h4>
                                     <p>Dicoding Academy Indonesia</p>
-                                    <span class="view-cert-label"><i class='bx bx-search-alt-2'></i> View Credential</span>
+                                    <span class="view-cert-label"><i class='bx bx-search-alt-2'></i> View
+                                        Credential</span>
                                 </div>
-                                <div class="achievement-card cert-card" onclick="openLightbox('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80')">
+                                <div class="achievement-card cert-card"
+                                    onclick="openLightbox('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80')">
                                     <h4>Responsive Web Design</h4>
                                     <p>FreeCodeCamp Certification</p>
-                                    <span class="view-cert-label"><i class='bx bx-search-alt-2'></i> View Credential</span>
+                                    <span class="view-cert-label"><i class='bx bx-search-alt-2'></i> View
+                                        Credential</span>
                                 </div>
                             </div>
                         </div>
@@ -253,12 +265,12 @@
         <section id="contact" class="page-section">
             <div class="contact-layout">
                 <div class="contact-content">
-                    
-                    <h2 class="section-title">Let's Talk</h2>
+
+                    <h2 class="section-title">Contact & Comment</h2>
 
                     <!-- KOMPONEN TWIN COLUMN LAYOUT START -->
                     <div class="contact-twin-layout">
-                        
+
                         <!-- KOLOM KIRI: CONTACT ME START -->
                         <div class="contact-col contact-col-left">
                             <h3 class="contact-col-title">Contact Me</h3>
@@ -281,14 +293,22 @@
                             <div class="connect-section">
                                 <h4>Connect with Me</h4>
                                 <div class="social-links-list">
-                                    <a href="#" class="social-link-item"><i class='bx bxl-github'></i><span>GitHub</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-linkedin-square'></i><span>LinkedIn</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-discord-alt'></i><span>Discord</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bx-envelope'></i><span>Email</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-instagram'></i><span>Instagram</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-youtube'></i><span>YouTube</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-tiktok'></i><span>TikTok</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-github'></i><span>GitHub</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-linkedin-square'></i><span>LinkedIn</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-discord-alt'></i><span>Discord</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-instagram'></i><span>Instagram</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-youtube'></i><span>YouTube</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-tiktok'></i><span>TikTok</span></a>
                                 </div>
+                                <!-- Tombol Email Full Width -->
+                                <a href="mailto:#" class="social-link-item email-action-btn"><i
+                                        class='bx bx-envelope'></i><span>Email Me Directly</span></a>
                             </div>
                         </div>
                         <!-- KOLOM KIRI: CONTACT ME END -->
@@ -303,21 +323,23 @@
                                 <div class="form-group">
                                     <textarea placeholder="Your Comment" rows="3" required></textarea>
                                 </div>
-                                
+
                                 <!-- UPLOAD IMAGE FITUR START -->
                                 <div class="form-group upload-group">
                                     <input type="file" id="comment-image-upload" accept="image/*" hidden>
-                                    
+
                                     <!-- Dashed Placeholder Area -->
-                                    <div class="upload-placeholder-box" id="upload-placeholder-box" onclick="document.getElementById('comment-image-upload').click()">
+                                    <div class="upload-placeholder-box" id="upload-placeholder-box"
+                                        onclick="document.getElementById('comment-image-upload').click()">
                                         <i class='bx bx-cloud-upload'></i>
                                         <span>Click to Upload Image (Optional)</span>
                                     </div>
-                                    
+
                                     <!-- Kontainer Preview Gambar -->
                                     <div class="image-preview-container" id="image-preview-container" hidden>
                                         <img id="comment-image-preview" src="" alt="Image Preview">
-                                        <button type="button" id="btn-remove-image" class="btn-remove-image" title="Remove Image"><i class='bx bx-x'></i></button>
+                                        <button type="button" id="btn-remove-image" class="btn-remove-image"
+                                            title="Remove Image"><i class='bx bx-x'></i></button>
                                     </div>
                                 </div>
                                 <!-- UPLOAD IMAGE FITUR END -->
@@ -336,7 +358,7 @@
             </div>
         </section>
         <!-- SECTION CONTACT & COMMENT END -->
-        
+
     </main>
     <!-- KONTENER UTAMA APLIKASI END -->
 

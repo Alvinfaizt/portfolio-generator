@@ -479,14 +479,21 @@ legend {
     margin: 0 auto;
 }
 
-/* Sub-Navigasi 3 Kolom */
-.about-subnav {
+/* Sub-Navigasi 3 Kolom (Pill Segmented Control) */
+.about-subnav-wrapper {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.about-subnav {
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .subnav-btn {
@@ -737,6 +744,21 @@ legend {
     transform: translateY(-2px);
 }
 
+.email-action-btn {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.email-action-btn:hover {
+    background-color: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+}
+
 /* Tombol Submit Contact/Comment */
 .submit-button {
     width: 100%;
@@ -764,6 +786,9 @@ legend {
 /* Image Upload UI */
 .upload-group {
     margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Stretch to fill space */
 }
 
 .upload-placeholder-box {
@@ -773,6 +798,7 @@ legend {
     justify-content: center;
     gap: 0.8rem;
     width: 100%;
+    flex: 1; /* Tumbuh secara vertikal */
     min-height: 120px;
     border: 2px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
@@ -804,7 +830,10 @@ legend {
     margin-top: 1rem;
     position: relative;
     width: 100%;
-    max-width: 250px;
+    max-width: 100%;
+    flex: 1; /* Tumbuh secara vertikal */
+    display: flex;
+    flex-direction: column;
     border: 1px dashed rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 0.5rem;
@@ -813,7 +842,8 @@ legend {
 
 .image-preview-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
     display: block;
 }
