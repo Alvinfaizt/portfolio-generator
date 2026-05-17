@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- MODERN TOP NAVBAR START -->
+    <!-- KOMPONEN FLOATING NAVBAR START -->
     <nav class="modern-navbar">
         <div class="nav-brand">alvin.dev</div>
         <ul class="nav-menu">
@@ -23,7 +23,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <!-- MODERN TOP NAVBAR END -->
+    <!-- KOMPONEN FLOATING NAVBAR END -->
 
     <!-- KONTENER UTAMA APLIKASI START -->
     <main class="app-container">
@@ -54,7 +54,7 @@
         <!-- SECTION PORTFOLIO START -->
         <section id="portfolio" class="page-section">
             <div class="portfolio-layout">
-                <!-- KOLOM KIRI: FORM INPUT START -->
+                <!-- KOLOM KIRI: COMPACT FORM START -->
                 <section class="form-section">
                     <header class="form-header">
                         <h1>Portfolio Generator</h1>
@@ -84,13 +84,15 @@
                         <!-- FORM KELOMPOK DATA PRIBADI START -->
                         <fieldset>
                             <legend>Data Pribadi</legend>
-                            <div class="form-group">
-                                <label for="input-nama">Nama Lengkap</label>
-                                <input type="text" id="input-nama" placeholder="Contoh: Akhmad Alvin">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-jurusan">Jurusan / Program Studi</label>
-                                <input type="text" id="input-jurusan" placeholder="Contoh: Teknik Informatika">
+                            <div class="compact-grid-2">
+                                <div class="form-group">
+                                    <label for="input-nama">Nama Lengkap</label>
+                                    <input type="text" id="input-nama" placeholder="Contoh: Akhmad Alvin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-jurusan">Jurusan / Prodi</label>
+                                    <input type="text" id="input-jurusan" placeholder="Contoh: Teknik Informatika">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="input-kampus">Universitas / Kampus</label>
@@ -98,7 +100,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-bio">Bio Singkat</label>
-                                <textarea id="input-bio" rows="3"
+                                <textarea id="input-bio" rows="2"
                                     placeholder="Ceritakan singkat tentang fokus atau minat kuliahmu..."></textarea>
                             </div>
                         </fieldset>
@@ -116,7 +118,7 @@
                         <!-- FORM KELOMPOK KEAHLIAN END -->
                     </form>
                 </section>
-                <!-- KOLOM KIRI: FORM INPUT END -->
+                <!-- KOLOM KIRI: COMPACT FORM END -->
 
                 <!-- KOLOM KANAN: LIVE PREVIEW START -->
                 <section class="preview-section">
@@ -168,65 +170,68 @@
         <section id="about" class="page-section">
             <div class="about-layout">
                 <div class="about-content">
-                    <h2 class="section-title">Timeline & Fokus</h2>
                     
-                    <div class="about-grid">
-                        <!-- Kolom 1: Profil & Timeline Akademis -->
-                        <div class="about-col">
-                            <!-- KOMPONEN FOTO PROFIL START -->
-                            <div class="profile-photo-wrapper">
-                                <div class="profile-photo-frame">
-                                    <img src="https://ui-avatars.com/api/?name=FD&background=0d0e10&color=fff&size=200" alt="Foto Profil" />
-                                </div>
-                            </div>
-                            <!-- KOMPONEN FOTO PROFIL END -->
-
-                            <!-- KOMPONEN RIWAYAT AKADEMIS START -->
-                            <div class="timeline-container">
-                                <div class="timeline-item">
-                                    <h3 class="timeline-title">Universitas Muhammadiyah Makassar</h3>
-                                    <p class="timeline-desc">Mahasiswa Program Studi Teknik Informatika. Mempelajari fundamental ilmu komputer, algoritma struktur data, dan rekayasa perangkat lunak modern.</p>
-                                </div>
-                            </div>
-                            <!-- KOMPONEN RIWAYAT AKADEMIS END -->
+                    <!-- KOMPONEN HERO PROFILE START -->
+                    <div class="about-hero">
+                        <div class="about-photo">
+                            <!-- Foto profil kotak/bulat -->
+                            <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300" alt="Foto Profil" />
                         </div>
-
-                        <!-- Kolom 2: Fokus & Prestasi -->
-                        <div class="about-col">
-                            <!-- KOMPONEN FOKUS TEKNOLOGI START -->
-                            <div class="timeline-container" style="margin-bottom: 3rem;">
-                                <div class="timeline-item">
-                                    <h3 class="timeline-title">Frontend Web Development</h3>
-                                    <p class="timeline-desc">Merancang antarmuka pengguna (UI) yang bersih, berpusat pada interaktivitas tinggi tanpa framework berlebih, memanfaatkan Vanilla JS murni.</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <h3 class="timeline-title">Web3 Ecosystem</h3>
-                                    <p class="timeline-desc">Eksplorasi mendalam pada teknologi terdesentralisasi, integrasi dompet kripto pintar, dan perancangan antarmuka dApps.</p>
-                                </div>
-                            </div>
-                            <!-- KOMPONEN FOKUS TEKNOLOGI END -->
-
-                            <!-- KOMPONEN PRESTASI START -->
-                            <div class="achievements-section">
-                                <h3 class="timeline-title" style="margin-bottom: 1.5rem;">Galeri Prestasi & Sertifikat</h3>
-                                <div class="achievements-grid">
-                                    <div class="achievement-card">
-                                        <h4>Juara 1 Web Design</h4>
-                                        <p>Kompetisi IT Nasional 2023</p>
-                                    </div>
-                                    <div class="achievement-card">
-                                        <h4>Sertifikasi Frontend</h4>
-                                        <p>Platform Belajar Online</p>
-                                    </div>
-                                    <div class="achievement-card">
-                                        <h4>Open Source Contributor</h4>
-                                        <p>GitHub Campus Expert</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- KOMPONEN PRESTASI END -->
+                        <div class="about-hero-text">
+                            <span class="about-label">about me</span>
+                            <h2 class="about-name">Mahasiswa Teknik Informatika</h2>
+                            <p class="about-desc">Menempuh pendidikan di <strong>Universitas Muhammadiyah Makassar</strong>. Memiliki fokus mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS) serta ekosistem teknologi Web3 terdesentralisasi.</p>
                         </div>
                     </div>
+                    <!-- KOMPONEN HERO PROFILE END -->
+
+                    <!-- KOMPONEN ABOUT SUB-TABS START -->
+                    <div class="about-subnav">
+                        <button class="subnav-btn active" data-target="panel-proyek">Proyek</button>
+                        <button class="subnav-btn" data-target="panel-sertifikat">Sertifikat</button>
+                        <button class="subnav-btn" data-target="panel-prestasi">Prestasi</button>
+                    </div>
+
+                    <div class="about-panels-container">
+                        <!-- Panel Proyek -->
+                        <div id="panel-proyek" class="about-panel active">
+                            <div class="achievements-grid">
+                                <div class="achievement-card">
+                                    <h4>Decentralized App (dApp) UI</h4>
+                                    <p>Antarmuka interaktif dompet Web3.</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <h4>Portfolio SPA Tech-Noir</h4>
+                                    <p>One-page scroll web murni Vanilla JS.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel Sertifikat -->
+                        <div id="panel-sertifikat" class="about-panel" hidden>
+                            <div class="achievements-grid">
+                                <div class="achievement-card">
+                                    <h4>Sertifikasi Web Developer</h4>
+                                    <p>Dicoding Academy Indonesia</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <h4>Responsive Web Design</h4>
+                                    <p>FreeCodeCamp Certification</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel Prestasi -->
+                        <div id="panel-prestasi" class="about-panel" hidden>
+                            <div class="achievements-grid">
+                                <div class="achievement-card">
+                                    <h4>Juara 1 Lomba Web Nasional</h4>
+                                    <p>Kompetisi IT Nasional 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KOMPONEN ABOUT SUB-TABS END -->
 
                 </div>
             </div>
@@ -237,11 +242,33 @@
         <section id="contact" class="page-section">
             <div class="contact-layout">
                 <div class="contact-content">
-                    <h2 class="section-title">Contact</h2>
                     
-                    <div class="contact-grid">
-                        <!-- Kolom Kiri: Form -->
-                        <div class="contact-form-container">
+                    <!-- KOMPONEN SPLIT CARD LOGIN STYLE START -->
+                    <div class="contact-split-layout">
+                        
+                        <!-- Kartu Kiri: Sosial Media -->
+                        <div class="contact-card contact-card-left">
+                            <h3 class="contact-card-title">Mari Terhubung</h3>
+                            <p class="contact-subtitle">Pilih alternatif platform untuk berdiskusi lebih lanjut tentang kolaborasi.</p>
+                            <div class="social-links-list">
+                                <a href="#" class="social-link-item">
+                                    <i class='bx bxl-github'></i><span>GitHub</span>
+                                </a>
+                                <a href="#" class="social-link-item">
+                                    <i class='bx bxl-linkedin-square'></i><span>LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link-item">
+                                    <i class='bx bxl-discord-alt'></i><span>Discord</span>
+                                </a>
+                                <a href="#" class="social-link-item">
+                                    <i class='bx bx-envelope'></i><span>Email</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Kanan: Form Pesan -->
+                        <div class="contact-card contact-card-right">
+                            <h3 class="contact-card-title">Kirim Pesan Langsung</h3>
                             <form class="contact-form" onsubmit="event.preventDefault();">
                                 <div class="form-group">
                                     <input type="text" placeholder="Nama Lengkap" required>
@@ -252,21 +279,15 @@
                                 <div class="form-group">
                                     <textarea placeholder="Pesan Anda..." rows="3" required></textarea>
                                 </div>
-                                <button type="submit" class="submit-button">Kirim Pesan</button>
+                                <button type="submit" class="submit-button">
+                                    Kirim Pesan <i class='bx bx-send' style="margin-left: 0.5rem;"></i>
+                                </button>
                             </form>
                         </div>
-                        
-                        <!-- Kolom Kanan: Badges -->
-                        <div class="contact-badges-container">
-                            <p class="contact-subtitle">Pilih alternatif platform untuk berdiskusi lebih lanjut.</p>
-                            <div class="badges-wrapper">
-                                <a href="#" class="contact-badge"><i class='bx bxl-github'></i> GitHub</a>
-                                <a href="#" class="contact-badge"><i class='bx bxl-linkedin-square'></i> LinkedIn</a>
-                                <a href="#" class="contact-badge"><i class='bx bxl-discord-alt'></i> Discord</a>
-                                <a href="#" class="contact-badge"><i class='bx bx-envelope'></i> Email</a>
-                            </div>
-                        </div>
+
                     </div>
+                    <!-- KOMPONEN SPLIT CARD LOGIN STYLE END -->
+
                 </div>
             </div>
         </section>

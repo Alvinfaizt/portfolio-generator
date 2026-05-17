@@ -63,6 +63,34 @@ document.addEventListener("DOMContentLoaded", () => {
         saveThemePreference(selectedTheme);
     });
 
+    // 5. LOGIKA EVENT: About Sub-Tabs Internal Navigation
+    const subnavBtns = document.querySelectorAll(".subnav-btn");
+    const aboutPanels = document.querySelectorAll(".about-panel");
+
+    subnavBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Hapus kelas active dari semua tombol
+            subnavBtns.forEach(b => b.classList.remove("active"));
+            
+            // Sembunyikan semua panel
+            aboutPanels.forEach(panel => {
+                panel.setAttribute("hidden", "true");
+                panel.classList.remove("active");
+            });
+
+            // Aktifkan tombol yang ditekan
+            btn.classList.add("active");
+
+            // Tampilkan panel yang sesuai
+            const targetId = btn.getAttribute("data-target");
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+                targetPanel.removeAttribute("hidden");
+                targetPanel.classList.add("active");
+            }
+        });
+    });
+
 });
 
 /**
