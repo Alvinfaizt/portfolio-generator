@@ -324,7 +324,25 @@
                                     <textarea placeholder="Your Comment" rows="3" required></textarea>
                                 </div>
 
+                                <!-- UPLOAD IMAGE FITUR START -->
+                                <div class="form-group upload-group">
+                                    <input type="file" id="comment-image-upload" accept="image/*" hidden>
 
+                                    <!-- Dashed Placeholder Area -->
+                                    <div class="upload-placeholder-box" id="upload-placeholder-box"
+                                        onclick="document.getElementById('comment-image-upload').click()">
+                                        <i class='bx bx-cloud-upload'></i>
+                                        <span>Click to Upload Image (Optional)</span>
+                                    </div>
+
+                                    <!-- Kontainer Preview Gambar -->
+                                    <div class="image-preview-container" id="image-preview-container" hidden>
+                                        <img id="comment-image-preview" src="" alt="Image Preview">
+                                        <button type="button" id="btn-remove-image" class="btn-remove-image"
+                                            title="Remove Image"><i class='bx bx-x'></i></button>
+                                    </div>
+                                </div>
+                                <!-- UPLOAD IMAGE FITUR END -->
 
                                 <button type="submit" class="submit-button">
                                     Post Comment <i class='bx bx-message-square-dots' style="margin-left: 0.5rem;"></i>
