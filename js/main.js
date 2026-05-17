@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewContainer = document.getElementById("image-preview-container");
     const previewImage = document.getElementById("comment-image-preview");
     const removeImageBtn = document.getElementById("btn-remove-image");
+    const imageName = document.getElementById("comment-image-name");
 
     if (imageUpload) {
         imageUpload.addEventListener("change", function(event) {
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     previewImage.src = e.target.result;
+                    if(imageName) imageName.textContent = file.name;
                     previewContainer.removeAttribute("hidden");
                     placeholderBox.setAttribute("hidden", "true"); // Sembunyikan placeholder
                 };
@@ -117,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         removeImageBtn.addEventListener("click", function() {
             imageUpload.value = "";
             previewImage.src = "";
+            if(imageName) imageName.textContent = "";
             previewContainer.setAttribute("hidden", "true");
             placeholderBox.removeAttribute("hidden"); // Tampilkan kembali placeholder
         });

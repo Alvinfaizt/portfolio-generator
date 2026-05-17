@@ -858,18 +858,30 @@ legend {
     flex: 1; /* Tumbuh secara vertikal */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: 1px dashed rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-    padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2); /* Latar gelap estetik */
 }
 
 .image-preview-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-height: 200px;
+    object-fit: contain; /* Gambar utuh, tidak terpotong */
     border-radius: 8px;
     display: block;
+}
+
+.uploaded-file-name {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #10b981;
+    font-family: 'Space Grotesk', sans-serif;
+    word-break: break-all;
+    text-align: center;
 }
 
 .btn-remove-image {
