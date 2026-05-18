@@ -530,9 +530,9 @@ legend {
     color: #8e94a0;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem; /* Lebih kecil */
+    font-size: 1rem; /* Ukuran standar */
     cursor: pointer;
-    padding: 0.5rem 1.5rem; /* Lebih padat */
+    padding: 0.5rem 4.5rem; /* Vertikal ramping (0.5rem), horizontal sangat panjang (4.5rem) */
     border-radius: 50px;
     transition: all 0.2s ease;
 }
