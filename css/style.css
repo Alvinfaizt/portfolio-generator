@@ -182,20 +182,23 @@ body {
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SPLIT LAYOUT - MULAI ] */
 .portfolio-layout {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: auto;
     min-height: 100vh; /* Tidak ada scrollbar ganda internal */
 }
 
 .form-section {
-    width: 40%;
-    background-color: rgba(16, 17, 20, 0.75);
-    padding: 7rem 2.5rem 2rem 2.5rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 900px;
+    background-color: transparent; /* Minimalis */
+    padding: 7rem 2.5rem 3rem 2.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Minimalist Floating Line */
     height: auto;
     overflow-y: visible;
+    margin: 0 auto;
 }
 
 .form-header h1 {
@@ -334,8 +337,8 @@ legend {
 
 /* Live Preview Kartu */
 .preview-section {
-    width: 60%;
-    padding: 7rem 3rem 3rem 3rem;
+    width: 100%;
+    padding: 4rem 3rem 7rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -517,7 +520,7 @@ legend {
     align-items: center;
     gap: 0;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.4rem;
+    padding: 0.25rem; /* Lebih padat agar minimalis */
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -527,9 +530,9 @@ legend {
     color: #8e94a0;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Lebih kecil */
     cursor: pointer;
-    padding: 0.6rem 2rem;
+    padding: 0.5rem 1.5rem; /* Lebih padat */
     border-radius: 50px;
     transition: all 0.2s ease;
 }
