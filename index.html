@@ -13,13 +13,12 @@
 
 <body>
 
-    <!-- KOMPONEN FLOATING NAVBAR START -->
     <nav class="modern-navbar">
         <div class="nav-brand">alvin.dev</div>
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -30,7 +29,7 @@
 
         <!-- SECTION HOME START -->
         <section id="home" class="page-section">
-            <div class="home-layout">
+            <div class="home-layout reveal">
                 <div class="home-content">
                     <h1 class="hero-title">Frontend Developer</h1>
 
@@ -52,125 +51,9 @@
         </section>
         <!-- SECTION HOME END -->
 
-        <!-- SECTION PORTFOLIO START -->
-        <section id="portfolio" class="page-section">
-            <div class="portfolio-layout">
-                <!-- KOLOM KIRI: COMPACT FORM START -->
-                <section class="form-section">
-                    <header class="form-header">
-                        <h1>Portfolio Generator</h1>
-                        <p>Isi data diri kamu untuk membuat portfolio instan bergaya Tech-Noir.</p>
-
-                        <!-- THEME SELECTOR START -->
-                        <div class="theme-selector">
-                            <label for="theme-select">Pilih Varian Tema:</label>
-                            <select id="theme-select">
-                                <option value="minimalist">Tech-Noir (Aksen Abu-abu)</option>
-                                <option value="tech">Cyber-Dark (Aksen Cyan)</option>
-                                <option value="monochrome">Monochrome (High Contrast Solid)</option>
-                            </select>
-                        </div>
-                        <!-- THEME SELECTOR END -->
-
-                        <!-- TOMBOL AKSI START -->
-                        <div class="action-buttons">
-                            <button id="btn-print" class="print-button">
-                                🖨️ Cetak / Ekspor PDF
-                            </button>
-                        </div>
-                        <!-- TOMBOL AKSI END -->
-                    </header>
-
-                    <form id="portfolio-form" onsubmit="event.preventDefault();">
-                        <!-- FORM KELOMPOK DATA PRIBADI START -->
-                        <fieldset>
-                            <legend>Data Pribadi</legend>
-                            <div class="compact-grid-2">
-                                <div class="form-group">
-                                    <label for="input-nama">Nama Lengkap</label>
-                                    <input type="text" id="input-nama" placeholder="Contoh: Akhmad Alvin">
-                                </div>
-                                <div class="form-group">
-                                    <label for="input-jurusan">Jurusan / Prodi</label>
-                                    <input type="text" id="input-jurusan" placeholder="Contoh: Teknik Informatika">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-kampus">Universitas / Kampus</label>
-                                <input type="text" id="input-kampus" placeholder="Contoh: Universitas Cyber Nusantara">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-bio">Bio Singkat</label>
-                                <textarea id="input-bio" rows="2"
-                                    placeholder="Ceritakan singkat tentang fokus atau minat kuliahmu..."></textarea>
-                            </div>
-                        </fieldset>
-                        <!-- FORM KELOMPOK DATA PRIBADI END -->
-
-                        <!-- FORM KELOMPOK KEAHLIAN START -->
-                        <fieldset>
-                            <legend>Keahlian (Pisahkan dengan koma)</legend>
-                            <div class="form-group">
-                                <label for="input-skills">Daftar Skill</label>
-                                <input type="text" id="input-skills" placeholder="Contoh: Python, HTML, UI Design">
-                            </div>
-                        </fieldset>
-                        <!-- FORM KELOMPOK KEAHLIAN END -->
-                    </form>
-                </section>
-                <!-- KOLOM KIRI: COMPACT FORM END -->
-
-                <!-- KOLOM KANAN: LIVE PREVIEW START -->
-                <section class="preview-section">
-                    <!-- NAVIGASI MOBILE START -->
-                    <div class="mobile-tabs">
-                        <button id="btn-show-form" class="active">Edit Data</button>
-                        <button id="btn-show-preview">Lihat Hasil</button>
-                    </div>
-                    <!-- NAVIGASI MOBILE END -->
-
-                    <!-- KARTU PORTFOLIO UTAMA START -->
-                    <div class="portfolio-card" id="portfolio-preview">
-                        <!-- HEADER PREVIEW START -->
-                        <div class="preview-header">
-                            <h2 id="view-nama">Nama Mahasiswa</h2>
-                            <p class="subtitle"><span id="view-jurusan">Jurusan</span> @ <span
-                                    id="view-kampus">Kampus</span>
-                            </p>
-                        </div>
-                        <!-- HEADER PREVIEW END -->
-
-                        <!-- KONTEN PREVIEW START -->
-                        <div class="preview-body">
-                            <!-- SEKSI TENTANG SAYA START -->
-                            <div class="preview-section-block">
-                                <h3>Tentang Saya</h3>
-                                <p id="view-bio">Deskripsi diri anda akan muncul di sini setelah form diisi secara
-                                    real-time.</p>
-                            </div>
-                            <!-- SEKSI TENTANG SAYA END -->
-
-                            <!-- SEKSI KEAHLIAN START -->
-                            <div class="preview-section-block">
-                                <h3>Keahlian Utama</h3>
-                                <div id="view-skills" class="skills-tag-container">
-                                    <span class="skill-tag">Skill Anda</span>
-                                </div>
-                            </div>
-                            <!-- SEKSI KEAHLIAN END -->
-                        </div>
-                        <!-- KONTEN PREVIEW END -->
-                    </div>
-                    <!-- KARTU PORTFOLIO UTAMA END -->
-                </section>
-                <!-- KOLOM KANAN: LIVE PREVIEW END -->
-            </div>
-        </section>
-        <!-- SECTION PORTFOLIO END -->
-
         <!-- SECTION ABOUT START -->
         <section id="about" class="page-section">
-            <div class="about-layout">
+            <div class="about-layout reveal">
                 <div class="about-content">
 
                     <!-- [ ARSITEKTUR TATA LETAK: PROFIL ABOUT ME - MULAI ] -->
@@ -178,78 +61,89 @@
                         <div class="about-hero-text">
                             <span class="about-label">ABOUT ME</span>
                             <h2 class="about-name">Akhmad Alvin Faizt</h2>
-                            <p class="about-desc">Mahasiswa Teknik Informatika Universitas Muhammadiyah Makassar. Fokus mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS) serta ekosistem teknologi Web3 terdesentralisasi.</p>
+                            <p class="about-desc">Mahasiswa Teknik Informatika Universitas Muhammadiyah Makassar. Fokus
+                                mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS)
+                                serta ekosistem teknologi Web3 terdesentralisasi.</p>
                             <a href="#" class="btn-cv">Download CV <i class='bx bx-download'></i></a>
                         </div>
                         <div class="about-photo">
-                            <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300" alt="Foto Profil" />
+                            <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300"
+                                alt="Foto Profil" />
                         </div>
                     </div>
                     <!-- [ ARSITEKTUR TATA LETAK: PROFIL ABOUT ME - SELESAI ] -->
-
-                    <!-- [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SUB-NAVBAR - MULAI ] -->
-                    <div class="showcase-section">
-                        <div class="showcase-header">
-                            <h2>Portfolio Showcase</h2>
-                            <p>A curated collection of my digital creations, verified credentials, and academic milestones.</p>
-                        </div>
-
-                        <div class="about-subnav-wrapper">
-                            <div class="about-subnav">
-                                <button class="subnav-btn active" data-target="panel-certificates">Certificates</button>
-                                <button class="subnav-btn" data-target="panel-projects">Projects</button>
-                                <button class="subnav-btn" data-target="panel-achievements">Achievements</button>
-                            </div>
-                        </div>
-
-                        <div class="about-panels-container">
-                            <!-- Panel Certificates -->
-                            <div id="panel-certificates" class="about-panel active">
-                                <div class="achievements-grid">
-                                    <div class="achievement-card cert-card view-cert-btn" data-src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80">
-                                        <h4 style="pointer-events: none;">Frontend Web Developer</h4>
-                                        <p style="pointer-events: none;">Dicoding Academy Indonesia</p>
-                                        <span class="view-cert-label" style="pointer-events: none;"><i class='bx bx-search-alt-2'></i> View Credential</span>
-                                    </div>
-                                    <div class="achievement-card cert-card view-cert-btn" data-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80">
-                                        <h4 style="pointer-events: none;">Responsive Web Design</h4>
-                                        <p style="pointer-events: none;">FreeCodeCamp Certification</p>
-                                        <span class="view-cert-label" style="pointer-events: none;"><i class='bx bx-search-alt-2'></i> View Credential</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Panel Projects -->
-                            <div id="panel-projects" class="about-panel" hidden>
-                                <div class="achievements-grid">
-                                    <div class="achievement-card">
-                                        <h4>Decentralized App (dApp) UI</h4>
-                                        <p>Antarmuka interaktif dompet Web3.</p>
-                                    </div>
-                                    <div class="achievement-card">
-                                        <h4>Portfolio SPA Tech-Noir</h4>
-                                        <p>One-page scroll web murni Vanilla JS.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Panel Achievements -->
-                            <div id="panel-achievements" class="about-panel" hidden>
-                                <div class="achievements-grid">
-                                    <div class="achievement-card">
-                                        <h4>Juara 1 Lomba Web Nasional</h4>
-                                        <p>Kompetisi IT Nasional 2023</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SUB-NAVBAR - SELESAI ] -->
 
                 </div>
             </div>
         </section>
         <!-- SECTION ABOUT END -->
+
+        <!-- SECTION PORTFOLIO START -->
+        <!-- [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE - MULAI ] -->
+        <section id="portfolio" class="page-section">
+            <div class="showcase-section reveal">
+                <div class="showcase-header">
+                    <h2>Portfolio Showcase</h2>
+                    <p>A curated collection of my digital creations, verified credentials, and academic milestones.</p>
+                </div>
+
+                <div class="about-subnav-wrapper">
+                    <div class="about-subnav">
+                        <button class="subnav-btn active" data-target="panel-certificates">Certificates</button>
+                        <button class="subnav-btn" data-target="panel-projects">Projects</button>
+                        <button class="subnav-btn" data-target="panel-achievements">Achievements</button>
+                    </div>
+                </div>
+
+                <div class="about-panels-container">
+                    <!-- Panel Certificates -->
+                    <div id="panel-certificates" class="about-panel active">
+                        <div class="achievements-grid">
+                            <div class="achievement-card cert-card view-cert-btn"
+                                data-src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80">
+                                <h4 style="pointer-events: none;">Frontend Web Developer</h4>
+                                <p style="pointer-events: none;">Dicoding Academy Indonesia</p>
+                                <span class="view-cert-label" style="pointer-events: none;"><i
+                                        class='bx bx-search-alt-2'></i> View Credential</span>
+                            </div>
+                            <div class="achievement-card cert-card view-cert-btn"
+                                data-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80">
+                                <h4 style="pointer-events: none;">Responsive Web Design</h4>
+                                <p style="pointer-events: none;">FreeCodeCamp Certification</p>
+                                <span class="view-cert-label" style="pointer-events: none;"><i
+                                        class='bx bx-search-alt-2'></i> View Credential</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Projects -->
+                    <div id="panel-projects" class="about-panel" hidden>
+                        <div class="achievements-grid">
+                            <div class="achievement-card">
+                                <h4>Decentralized App (dApp) UI</h4>
+                                <p>Antarmuka interaktif dompet Web3.</p>
+                            </div>
+                            <div class="achievement-card">
+                                <h4>Portfolio SPA Tech-Noir</h4>
+                                <p>One-page scroll web murni Vanilla JS.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Achievements -->
+                    <div id="panel-achievements" class="about-panel" hidden>
+                        <div class="achievements-grid">
+                            <div class="achievement-card">
+                                <h4>Juara 1 Lomba Web Nasional</h4>
+                                <p>Kompetisi IT Nasional 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE - SELESAI ] -->
+        <!-- SECTION PORTFOLIO END -->
 
         <!-- SECTION CONTACT & COMMENT START -->
         <section id="contact" class="page-section">
@@ -267,11 +161,11 @@
                             <form class="contact-form" onsubmit="event.preventDefault();">
                                 <div class="form-group">
                                     <label>Your Name</label>
-                                    <input type="text" placeholder="John Doe" required>
+                                    <input type="text" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Email</label>
-                                    <input type="email" placeholder="john@example.com" required>
+                                    <input type="email" placeholder="name@example.com" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Message</label>
@@ -286,15 +180,22 @@
                             <div class="connect-section">
                                 <h4>Connect with Me</h4>
                                 <div class="social-links-list">
-                                    <a href="#" class="social-link-item"><i class='bx bxl-github'></i><span>GitHub</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-linkedin-square'></i><span>LinkedIn</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-discord-alt'></i><span>Discord</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-instagram'></i><span>Instagram</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-youtube'></i><span>YouTube</span></a>
-                                    <a href="#" class="social-link-item"><i class='bx bxl-tiktok'></i><span>TikTok</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-github'></i><span>GitHub</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-linkedin-square'></i><span>LinkedIn</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-discord-alt'></i><span>Discord</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-instagram'></i><span>Instagram</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-youtube'></i><span>YouTube</span></a>
+                                    <a href="#" class="social-link-item"><i
+                                            class='bx bxl-tiktok'></i><span>TikTok</span></a>
                                 </div>
                                 <!-- Tombol Email Full Width -->
-                                <a href="mailto:#" class="social-link-item email-action-btn"><i class='bx bx-envelope'></i><span>Email Me Directly</span></a>
+                                <a href="mailto:#" class="social-link-item email-action-btn"><i
+                                        class='bx bx-envelope'></i><span>Email Me Directly</span></a>
                             </div>
                         </div>
 
@@ -304,7 +205,7 @@
                             <form class="contact-form comment-form" onsubmit="event.preventDefault();">
                                 <div class="form-group">
                                     <label>Your Name</label>
-                                    <input type="text" placeholder="Jane Doe" required>
+                                    <input type="text" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Comment</label>
@@ -317,10 +218,13 @@
                                     <input type="file" id="comment-image-input" accept="image/*" hidden>
 
                                     <!-- Dashed Placeholder Area -->
-                                    <div class="upload-placeholder-box" id="comment-preview-box" onclick="document.getElementById('comment-image-input').click()">
-                                        <span style="color: #64748b; font-size: 0.85rem; text-align: center; font-family: monospace; line-height: 1.6;">
+                                    <div class="upload-placeholder-box" id="comment-preview-box"
+                                        onclick="document.getElementById('comment-image-input').click()">
+                                        <span
+                                            style="color: #64748b; font-size: 0.85rem; text-align: center; font-family: monospace; line-height: 1.6;">
                                             [ IMAGE PREVIEW PLACEHOLDER ]<br>
-                                            <span style="font-size: 0.75rem; color: #475569;">Your uploaded image will appear here</span>
+                                            <span style="font-size: 0.75rem; color: #475569;">Your uploaded image will
+                                                appear here</span>
                                         </span>
                                     </div>
                                 </div>
@@ -341,6 +245,39 @@
 
     </main>
     <!-- KONTENER UTAMA APLIKASI END -->
+
+    <!-- [ ARSITEKTUR TATA LETAK: COMPATIBILITY LAYER JS - MULAI ] -->
+    <div style="display: none;">
+        <select id="theme-select">
+            <option value="minimalist">Minimalist</option>
+            <option value="tech">Tech</option>
+            <option value="monochrome">Monochrome</option>
+        </select>
+        <button id="btn-print">Print</button>
+        <form id="portfolio-form">
+            <input type="text" id="input-nama">
+            <input type="text" id="input-jurusan">
+            <input type="text" id="input-kampus">
+            <textarea id="input-bio"></textarea>
+            <input type="text" id="input-skills">
+        </form>
+        <div id="portfolio-preview">
+            <h2 id="view-nama"></h2>
+            <span id="view-jurusan"></span>
+            <span id="view-kampus"></span>
+            <p id="view-bio"></p>
+            <div id="view-skills"></div>
+        </div>
+        <button id="btn-show-form"></button>
+        <button id="btn-show-preview"></button>
+        <input type="file" id="comment-image-upload">
+        <div id="upload-placeholder-box">
+            <i id="upload-icon"></i>
+            <span id="upload-text"></span>
+            <button id="btn-remove-image"></button>
+        </div>
+    </div>
+    <!-- [ ARSITEKTUR TATA LETAK: COMPATIBILITY LAYER JS - SELESAI ] -->
 
     <!-- Lightbox dihapus karena interactive.js akan generate secara dinamis -->
 

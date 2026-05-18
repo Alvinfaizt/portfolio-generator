@@ -16,6 +16,10 @@ html[data-theme="minimalist"] {
     /* Tipografi Dasar */
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
+    
+    /* Ambient Glow */
+    --glow-1: rgba(255, 255, 255, 0.03);
+    --glow-2: rgba(255, 255, 255, 0.015);
 }
 
 /* 2. TEMA CYBER-DARK (Tech variant)
@@ -30,6 +34,10 @@ html[data-theme="tech"] {
     
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
+    
+    /* Ambient Glow */
+    --glow-1: rgba(56, 189, 248, 0.07);
+    --glow-2: rgba(56, 189, 248, 0.03);
 }
 
 /* 3. TEMA MONOCHROME (High Contrast Solid variant)
@@ -44,6 +52,10 @@ html[data-theme="monochrome"] {
     
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
+    
+    /* Ambient Glow */
+    --glow-1: rgba(255, 255, 255, 0.04);
+    --glow-2: rgba(255, 255, 255, 0.02);
 }
 
 

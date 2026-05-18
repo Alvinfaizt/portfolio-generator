@@ -23,7 +23,25 @@ body {
         linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
     background-attachment: fixed;
+    position: relative;
 }
+
+/* [ ARSITEKTUR TATA LETAK: AMBIENT GLOW - MULAI ] */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, var(--glow-1, rgba(255, 255, 255, 0.03)) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, var(--glow-2, rgba(255, 255, 255, 0.015)) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+/* [ ARSITEKTUR TATA LETAK: AMBIENT GLOW - SELESAI ] */
 
 .app-container {
     width: 100%;
@@ -46,7 +64,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 3rem; /* Stik es krim style ramping */
+    padding: 0.8rem 3rem; /* Proporsional dan nyaman dilihat */
     z-index: 1000 !important;
     background-color: rgba(13, 14, 16, 0.98); /* Gelap tebal mendekati solid */
     backdrop-filter: blur(12px);
@@ -57,6 +75,19 @@ body {
     max-width: 1200px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* [ ARSITEKTUR TATA LETAK: REVEAL ANIMATIONS - MULAI ] */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* [ ARSITEKTUR TATA LETAK: REVEAL ANIMATIONS - SELESAI ] */
 
 .nav-brand {
     font-family: monospace;
@@ -530,9 +561,9 @@ legend {
     color: #8e94a0;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem; /* Ukuran standar */
+    font-size: 0.95rem; /* Ramping dan minimalis */
     cursor: pointer;
-    padding: 0.5rem 4.5rem; /* Vertikal ramping (0.5rem), horizontal sangat panjang (4.5rem) */
+    padding: 0.4rem 2.2rem; /* Padatkan padding internal */
     border-radius: 50px;
     transition: all 0.2s ease;
 }
@@ -542,6 +573,17 @@ legend {
     color: #0d0e10;
     background-color: #ffffff;
 }
+
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SECTION - MULAI ] */
+#portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 7rem 2rem 3rem 2rem;
+    width: 100%;
+}
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SECTION - SELESAI ] */
 /* [ ARSITEKTUR TATA LETAK: ABOUT ME & SHOWCASE - SELESAI ] */
 
 /* Panel Konten Dinamis */
@@ -916,22 +958,22 @@ legend {
 /* ==========================================================================
    [7. LOGIKA CSS MEDIA QUERY KHUSUS CETAK (PRINT)]
    ========================================================================== */
+
 /* [ ARSITEKTUR TATA LETAK: LOGIKA PRINT MEDIA - MULAI ] */
 @media print {
     @page {
         size: A4;
-        margin: 0;
+        margin: 20mm;
     }
 
     #home,
     #about,
     #contact,
     .modern-navbar,
-    .form-section,
-    .action-buttons,
-    .mobile-tabs,
+    .about-subnav-wrapper,
+    .showcase-header,
     .lightbox-modal,
-    #cert-modal {
+    #cert-modal span {
         display: none !important;
     }
 
@@ -939,50 +981,22 @@ legend {
         display: block !important;
         min-height: 0 !important;
         height: auto !important;
+        padding: 0 !important;
     }
 
     body,
     html {
-        background-color: #0d0e10 !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
         margin: 0 !important;
         padding: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
-    .app-container,
-    .portfolio-layout {
+    .about-panel {
         display: block !important;
-        width: 100% !important;
-        height: 100% !important;
-        background: transparent !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .preview-section {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        height: 100vh !important; /* Pas di tengah A4 */
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .portfolio-card {
-        display: block !important;
-        width: 180mm !important;
-        max-width: 180mm !important;
-        padding: 2.5rem !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-        page-break-inside: avoid;
+        opacity: 1 !important;
     }
 }
 /* [ ARSITEKTUR TATA LETAK: LOGIKA PRINT MEDIA - SELESAI ] */

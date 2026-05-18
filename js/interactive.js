@@ -6,7 +6,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Menjalankan inisialisasi fitur saat halaman selesai dimuat
     initCertificateModal();
     initCommentImageUpload();
+    initRevealAnimations();
 });
+
+/* ==========================================================================
+   [ ARSITEKTUR TATA LETAK: REVEAL ANIMATIONS DETECTOR - MULAI ]
+   ========================================================================== */
+function initRevealAnimations() {
+    const revealElements = document.querySelectorAll(".reveal");
+    if (revealElements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+}
+/* [ ARSITEKTUR TATA LETAK: REVEAL ANIMATIONS DETECTOR - SELESAI ] */
 
 /* ==========================================================================
    1. LOGIKA MODAL POP-UP PREVIEW SERTIFIKAT
