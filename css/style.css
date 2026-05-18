@@ -1,5 +1,5 @@
 /* Import Font Modern untuk Seluruh Aplikasi */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
 
 /* ==========================================================================
    [1. RESET & VARIABEL GLOBAL (TECH-NOIR GLOBAL BACKGROUND)]
@@ -103,15 +103,18 @@ body::before {
     gap: 2rem;
 }
 
+/* [ ARSITEKTUR TATA LETAK: FONT NAVIGASI RETRO TYPEWRITER - MULAI ] */
 .nav-menu li a {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
     color: #8e94a0;
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
     position: relative;
     padding-bottom: 0.3rem;
     transition: color 0.3s ease;
 }
+/* [ ARSITEKTUR TATA LETAK: FONT NAVIGASI RETRO TYPEWRITER - SELESAI ] */
 
 .nav-menu li a:hover,
 .nav-menu li a:active {
@@ -523,13 +526,17 @@ legend {
     margin-bottom: 2.5rem;
 }
 
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SPACE GROTESK TITLE - MULAI ] */
 .showcase-header h2 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.6rem; /* Upscaled ~18% untuk menonjol secara megah */
     color: #ffffff;
-    margin-bottom: 0.8rem;
-    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em; /* Renggang premium */
+    text-transform: uppercase; /* Kapital penuh bergaya Web3 */
+    font-weight: 700;
 }
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SPACE GROTESK TITLE - SELESAI ] */
 
 .showcase-header p {
     color: #8e94a0;
@@ -742,15 +749,19 @@ legend {
     width: 100%;
 }
 
+/* [ ARSITEKTUR TATA LETAK: MAIN CONTACT SECTION TITLE SPACE GROTESK - MULAI ] */
 .section-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.6rem; /* Upscaled ~18% untuk konsistensi megah */
     color: #ffffff;
     margin-bottom: 2.5rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em; /* Renggang premium */
     text-align: center;
     width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
 }
+/* [ ARSITEKTUR TATA LETAK: MAIN CONTACT SECTION TITLE SPACE GROTESK - SELESAI ] */
 
 /* [ ARSITEKTUR TATA LETAK: KONTAK & KOMENTAR DUA KOLOM - MULAI ] */
 .contact-twin-layout {
@@ -770,12 +781,17 @@ legend {
     flex-direction: column;
 }
 
+/* [ ARSITEKTUR TATA LETAK: TWIN COLUMN COMPONENT TITLE SPACE GROTESK - MULAI ] */
 .contact-col-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Upscaled 20% untuk kekokohan visual */
     color: #ffffff;
     margin-bottom: 2rem;
+    letter-spacing: 0.08em; /* Renggang premium */
+    text-transform: uppercase; /* Kapital penuh bergaya Web3 */
+    font-weight: 700;
 }
+/* [ ARSITEKTUR TATA LETAK: TWIN COLUMN COMPONENT TITLE SPACE GROTESK - SELESAI ] */
 
 /* Form Styles dalam Kolom */
 .contact-form {
@@ -784,6 +800,43 @@ legend {
     gap: 1.5rem;
     flex: 1;
 }
+
+/* [ ARSITEKTUR TATA LETAK: KOTAK KOLOM TERBALUT (BOXED INPUT) - MULAI ] */
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem !important; /* Tebal, proporsional */
+    background-color: rgba(20, 21, 23, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    font-family: inherit;
+    font-size: 0.95rem !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Override global border-bottom */
+}
+
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+    color: #555c68 !important;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    outline: none !important;
+    border-color: var(--accent-color, #ffffff) !important;
+    background-color: rgba(20, 21, 23, 0.9) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05), 0 0 15px var(--accent-color, rgba(255, 255, 255, 0.3)) !important;
+    transform: none !important; /* Menghilangkan translateX default agar tidak bergeser */
+}
+
+/* Khusus textarea agar tingginya proporsional */
+.contact-form .form-group textarea {
+    resize: vertical !important; /* Izinkan user meresize tinggi jika diperlukan */
+    min-height: 120px;
+}
+/* [ ARSITEKTUR TATA LETAK: KOTAK KOLOM TERBALUT (BOXED INPUT) - SELESAI ] */
 
 /* Social Connect di Kolom Kiri */
 .connect-section {
@@ -903,6 +956,7 @@ legend {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.95rem;
     padding: 2rem 1rem;
+    min-height: 180px; /* Menjamin ruang vertikal stabil & menakjubkan */
 }
 
 .upload-placeholder-box i {
@@ -994,7 +1048,8 @@ legend {
         print-color-adjust: exact !important;
     }
 
-    .about-panel {
+    /* Pastikan cetakan hanya fokus pada data utama yang sedang aktif di halaman visual A4 */
+    .about-panel.active {
         display: block !important;
         opacity: 1 !important;
     }
