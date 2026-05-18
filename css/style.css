@@ -37,6 +37,7 @@ body {
 /* ==========================================================================
    [2. STRETCHED FLOATING NAVBAR]
    ========================================================================== */
+/* [ ARSITEKTUR TATA LETAK: FLOATING NAVBAR - MULAI ] */
 .modern-navbar {
     position: fixed;
     top: 1.5rem;
@@ -45,13 +46,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 3rem;
+    padding: 0.4rem 3rem; /* Stik es krim style ramping */
     z-index: 1000 !important;
-    background-color: rgba(13, 14, 16, 0.95);
+    background-color: rgba(13, 14, 16, 0.98); /* Gelap tebal mendekati solid */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50px;
+    border-radius: 50px; /* Ujung membulat penuh */
     width: 85%;
     max-width: 1200px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -100,6 +101,7 @@ body {
 .nav-menu li a:hover::after {
     width: 100%;
 }
+/* [ ARSITEKTUR TATA LETAK: FLOATING NAVBAR - SELESAI ] */
 
 /* ==========================================================================
    [3. SECTION HOME (LANDING PAGE)]
@@ -177,10 +179,12 @@ body {
 /* ==========================================================================
    [4. SECTION PORTFOLIO (COMPACT FORM & PREVIEW)]
    ========================================================================== */
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SPLIT LAYOUT - MULAI ] */
 .portfolio-layout {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: auto;
+    min-height: 100vh; /* Tidak ada scrollbar ganda internal */
 }
 
 .form-section {
@@ -191,6 +195,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     height: auto;
+    overflow-y: visible;
 }
 
 .form-header h1 {
@@ -334,9 +339,11 @@ legend {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: auto;
+    overflow-y: visible;
 }
+/* [ ARSITEKTUR TATA LETAK: PORTFOLIO SPLIT LAYOUT - SELESAI ] */
 
 .portfolio-card {
     width: 100%;
@@ -373,6 +380,7 @@ legend {
 /* ==========================================================================
    [5. SECTION ABOUT (BACKGROUND INTEGRATED)]
    ========================================================================== */
+/* [ ARSITEKTUR TATA LETAK: ABOUT ME & SHOWCASE - MULAI ] */
 .about-layout {
     display: flex;
     justify-content: center;
@@ -390,8 +398,9 @@ legend {
 .about-hero {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .about-hero-text {
@@ -407,6 +416,9 @@ legend {
     border: 2px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .about-photo img {
@@ -467,6 +479,11 @@ legend {
 }
 
 /* Showcase Header */
+.showcase-section {
+    text-align: center;
+    width: 100%;
+}
+
 .showcase-header {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -487,7 +504,7 @@ legend {
     margin: 0 auto;
 }
 
-/* Sub-Navigasi 3 Kolom (Pill Segmented Control) */
+/* Sub-Navigasi 3 Kolom (Satu wadah kontainer horizontal) */
 .about-subnav-wrapper {
     display: flex;
     justify-content: center;
@@ -497,9 +514,10 @@ legend {
 .about-subnav {
     display: inline-flex;
     justify-content: center;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.6rem 1.5rem;
+    padding: 0.4rem;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -509,9 +527,9 @@ legend {
     color: #8e94a0;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
-    padding: 0.6rem 2.5rem;
+    padding: 0.6rem 2rem;
     border-radius: 50px;
     transition: all 0.2s ease;
 }
@@ -521,6 +539,7 @@ legend {
     color: #0d0e10;
     background-color: #ffffff;
 }
+/* [ ARSITEKTUR TATA LETAK: ABOUT ME & SHOWCASE - SELESAI ] */
 
 /* Panel Konten Dinamis */
 .about-panels-container {
@@ -688,14 +707,16 @@ legend {
     width: 100%;
 }
 
+/* [ ARSITEKTUR TATA LETAK: KONTAK & KOMENTAR DUA KOLOM - MULAI ] */
 .contact-twin-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex; /* Menggunakan Flexbox */
+    align-items: stretch; /* Tinggi kolom sama sejajar */
     gap: 2rem;
     width: 100%;
 }
 
 .contact-col {
+    flex: 1; /* Lebar 50% untuk masing-masing kolom */
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -717,7 +738,6 @@ legend {
     flex-direction: column;
     gap: 1.5rem;
     flex: 1;
-    /* Biarkan form membentang mengisi sisa tinggi jika ada */
 }
 
 /* Social Connect di Kolom Kiri */
@@ -774,12 +794,16 @@ legend {
     color: #ffffff;
     font-weight: 600;
     justify-content: center;
+    padding: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .email-action-btn:hover {
     background-color: #10b981;
     color: #ffffff;
     border-color: #10b981;
+    transform: translateY(-2px);
 }
 
 /* Tombol Submit Contact/Comment */
@@ -792,13 +816,13 @@ legend {
     font-size: 1rem;
     font-weight: 700;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Lebih halus ujungnya */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    margin-top: auto;
+    margin-top: 1.5rem;
 }
 
 .submit-button:hover {
@@ -813,6 +837,7 @@ legend {
     display: flex;
     flex-direction: column;
     flex: 1; /* Stretch to fill space */
+    min-height: 0;
 }
 
 .upload-placeholder-box {
@@ -823,8 +848,7 @@ legend {
     justify-content: center;
     gap: 0.8rem;
     width: 100%;
-    flex: 1; /* Tumbuh secara vertikal */
-    min-height: 120px;
+    flex: 1; /* Tumbuh secara vertikal mengisi ruang kosong sebelum tombol */
     border: 2px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.01);
@@ -833,6 +857,7 @@ legend {
     transition: all 0.3s ease;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.95rem;
+    padding: 2rem 1rem;
 }
 
 .upload-placeholder-box i {
@@ -883,9 +908,12 @@ legend {
     transform: scale(1.1);
 }
 
+/* [ ARSITEKTUR TATA LETAK: KONTAK & KOMENTAR DUA KOLOM - SELESAI ] */
+
 /* ==========================================================================
    [7. LOGIKA CSS MEDIA QUERY KHUSUS CETAK (PRINT)]
    ========================================================================== */
+/* [ ARSITEKTUR TATA LETAK: LOGIKA PRINT MEDIA - MULAI ] */
 @media print {
     @page {
         size: A4;
@@ -899,12 +927,15 @@ legend {
     .form-section,
     .action-buttons,
     .mobile-tabs,
-    .lightbox-modal {
+    .lightbox-modal,
+    #cert-modal {
         display: none !important;
     }
 
     #portfolio {
         display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
     }
 
     body,
@@ -912,8 +943,8 @@ legend {
         background-color: #0d0e10 !important;
         margin: 0 !important;
         padding: 0 !important;
-        width: 210mm !important;
-        height: 297mm !important;
+        width: 100% !important;
+        height: 100% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -923,9 +954,7 @@ legend {
 
     .app-container,
     .portfolio-layout {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: block !important;
         width: 100% !important;
         height: 100% !important;
         background: transparent !important;
@@ -938,6 +967,7 @@ legend {
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
+        height: 100vh !important; /* Pas di tengah A4 */
         padding: 0 !important;
         margin: 0 !important;
     }
@@ -947,10 +977,12 @@ legend {
         width: 180mm !important;
         max-width: 180mm !important;
         padding: 2.5rem !important;
+        margin: 0 auto !important;
         box-sizing: border-box !important;
         page-break-inside: avoid;
     }
 }
+/* [ ARSITEKTUR TATA LETAK: LOGIKA PRINT MEDIA - SELESAI ] */
 
 /* ==========================================================================
    [8. RESPONSIVE MOBILE BREAKPOINT LAYOUT]
