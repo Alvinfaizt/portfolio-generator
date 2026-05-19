@@ -19,7 +19,8 @@ body {
     background-color: var(--body-bg, #0d0e10);
     color: var(--text-color, #ffffff);
     position: relative;
-    overflow-x: hidden; /* Mencegah luapan partikel di sumbu X */
+    overflow-x: hidden;
+    /* Mencegah luapan partikel di sumbu X */
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -31,7 +32,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, var(--glow-1, rgba(255, 255, 255, 0.08)) 0%, transparent 45%),
         radial-gradient(circle at 90% 80%, var(--glow-2, rgba(255, 255, 255, 0.04)) 0%, transparent 45%);
     pointer-events: none;
@@ -96,10 +97,12 @@ body::after {
         transform: translate(0, 0) scale(1);
         opacity: 0.85;
     }
+
     50% {
         transform: translate(6vw, 3vh) scale(1.1);
         opacity: 1;
     }
+
     100% {
         transform: translate(-3vw, 6vh) scale(0.95);
         opacity: 0.75;
@@ -111,15 +114,18 @@ body::after {
         transform: translate(0, 0) scale(1);
         opacity: 0.75;
     }
+
     50% {
         transform: translate(-5vw, -6vh) scale(1.15);
         opacity: 0.95;
     }
+
     100% {
         transform: translate(3vw, 3vh) scale(0.9);
         opacity: 0.65;
     }
 }
+
 /* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & KABUT GLOW - SELESAI ] */
 
 .app-container {
@@ -143,13 +149,16 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 3rem; /* Proporsional dan nyaman dilihat */
+    padding: 0.8rem 3rem;
+    /* Proporsional dan nyaman dilihat */
     z-index: 1000 !important;
-    background-color: var(--card-bg, rgba(13, 14, 16, 0.98)); /* Gelap tebal mendekati solid */
+    background-color: var(--card-bg, rgba(13, 14, 16, 0.98));
+    /* Gelap tebal mendekati solid */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-    border-radius: 50px; /* Ujung membulat penuh */
+    border-radius: 50px;
+    /* Ujung membulat penuh */
     width: 85%;
     max-width: 1200px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -166,6 +175,7 @@ body::after {
     opacity: 1;
     transform: translateY(0);
 }
+
 /* [ ARSITEKTUR TATA LETAK: REVEAL ANIMATIONS - SELESAI ] */
 
 .nav-brand {
@@ -193,6 +203,7 @@ body::after {
     padding-bottom: 0.3rem;
     transition: color 0.3s ease;
 }
+
 /* [ ARSITEKTUR TATA LETAK: FONT NAVIGASI RETRO TYPEWRITER - SELESAI ] */
 
 .nav-menu li a:hover,
@@ -214,6 +225,7 @@ body::after {
 .nav-menu li a:hover::after {
     width: 100%;
 }
+
 /* [ ARSITEKTUR TATA LETAK: FLOATING NAVBAR - SELESAI ] */
 
 /* ==========================================================================
@@ -299,16 +311,19 @@ body::after {
     align-items: center;
     width: 100%;
     height: auto;
-    min-height: 100vh; /* Tidak ada scrollbar ganda internal */
+    min-height: 100vh;
+    /* Tidak ada scrollbar ganda internal */
 }
 
 .form-section {
     width: 100%;
     max-width: 900px;
-    background-color: transparent; /* Minimalis */
+    background-color: transparent;
+    /* Minimalis */
     padding: 7rem 2.5rem 3rem 2.5rem;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Minimalist Floating Line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    /* Minimalist Floating Line */
     height: auto;
     overflow-y: visible;
     margin: 0 auto;
@@ -459,6 +474,7 @@ legend {
     height: auto;
     overflow-y: visible;
 }
+
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SPLIT LAYOUT - SELESAI ] */
 
 .portfolio-card {
@@ -556,6 +572,7 @@ legend {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
+
 /* [ EFEK HOVER POP-OUT FOTO PROFIL - SELESAI ] */
 
 .about-label {
@@ -617,13 +634,17 @@ legend {
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SPACE GROTESK TITLE - MULAI ] */
 .showcase-header h2 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.6rem; /* Upscaled ~18% untuk menonjol secara megah */
+    font-size: 2.6rem;
+    /* Upscaled ~18% untuk menonjol secara megah */
     color: var(--text-color, #ffffff);
     margin-bottom: 1rem;
-    letter-spacing: 0.1em; /* Renggang premium */
-    text-transform: uppercase; /* Kapital penuh bergaya Web3 */
+    letter-spacing: 0.1em;
+    /* Renggang premium */
+    text-transform: uppercase;
+    /* Kapital penuh bergaya Web3 */
     font-weight: 700;
 }
+
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SPACE GROTESK TITLE - SELESAI ] */
 
 .showcase-header p {
@@ -647,7 +668,8 @@ legend {
     align-items: center;
     gap: 0;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.25rem; /* Lebih padat agar minimalis */
+    padding: 0.25rem;
+    /* Lebih padat agar minimalis */
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s;
@@ -663,9 +685,11 @@ legend {
     color: #8e94a0;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.95rem; /* Ramping dan minimalis */
+    font-size: 0.95rem;
+    /* Ramping dan minimalis */
     cursor: pointer;
-    padding: 0.4rem 2.2rem; /* Padatkan padding internal */
+    padding: 0.4rem 2.2rem;
+    /* Padatkan padding internal */
     border-radius: 50px;
     transition: all 0.3s ease;
 }
@@ -676,6 +700,7 @@ legend {
     background-color: #ffffff;
     transform: scale(1.03);
 }
+
 /* [ EFEK HOVER POP-OUT SUB-NAVBAR - SELESAI ] */
 
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SECTION - MULAI ] */
@@ -687,6 +712,7 @@ legend {
     padding: 7rem 2rem 3rem 2rem;
     width: 100%;
 }
+
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SECTION - SELESAI ] */
 /* [ ARSITEKTUR TATA LETAK: ABOUT ME & SHOWCASE - SELESAI ] */
 
@@ -732,6 +758,7 @@ legend {
     font-size: 0.85rem;
     color: #8e94a0;
 }
+
 /* [ EFEK HOVER POP-OUT KARTU DOKUMEN - SELESAI ] */
 
 /* Certificate Preview Lightbox Interactivity */
@@ -852,27 +879,33 @@ legend {
 /* [ ARSITEKTUR TATA LETAK: MAIN CONTACT SECTION TITLE SPACE GROTESK - MULAI ] */
 .section-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.6rem; /* Upscaled ~18% untuk konsistensi megah */
+    font-size: 2.6rem;
+    /* Upscaled ~18% untuk konsistensi megah */
     color: var(--text-color, #ffffff);
     margin-bottom: 2.5rem;
-    letter-spacing: 0.1em; /* Renggang premium */
+    letter-spacing: 0.1em;
+    /* Renggang premium */
     text-align: center;
     width: 100%;
     text-transform: uppercase;
     font-weight: 700;
 }
+
 /* [ ARSITEKTUR TATA LETAK: MAIN CONTACT SECTION TITLE SPACE GROTESK - SELESAI ] */
 
 /* [ EFEK HOVER POP-OUT KOTAK KEMBAR KONTAK & KOMENTAR - MULAI ] */
 .contact-twin-layout {
-    display: flex; /* Menggunakan Flexbox */
-    align-items: stretch; /* Tinggi kolom sama sejajar */
+    display: flex;
+    /* Menggunakan Flexbox */
+    align-items: stretch;
+    /* Tinggi kolom sama sejajar */
     gap: 2rem;
     width: 100%;
 }
 
 .contact-col {
-    flex: 1; /* Lebar 50% untuk masing-masing kolom */
+    flex: 1;
+    /* Lebar 50% untuk masing-masing kolom */
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -891,13 +924,17 @@ legend {
 /* [ ARSITEKTUR TATA LETAK: TWIN COLUMN COMPONENT TITLE SPACE GROTESK - MULAI ] */
 .contact-col-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.8rem; /* Upscaled 20% untuk kekokohan visual */
+    font-size: 1.8rem;
+    /* Upscaled 20% untuk kekokohan visual */
     color: var(--text-color, #ffffff);
     margin-bottom: 2rem;
-    letter-spacing: 0.08em; /* Renggang premium */
-    text-transform: uppercase; /* Kapital penuh bergaya Web3 */
+    letter-spacing: 0.08em;
+    /* Renggang premium */
+    text-transform: uppercase;
+    /* Kapital penuh bergaya Web3 */
     font-weight: 700;
 }
+
 /* [ EFEK HOVER POP-OUT KOTAK KEMBAR KONTAK & KOMENTAR - SELESAI ] */
 
 /* Form Styles dalam Kolom */
@@ -912,7 +949,8 @@ legend {
 .contact-form .form-group input,
 .contact-form .form-group textarea {
     width: 100%;
-    padding: 0.8rem 1rem !important; /* Tebal, proporsional */
+    padding: 0.8rem 1rem !important;
+    /* Tebal, proporsional */
     background-color: var(--input-bg, rgba(20, 21, 23, 0.6)) !important;
     border: 1px solid var(--input-border, rgba(255, 255, 255, 0.1)) !important;
     border-radius: 6px !important;
@@ -921,7 +959,8 @@ legend {
     font-size: 0.95rem !important;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--input-border, rgba(255, 255, 255, 0.1)) !important; /* Override global border-bottom */
+    border-bottom: 1px solid var(--input-border, rgba(255, 255, 255, 0.1)) !important;
+    /* Override global border-bottom */
 }
 
 .contact-form .form-group input::placeholder,
@@ -935,14 +974,17 @@ legend {
     border-color: var(--accent-color, #ffffff) !important;
     background-color: var(--input-bg-focus, rgba(20, 21, 23, 0.9)) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 0 0 15px var(--accent-color, rgba(255, 255, 255, 0.3)) !important;
-    transform: none !important; /* Menghilangkan translateX default agar tidak bergeser */
+    transform: none !important;
+    /* Menghilangkan translateX default agar tidak bergeser */
 }
 
 /* Khusus textarea agar tingginya proporsional */
 .contact-form .form-group textarea {
-    resize: vertical !important; /* Izinkan user meresize tinggi jika diperlukan */
+    resize: vertical !important;
+    /* Izinkan user meresize tinggi jika diperlukan */
     min-height: 120px;
 }
+
 /* [ ARSITEKTUR TATA LETAK: KOTAK KOLOM TERBALUT (BOXED INPUT) - SELESAI ] */
 
 /* Social Connect di Kolom Kiri */
@@ -1021,7 +1063,8 @@ legend {
     font-size: 1rem;
     font-weight: 700;
     border: none;
-    border-radius: 8px; /* Lebih halus ujungnya */
+    border-radius: 8px;
+    /* Lebih halus ujungnya */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1041,7 +1084,8 @@ legend {
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    flex: 1; /* Stretch to fill space */
+    flex: 1;
+    /* Stretch to fill space */
     min-height: 0;
 }
 
@@ -1053,7 +1097,8 @@ legend {
     justify-content: center;
     gap: 0.8rem;
     width: 100%;
-    flex: 1; /* Tumbuh secara vertikal mengisi ruang kosong sebelum tombol */
+    flex: 1;
+    /* Tumbuh secara vertikal mengisi ruang kosong sebelum tombol */
     border: 2px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.01);
@@ -1063,7 +1108,8 @@ legend {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.95rem;
     padding: 2rem 1rem;
-    min-height: 180px; /* Menjamin ruang vertikal stabil & menakjubkan */
+    min-height: 180px;
+    /* Menjamin ruang vertikal stabil & menakjubkan */
 }
 
 .upload-placeholder-box i {
@@ -1142,6 +1188,7 @@ legend {
 .input-icon-wrapper:focus-within .input-icon {
     color: var(--accent-color, #ffffff);
 }
+
 /* [ REVISI IKON INLINE BOXED INPUT FIELD - SELESAI ] */
 
 /* [ FOOTER MINIMALIS SIBER TERMINAL - MULAI ] */
@@ -1190,8 +1237,15 @@ legend {
 }
 
 @keyframes footerPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .footer-copyright {
@@ -1205,6 +1259,7 @@ legend {
     color: var(--accent-color, #e2e8f0);
     font-weight: 600;
 }
+
 /* [ FOOTER MINIMALIS SIBER TERMINAL - SELESAI ] */
 
 /* ==========================================================================
@@ -1219,7 +1274,9 @@ legend {
     }
 
     /* Nonaktifkan seluruh animasi background dan efek 3D */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         transition: none !important;
         transform: none !important;
@@ -1270,6 +1327,7 @@ legend {
         opacity: 1 !important;
     }
 }
+
 /* [ ARSITEKTUR TATA LETAK: LOGIKA PRINT MEDIA - SELESAI ] */
 
 /* ==========================================================================
@@ -1373,6 +1431,7 @@ legend {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color, #ffffff);
 }
+
 /* [ CUSTOM SCROLLBAR - SELESAI ] */
 
 /* [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - MULAI ] */
@@ -1418,8 +1477,15 @@ legend {
 }
 
 @keyframes preloaderIconReveal {
-    from { opacity: 0; transform: scale(0.5); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .preloader-brand {
@@ -1438,6 +1504,7 @@ legend {
     text-transform: uppercase;
     margin-top: 0.25rem;
 }
+
 /* [ REVISI UP-SCALE PRELOADER BRANDING - SELESAI ] */
 /* [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - SELESAI ] */
 
@@ -1468,6 +1535,7 @@ legend {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow-1);
 }
+
 /* [ SAKELAR DARK/LIGHT MODE - SELESAI ] */
 
 /* [ TRANSISI ACTIVE FILTER SHOWCASE - MULAI ] */
@@ -1488,6 +1556,7 @@ legend {
     opacity: 0;
     transform: translateY(-15px);
 }
+
 /* [ TRANSISI ACTIVE FILTER SHOWCASE - SELESAI ] */
 
 /* [ AREA UPLOAD GAMBAR KOMENTAR - MULAI ] */
@@ -1523,6 +1592,7 @@ legend {
     object-fit: contain;
     border-radius: 6px;
 }
+
 /* [ AREA UPLOAD GAMBAR KOMENTAR - SELESAI ] */
 
 /* [ REVISI TOTAL BUG FIX VISIBILITAS KOMPONEN LIGHT MODE - MULAI ] */
@@ -1701,4 +1771,5 @@ html[data-mode="light"] .footer-copyright {
 html[data-mode="light"] .footer-author {
     color: var(--accent-color, #0f172a) !important;
 }
+
 /* [ REVISI TOTAL BUG FIX VISIBILITAS KOMPONEN LIGHT MODE - SELESAI ] */
