@@ -8,6 +8,8 @@
    Aksen abu-abu terang elegan untuk netralitas. */
 :root,
 html[data-theme="minimalist"] {
+    --body-bg: #0d0e10;
+    --text-color: #ffffff;
     --card-bg: rgba(16, 17, 20, 0.85); /* Kartu semi-transparan gelap */
     --card-text: #ffffff;
     --accent-color: #e2e8f0; /* Putih keabu-abuan terang */
@@ -28,6 +30,8 @@ html[data-theme="minimalist"] {
 /* 2. TEMA CYBER-DARK (Tech variant)
    Aksen Cyan khas cyberpunk/teknologi. */
 html[data-theme="tech"] {
+    --body-bg: #070b13;
+    --text-color: #ffffff;
     --card-bg: rgba(10, 15, 24, 0.85);
     --card-text: #ffffff;
     --accent-color: #38bdf8; /* Biru Cyan terang */
@@ -47,6 +51,8 @@ html[data-theme="tech"] {
 /* 3. TEMA MONOCHROME (High Contrast Solid variant)
    Kontras sangat tajam, hanya hitam dan putih murni. */
 html[data-theme="monochrome"] {
+    --body-bg: #000000;
+    --text-color: #ffffff;
     --card-bg: rgba(0, 0, 0, 0.95);
     --card-text: #ffffff;
     --accent-color: #ffffff; /* Putih solid */
@@ -62,6 +68,42 @@ html[data-theme="monochrome"] {
     --glow-2: rgba(255, 255, 255, 0.06);
     --grid-color: rgba(255, 255, 255, 0.06);
 }
+
+/* [ SAKELAR DARK/LIGHT MODE CONFIGURATION - MULAI ] */
+html[data-mode="light"] {
+    --body-bg: #f5f6f8;
+    --text-color: #1a1b1e;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-text: #1a1b1e;
+    --border-style: 1px solid rgba(0, 0, 0, 0.08);
+    --tag-bg: rgba(0, 0, 0, 0.04);
+    --tag-text: #555c68;
+    --glow-1: rgba(0, 0, 0, 0.04);
+    --glow-2: rgba(0, 0, 0, 0.02);
+    --grid-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="minimalist"][data-mode="light"] {
+    --accent-color: #0f172a;
+}
+
+html[data-theme="tech"][data-mode="light"] {
+    --accent-color: #0284c7;
+    --tag-bg: rgba(2, 132, 199, 0.08);
+    --tag-text: #0369a1;
+    --border-style: 1px solid rgba(2, 132, 199, 0.15);
+    --glow-1: rgba(2, 132, 199, 0.06);
+    --glow-2: rgba(2, 132, 199, 0.03);
+    --grid-color: rgba(2, 132, 199, 0.06);
+}
+
+html[data-theme="monochrome"][data-mode="light"] {
+    --accent-color: #000000;
+    --tag-bg: rgba(0, 0, 0, 0.05);
+    --tag-text: #000000;
+    --border-style: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* [ SAKELAR DARK/LIGHT MODE CONFIGURATION - SELESAI ] */
 
 /* [ KONFIGURASI VARIABEL WARNA GRID BERDASARKAN TEMA - SELESAI ] */
 

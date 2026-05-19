@@ -63,30 +63,35 @@ document.addEventListener("DOMContentLoaded", () => {
         saveThemePreference(selectedTheme);
     });
 
-    // 5. LOGIKA EVENT: About Sub-Tabs Internal Navigation
+    // 5. LOGIKA EVENT: About Sub-Tabs Internal Navigation dengan Transisi Efek
     const subnavBtns = document.querySelectorAll(".subnav-btn");
     const aboutPanels = document.querySelectorAll(".about-panel");
 
     subnavBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-            // Hapus kelas active dari semua tombol
-            subnavBtns.forEach(b => b.classList.remove("active"));
-            
-            // Sembunyikan semua panel
-            aboutPanels.forEach(panel => {
-                panel.setAttribute("hidden", "true");
-                panel.classList.remove("active");
-            });
-
-            // Aktifkan tombol yang ditekan
-            btn.classList.add("active");
-
-            // Tampilkan panel yang sesuai
+            const activePanel = document.querySelector(".about-panel.active");
             const targetId = btn.getAttribute("data-target");
             const targetPanel = document.getElementById(targetId);
-            if (targetPanel) {
-                targetPanel.removeAttribute("hidden");
-                targetPanel.classList.add("active");
+
+            if (activePanel && targetPanel && activePanel !== targetPanel) {
+                // Hapus kelas active dari semua tombol
+                subnavBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                // 1. Hilangkan panel lama dengan transisi opacity & transform (slide-up)
+                activePanel.classList.add("fade-out");
+
+                setTimeout(() => {
+                    activePanel.classList.remove("active", "fade-out");
+                    activePanel.setAttribute("hidden", "true");
+
+                    // 2. Munculkan panel baru dengan efek slide-up & fade-in
+                    targetPanel.removeAttribute("hidden");
+                    
+                    // Trigger reflow untuk mengaktifkan animasi transisi
+                    void targetPanel.offsetWidth;
+                    targetPanel.classList.add("active");
+                }, 300); // Sinkron dengan durasi transisi CSS (0.3 detik)
             }
         });
     });
@@ -128,7 +133,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 7. LOGIKA EVENT: Sakelar Terapung Dark/Light Mode
+    initThemeToggle();
+
 });
+
+/* ==========================================================================
+   [ LOGIKA INTERAKSI SAKELAR DARK/LIGHT MODE - MULAI ]
+   ========================================================================== */
+function initThemeToggle() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const toggleIcon = document.getElementById("theme-toggle-icon");
+    if (!toggleBtn || !toggleIcon) return;
+
+    // Baca preferensi mode awal dari localStorage
+    const savedMode = localStorage.getItem("theme-mode") || "dark";
+    document.documentElement.setAttribute("data-mode", savedMode);
+    updateToggleIcon(savedMode);
+
+    toggleBtn.addEventListener("click", () => {
+        const currentMode = document.documentElement.getAttribute("data-mode") || "dark";
+        const newMode = currentMode === "light" ? "dark" : "light";
+        
+        document.documentElement.setAttribute("data-mode", newMode);
+        localStorage.setItem("theme-mode", newMode);
+        updateToggleIcon(newMode);
+    });
+
+    function updateToggleIcon(mode) {
+        if (mode === "light") {
+            toggleIcon.className = "bx bx-moon";
+        } else {
+            toggleIcon.className = "bx bx-sun";
+        }
+    }
+}
+/* [ LOGIKA INTERAKSI SAKELAR DARK/LIGHT MODE - SELESAI ] */
 
 // ==========================================================================
 // FUNGSI GLOBAL: LIGHTBOX MODAL MURNI

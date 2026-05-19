@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // Menjalankan inisialisasi fitur saat halaman selesai dimuat
+    initPreloaderAndTypewriter();
     initCertificateModal();
     initCommentImageUpload();
     initRevealAnimations();
@@ -148,3 +149,39 @@ function resetPreviewPlaceholder(container) {
         </span>
     `;
 }
+
+/* ==========================================================================
+   [ LOGIKA ANIMASI PRELOADER & AUTO TYPEWRITER - MULAI ]
+   ========================================================================== */
+function initPreloaderAndTypewriter() {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add("fade-out");
+            setTimeout(() => {
+                preloader.style.display = "none";
+                startTypewriter();
+            }, 800); // Durasi fade-out transisi CSS
+        }, 2000); // Tampil selama 2 detik sebelum memudar
+    } else {
+        startTypewriter();
+    }
+}
+
+function startTypewriter() {
+    const element = document.getElementById("typewriter-title");
+    if (!element) return;
+    const text = "Frontend Developer";
+    let index = 0;
+    element.textContent = "";
+    
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100); // Jeda antar huruf 100ms
+        }
+    }
+    type();
+}
+/* [ LOGIKA ANIMASI PRELOADER & AUTO TYPEWRITER - SELESAI ] */

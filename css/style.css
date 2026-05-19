@@ -16,10 +16,11 @@ html {
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #0d0e10;
-    color: #ffffff;
+    background-color: var(--body-bg, #0d0e10);
+    color: var(--text-color, #ffffff);
     position: relative;
     overflow-x: hidden; /* Mencegah luapan partikel di sumbu X */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & KABUT GLOW - MULAI ] */
@@ -231,7 +232,7 @@ body::after {
 .hero-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 4.5rem;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     letter-spacing: -0.05em;
     margin-bottom: 1.5rem;
 }
@@ -1148,7 +1149,9 @@ legend {
     .about-subnav-wrapper,
     .showcase-header,
     .lightbox-modal,
-    #cert-modal span {
+    #cert-modal span,
+    #preloader,
+    .theme-toggle-btn {
         display: none !important;
     }
 
@@ -1254,3 +1257,208 @@ legend {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   [9. FITUR ELIT LAINNYA: PRELOADER, SCROLLBAR, SAKELAR, DAN TYPEWRITER]
+   ========================================================================== */
+
+/* [ CUSTOM SCROLLBAR - MULAI ] */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(142, 148, 160, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color, #ffffff);
+}
+/* [ CUSTOM SCROLLBAR - SELESAI ] */
+
+/* [ OPENING PRELOADER OVERLAY - MULAI ] */
+.preloader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+}
+
+.preloader-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.preloader-initial {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    color: #ffffff;
+    animation: pulseGlow 1.5s infinite ease-in-out alternate;
+}
+
+.preloader-bar {
+    width: 150px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.preloader-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-color: var(--accent-color, #ffffff);
+    animation: loadingBar 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.4;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes loadingBar {
+    0% {
+        left: -40%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+/* [ OPENING PRELOADER OVERLAY - SELESAI ] */
+
+/* [ AUTO TYPEWRITER EFFECT HOME - MULAI ] */
+.typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--accent-color, #ffffff);
+    margin-left: 5px;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    50% {
+        opacity: 0;
+    }
+}
+/* [ AUTO TYPEWRITER EFFECT HOME - SELESAI ] */
+
+/* [ SAKELAR DARK/LIGHT MODE - MULAI ] */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--card-bg, rgba(16, 17, 20, 0.85));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    color: var(--text-color, #ffffff);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s, background-color 0.3s, color 0.3s, border-color 0.3s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow-1);
+}
+/* [ SAKELAR DARK/LIGHT MODE - SELESAI ] */
+
+/* [ TRANSISI ACTIVE FILTER SHOWCASE - MULAI ] */
+.about-panel {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    display: none;
+}
+
+.about-panel.active {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-panel.fade-out {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+/* [ TRANSISI ACTIVE FILTER SHOWCASE - SELESAI ] */
+
+/* [ AREA UPLOAD GAMBAR KOMENTAR - MULAI ] */
+.upload-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.upload-placeholder-box {
+    flex: 1;
+    min-height: 140px;
+    border: 2px dashed var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 8px;
+    background-color: rgba(20, 21, 23, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-placeholder-box:hover {
+    border-color: var(--accent-color, #ffffff);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.upload-placeholder-box img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+/* [ AREA UPLOAD GAMBAR KOMENTAR - SELESAI ] */

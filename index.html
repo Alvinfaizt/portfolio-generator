@@ -2,9 +2,29 @@
 <html lang="en" data-theme="minimalist">
 
 <head>
+    <!-- [ LOGIKA METADATA SEO LENGKAP - MULAI ] -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Student Portfolio Generator</title>
+    <title>Akhmad Alvin Faizt | Informatics Student Portfolio</title>
+    <meta name="description" content="Informatics Student Portfolio of Akhmad Alvin Faizt. Built with pure Vanilla HTML/CSS/JS, featuring high contrast dark/light themes and minimalist tech-noir aesthetics.">
+    <meta name="author" content="Akhmad Alvin Faizt">
+    <meta name="keywords" content="Akhmad Alvin Faizt, Portfolio, Informatics Student, Frontend Developer, Web3, Tech-Noir, Vanilla JS, Universitas Muhammadiyah Makassar">
+    <meta name="robots" content="index, follow">
+
+    <!-- OpenGraph / Facebook (WhatsApp/Discord Preview) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Akhmad Alvin Faizt | Informatics Student Portfolio">
+    <meta property="og:description" content="Informatics Student Portfolio of Akhmad Alvin Faizt. Built with pure Vanilla HTML/CSS/JS.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=500">
+    <meta property="og:url" content="https://alvinfaizt.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Akhmad Alvin Faizt | Informatics Student Portfolio">
+    <meta name="twitter:description" content="Informatics Student Portfolio of Akhmad Alvin Faizt. Built with pure Vanilla HTML/CSS/JS.">
+    <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=500">
+    <!-- [ LOGIKA METADATA SEO LENGKAP - SELESAI ] -->
+
     <!-- Boxicons CDN -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
@@ -12,6 +32,21 @@
 </head>
 
 <body>
+    <!-- [ OPENING PRELOADER OVERLAY - MULAI ] -->
+    <div id="preloader" class="preloader-overlay">
+        <div class="preloader-content">
+            <span class="preloader-initial">A. A. F.</span>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+    <!-- [ OPENING PRELOADER OVERLAY - SELESAI ] -->
+
+    <!-- [ SAKELAR DARK/LIGHT MODE - MULAI ] -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+        <i class='bx bx-sun' id="theme-toggle-icon"></i>
+    </button>
+    <!-- [ SAKELAR DARK/LIGHT MODE - SELESAI ] -->
+
     <!-- [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & KABUT GLOW - MULAI ] -->
     <div class="cyber-ambient-bg" aria-hidden="true">
         <div class="ambient-glow-1"></div>
@@ -37,7 +72,9 @@
         <section id="home" class="page-section">
             <div class="home-layout reveal">
                 <div class="home-content">
-                    <h1 class="hero-title">Frontend Developer</h1>
+                    <!-- [ AUTO TYPEWRITER EFFECT HOME - MULAI ] -->
+                    <h1 class="hero-title"><span id="typewriter-title"></span><span class="typewriter-cursor">|</span></h1>
+                    <!-- [ AUTO TYPEWRITER EFFECT HOME - SELESAI ] -->
 
                     <!-- STATUS INDICATOR START -->
                     <div class="status-indicator">
