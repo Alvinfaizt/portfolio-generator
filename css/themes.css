@@ -193,7 +193,7 @@ html[data-theme="monochrome"][data-mode="light"] {
     background-color: var(--tag-bg);
     color: var(--tag-text);
     /* Border tipis maksimal 0.08 */
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: var(--border-style);
     padding: 0.4rem 1.2rem;
     /* Bentuk pil kapsul sempit (memanjang) */
     border-radius: 50px;
