@@ -104,10 +104,10 @@ html[data-mode="light"] {
     --tag-bg: rgba(0, 0, 0, 0.04);
     --tag-text: #475569;
 
-    /* Pendaran Kabut Cahaya Siber (Ambient Glow Neon Terang) */
-    --glow-1: rgba(56, 189, 248, 0.12); /* Soft cyan glow utama */
-    --glow-2: rgba(20, 184, 166, 0.08); /* Teal glow sekunder */
-    --grid-color: rgba(56, 189, 248, 0.06); /* Grid siber biru muda */
+    /* Pendaran Kabut Cahaya Siber Hijau Dramatis (Ambient Glow Neon Terang) */
+    --glow-1: rgba(34, 197, 94, 0.18); /* Neon green glow utama — tebal & hidup */
+    --glow-2: rgba(74, 222, 128, 0.14); /* Mint green glow sekunder — dramatis */
+    --grid-color: rgba(34, 197, 94, 0.08); /* Grid siber hijau tegas */
 
     /* Variabel Tambahan Terikat Untuk Mode Cahaya */
     --text-primary: #1d1d1f;

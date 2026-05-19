@@ -1116,6 +1116,97 @@ legend {
 
 /* [ ARSITEKTUR TATA LETAK: KONTAK & KOMENTAR DUA KOLOM - SELESAI ] */
 
+/* [ REVISI IKON INLINE BOXED INPUT FIELD - MULAI ] */
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-wrapper .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.15rem;
+    color: #8e94a0;
+    pointer-events: none;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding-left: 2.8rem !important;
+}
+
+.input-icon-wrapper:focus-within .input-icon {
+    color: var(--accent-color, #ffffff);
+}
+/* [ REVISI IKON INLINE BOXED INPUT FIELD - SELESAI ] */
+
+/* [ FOOTER MINIMALIS SIBER TERMINAL - MULAI ] */
+.cyber-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.06));
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-status-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-status-badge {
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #22c55e;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.5), 0 0 20px rgba(34, 197, 94, 0.2);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 4px;
+    background-color: rgba(34, 197, 94, 0.04);
+    text-transform: uppercase;
+}
+
+.footer-status-badge .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    animation: footerPulse 2s infinite ease-in-out;
+    vertical-align: middle;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+}
+
+@keyframes footerPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.footer-copyright {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #64748b;
+    letter-spacing: 0.08em;
+}
+
+.footer-copyright .footer-author {
+    color: var(--accent-color, #e2e8f0);
+    font-weight: 600;
+}
+/* [ FOOTER MINIMALIS SIBER TERMINAL - SELESAI ] */
+
 /* ==========================================================================
    [7. LOGIKA CSS MEDIA QUERY KHUSUS CETAK (PRINT)]
    ========================================================================== */
@@ -1151,7 +1242,8 @@ legend {
     .lightbox-modal,
     #cert-modal span,
     #preloader,
-    .theme-toggle-btn {
+    .theme-toggle-btn,
+    .cyber-footer {
         display: none !important;
     }
 
@@ -1317,8 +1409,9 @@ legend {
     gap: 0.75rem;
 }
 
+/* [ REVISI UP-SCALE PRELOADER BRANDING - MULAI ] */
 .preloader-icon {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     color: var(--accent-color, #ffffff);
     opacity: 0;
     animation: preloaderIconReveal 0.4s 0.2s ease-out forwards;
@@ -1331,19 +1424,21 @@ legend {
 
 .preloader-brand {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.4rem;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.12rem;
     color: #ffffff;
 }
 
 .preloader-subtitle {
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #8e94a0;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.25rem;
     text-transform: uppercase;
+    margin-top: 0.25rem;
 }
+/* [ REVISI UP-SCALE PRELOADER BRANDING - SELESAI ] */
 /* [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - SELESAI ] */
 
 /* [ SAKELAR DARK/LIGHT MODE - MULAI ] */
@@ -1430,7 +1525,9 @@ legend {
 }
 /* [ AREA UPLOAD GAMBAR KOMENTAR - SELESAI ] */
 
-/* [ REVISI LOGIKA PEWARNAAN KONTRAS SKEMA DARK/LIGHT MODE - MULAI ] */
+/* [ REVISI TOTAL BUG FIX VISIBILITAS KOMPONEN LIGHT MODE - MULAI ] */
+
+/* Sub-Navigasi Showcase */
 html[data-mode="light"] .about-subnav {
     background-color: rgba(0, 0, 0, 0.05) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -1447,6 +1544,7 @@ html[data-mode="light"] .subnav-btn:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Tombol Aksi (CV, Print, Submit) */
 html[data-mode="light"] .btn-cv,
 html[data-mode="light"] .print-button,
 html[data-mode="light"] .submit-button {
@@ -1465,7 +1563,33 @@ html[data-mode="light"] .submit-button:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* [ REVISI VISIBILITAS KOLOM KONTAK MODE CAHAYA - MULAI ] */
+/* Kartu Konten Showcase (Certificates, Projects, Achievements) */
+html[data-mode="light"] .achievement-card {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-mode="light"] .achievement-card:hover {
+    background-color: #f8fafc !important;
+    border-color: var(--accent-color, #0f172a) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-mode="light"] .achievement-card p {
+    color: #64748b !important;
+}
+
+/* Perbaikan Teks Hover View Credential */
+html[data-mode="light"] .view-cert-label {
+    color: #10b981 !important;
+}
+
+html[data-mode="light"] .cert-card:hover .view-cert-label {
+    color: #059669 !important;
+}
+
+/* Kolom Kontak Twin-Layout */
 html[data-mode="light"] .contact-col {
     background-color: #ffffff !important;
     border: 1px solid #d1d5db !important;
@@ -1477,6 +1601,7 @@ html[data-mode="light"] .contact-col:hover {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(15, 23, 42, 0.06) !important;
 }
 
+/* Visibilitas Input Field Kontak */
 html[data-mode="light"] .contact-form .form-group input,
 html[data-mode="light"] .contact-form .form-group textarea {
     background-color: #f0f1f3 !important;
@@ -1486,7 +1611,7 @@ html[data-mode="light"] .contact-form .form-group textarea {
 
 html[data-mode="light"] .contact-form .form-group input::placeholder,
 html[data-mode="light"] .contact-form .form-group textarea::placeholder {
-    color: #94a3b8 !important;
+    color: #6b7280 !important;
 }
 
 html[data-mode="light"] .contact-form .form-group input:focus,
@@ -1496,12 +1621,84 @@ html[data-mode="light"] .contact-form .form-group textarea:focus {
     box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08), 0 0 12px rgba(15, 23, 42, 0.06) !important;
 }
 
+html[data-mode="light"] .input-icon {
+    color: #6b7280 !important;
+}
+
+html[data-mode="light"] .input-icon-wrapper:focus-within .input-icon {
+    color: var(--accent-color, #0f172a) !important;
+}
+
+/* Garis Pemisah Koneksi Sosial */
 html[data-mode="light"] .connect-section {
     border-top-color: rgba(0, 0, 0, 0.08) !important;
 }
 
+/* Tombol Connect/Social Media */
+html[data-mode="light"] .social-link-item {
+    background-color: #f8fafc !important;
+    border: 1px solid #d1d5db !important;
+    color: #1d1d1f !important;
+}
+
+html[data-mode="light"] .social-link-item:hover {
+    background-color: var(--accent-color, #0f172a) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-color, #0f172a) !important;
+}
+
+/* Perbaikan Teks Tombol Email Me Directly (Default State) */
+html[data-mode="light"] .email-action-btn {
+    background-color: var(--accent-color, #0f172a) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--accent-color, #0f172a) !important;
+}
+
+html[data-mode="light"] .email-action-btn:hover {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+    border-color: #10b981 !important;
+}
+
+/* Upload Placeholder Box */
+html[data-mode="light"] .upload-placeholder-box {
+    background-color: #f8fafc !important;
+    border-color: #c5c8ce !important;
+}
+
+html[data-mode="light"] .upload-placeholder-box:hover {
+    background-color: #f0f1f3 !important;
+    border-color: var(--accent-color, #0f172a) !important;
+}
+
+/* Floating Navbar */
 html[data-mode="light"] .modern-navbar {
     background-color: rgba(255, 255, 255, 0.92) !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
 }
-/* [ REVISI VISIBILITAS KOLOM KONTAK MODE CAHAYA - SELESAI ] */
+
+/* Footer Siber Terminal */
+html[data-mode="light"] .cyber-footer {
+    border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-mode="light"] .footer-status-badge {
+    color: #16a34a !important;
+    border-color: rgba(22, 163, 74, 0.25) !important;
+    background-color: rgba(22, 163, 74, 0.06) !important;
+    text-shadow: none !important;
+}
+
+html[data-mode="light"] .footer-status-badge .status-dot {
+    background-color: #16a34a !important;
+    box-shadow: 0 0 4px rgba(22, 163, 74, 0.4) !important;
+}
+
+html[data-mode="light"] .footer-copyright {
+    color: #94a3b8 !important;
+}
+
+html[data-mode="light"] .footer-author {
+    color: var(--accent-color, #0f172a) !important;
+}
+/* [ REVISI TOTAL BUG FIX VISIBILITAS KOMPONEN LIGHT MODE - SELESAI ] */
