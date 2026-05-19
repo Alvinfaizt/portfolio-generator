@@ -1162,34 +1162,46 @@ legend {
 
 /* [ ARSITEKTUR TATA LETAK: KONTAK & KOMENTAR DUA KOLOM - SELESAI ] */
 
-/* [ REVISI IKON INLINE BOXED INPUT FIELD - MULAI ] */
-.input-icon-wrapper {
+/* [ REVISI SMART INPUT LOGIC KONTAK - MULAI ] */
+.input-group {
     position: relative;
     width: 100%;
 }
 
-.input-icon-wrapper .input-icon {
+.input-group .input-icon {
     position: absolute;
-    left: 14px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.15rem;
     color: #8e94a0;
     pointer-events: none;
     z-index: 2;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.input-icon-wrapper input {
+.input-group input {
     width: 100%;
-    padding-left: 2.8rem !important;
+    padding-left: 45px;
+    transition: padding-left 0.3s ease, all 0.3s ease;
 }
 
-.input-icon-wrapper:focus-within .input-icon {
+.input-group input:not(:placeholder-shown) {
+    padding-left: 15px;
+}
+
+.input-group input:not(:placeholder-shown) ~ .input-icon,
+.input-group input:focus ~ .input-icon {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+    pointer-events: none;
+}
+
+.input-group:focus-within .input-icon {
     color: var(--accent-color, #ffffff);
 }
 
-/* [ REVISI IKON INLINE BOXED INPUT FIELD - SELESAI ] */
+/* [ REVISI SMART INPUT LOGIC KONTAK - SELESAI ] */
 
 /* [ FOOTER MINIMALIS SIBER TERMINAL - MULAI ] */
 .cyber-footer {
