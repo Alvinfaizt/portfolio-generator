@@ -2,6 +2,8 @@
    [MANAJEMEN TEMA BERBASIS CSS VARIABLES (TECH-NOIR CORE)]
    ========================================================================== */
 
+/* [ KONFIGURASI VARIABEL WARNA GRID BERDASARKAN TEMA - MULAI ] */
+
 /* 1. TEMA TECH-NOIR (Default / Minimalist variant) 
    Aksen abu-abu terang elegan untuk netralitas. */
 :root,
@@ -17,9 +19,10 @@ html[data-theme="minimalist"] {
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
     
-    /* Ambient Glow */
+    /* Ambient Glow & Grid Color */
     --glow-1: rgba(255, 255, 255, 0.03);
     --glow-2: rgba(255, 255, 255, 0.015);
+    --grid-color: rgba(255, 255, 255, 0.05);
 }
 
 /* 2. TEMA CYBER-DARK (Tech variant)
@@ -35,9 +38,10 @@ html[data-theme="tech"] {
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
     
-    /* Ambient Glow */
+    /* Ambient Glow & Grid Color */
     --glow-1: rgba(56, 189, 248, 0.07);
     --glow-2: rgba(56, 189, 248, 0.03);
+    --grid-color: rgba(56, 189, 248, 0.08);
 }
 
 /* 3. TEMA MONOCHROME (High Contrast Solid variant)
@@ -53,10 +57,13 @@ html[data-theme="monochrome"] {
     --font-style: 'Plus Jakarta Sans', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
     
-    /* Ambient Glow */
+    /* Ambient Glow & Grid Color */
     --glow-1: rgba(255, 255, 255, 0.04);
     --glow-2: rgba(255, 255, 255, 0.02);
+    --grid-color: rgba(255, 255, 255, 0.06);
 }
+
+/* [ KONFIGURASI VARIABEL WARNA GRID BERDASARKAN TEMA - SELESAI ] */
 
 
 /* ==========================================================================
