@@ -172,7 +172,7 @@ body::after {
     font-family: monospace;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     letter-spacing: 0.05em;
 }
 
@@ -197,7 +197,7 @@ body::after {
 
 .nav-menu li a:hover,
 .nav-menu li a:active {
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
 }
 
 .nav-menu li a::after {
@@ -207,7 +207,7 @@ body::after {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #ffffff;
+    background-color: var(--text-color, #ffffff);
     transition: width 0.3s ease;
 }
 
@@ -317,7 +317,7 @@ body::after {
 .form-header h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.8rem;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     letter-spacing: -0.03em;
     margin-bottom: 0.5rem;
 }
@@ -342,7 +342,7 @@ body::after {
     padding: 0.75rem;
     width: 100%;
     background-color: transparent;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-family: inherit;
@@ -353,12 +353,12 @@ body::after {
 }
 
 .theme-selector select:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: var(--accent-color, #ffffff);
 }
 
 .theme-selector select option {
-    background-color: #0d0e10;
-    color: #ffffff;
+    background-color: var(--bg-primary, #0d0e10);
+    color: var(--text-color, #ffffff);
 }
 
 /* Compact Form Input */
@@ -371,7 +371,7 @@ legend {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -571,7 +571,7 @@ legend {
 .about-name {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 1.2rem;
     letter-spacing: -0.03em;
 }
@@ -618,7 +618,7 @@ legend {
 .showcase-header h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.6rem; /* Upscaled ~18% untuk menonjol secara megah */
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 1rem;
     letter-spacing: 0.1em; /* Renggang premium */
     text-transform: uppercase; /* Kapital penuh bergaya Web3 */
@@ -724,7 +724,7 @@ legend {
 .achievement-card h4 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 0.5rem;
 }
 
@@ -853,7 +853,7 @@ legend {
 .section-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.6rem; /* Upscaled ~18% untuk konsistensi megah */
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 2.5rem;
     letter-spacing: 0.1em; /* Renggang premium */
     text-align: center;
@@ -892,7 +892,7 @@ legend {
 .contact-col-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.8rem; /* Upscaled 20% untuk kekokohan visual */
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 2rem;
     letter-spacing: 0.08em; /* Renggang premium */
     text-transform: uppercase; /* Kapital penuh bergaya Web3 */
@@ -913,15 +913,15 @@ legend {
 .contact-form .form-group textarea {
     width: 100%;
     padding: 0.8rem 1rem !important; /* Tebal, proporsional */
-    background-color: rgba(20, 21, 23, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--input-bg, rgba(20, 21, 23, 0.6)) !important;
+    border: 1px solid var(--input-border, rgba(255, 255, 255, 0.1)) !important;
     border-radius: 6px !important;
-    color: #ffffff !important;
+    color: var(--text-color, #ffffff) !important;
     font-family: inherit;
     font-size: 0.95rem !important;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Override global border-bottom */
+    border-bottom: 1px solid var(--input-border, rgba(255, 255, 255, 0.1)) !important; /* Override global border-bottom */
 }
 
 .contact-form .form-group input::placeholder,
@@ -933,8 +933,8 @@ legend {
 .contact-form .form-group textarea:focus {
     outline: none !important;
     border-color: var(--accent-color, #ffffff) !important;
-    background-color: rgba(20, 21, 23, 0.9) !important;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05), 0 0 15px var(--accent-color, rgba(255, 255, 255, 0.3)) !important;
+    background-color: var(--input-bg-focus, rgba(20, 21, 23, 0.9)) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 0 0 15px var(--accent-color, rgba(255, 255, 255, 0.3)) !important;
     transform: none !important; /* Menghilangkan translateX default agar tidak bergeser */
 }
 
@@ -955,7 +955,7 @@ legend {
 .connect-section h4 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--text-color, #ffffff);
     margin-bottom: 1rem;
 }
 
@@ -1234,8 +1234,8 @@ legend {
     }
 
     .mobile-tabs button.active {
-        color: #ffffff;
-        border-bottom: 2px solid #ffffff;
+        color: var(--text-color, #ffffff);
+        border-bottom: 2px solid var(--text-color, #ffffff);
     }
 
     .about-hero {
@@ -1283,7 +1283,7 @@ legend {
 }
 /* [ CUSTOM SCROLLBAR - SELESAI ] */
 
-/* [ OPENING PRELOADER OVERLAY - MULAI ] */
+/* [ REVISI OPENING PRELOADER CINEMATIC SLIDE-DOWN - MULAI ] */
 .preloader-overlay {
     position: fixed;
     top: 0;
@@ -1295,14 +1295,12 @@ legend {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+    transform: translateY(0);
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.preloader-overlay.fade-out {
-    opacity: 0;
-    visibility: hidden;
+.preloader-overlay.slide-down {
+    transform: translateY(100%);
 }
 
 .preloader-content {
@@ -1310,25 +1308,46 @@ legend {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
 }
 
-.preloader-initial {
+.preloader-brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.preloader-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color, #ffffff);
+    animation: pulseGlow 1.5s infinite ease-in-out alternate;
+}
+
+.preloader-brand {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
     color: #ffffff;
     animation: pulseGlow 1.5s infinite ease-in-out alternate;
 }
 
+.preloader-subtitle {
+    font-family: monospace;
+    font-size: 1rem;
+    color: #8e94a0;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
 .preloader-bar {
-    width: 150px;
+    width: 180px;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     border-radius: 2px;
+    margin-top: 1rem;
 }
 
 .preloader-bar::after {
@@ -1361,23 +1380,7 @@ legend {
         left: 100%;
     }
 }
-/* [ OPENING PRELOADER OVERLAY - SELESAI ] */
-
-/* [ AUTO TYPEWRITER EFFECT HOME - MULAI ] */
-.typewriter-cursor {
-    display: inline-block;
-    width: 3px;
-    background-color: var(--accent-color, #ffffff);
-    margin-left: 5px;
-    animation: blinkCursor 0.8s infinite;
-}
-
-@keyframes blinkCursor {
-    50% {
-        opacity: 0;
-    }
-}
-/* [ AUTO TYPEWRITER EFFECT HOME - SELESAI ] */
+/* [ REVISI OPENING PRELOADER CINEMATIC SLIDE-DOWN - SELESAI ] */
 
 /* [ SAKELAR DARK/LIGHT MODE - MULAI ] */
 .theme-toggle-btn {
@@ -1387,9 +1390,9 @@ legend {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--card-bg, rgba(16, 17, 20, 0.85));
+    background-color: var(--bg-primary, rgba(16, 17, 20, 0.85));
     border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-    color: var(--text-color, #ffffff);
+    color: var(--text-primary, #ffffff);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -1462,3 +1465,73 @@ legend {
     border-radius: 6px;
 }
 /* [ AREA UPLOAD GAMBAR KOMENTAR - SELESAI ] */
+
+/* [ REVISI LOGIKA PEWARNAAN KONTRAS SKEMA DARK/LIGHT MODE - MULAI ] */
+html[data-mode="light"] .about-subnav {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-mode="light"] .subnav-btn {
+    color: #475569 !important;
+}
+
+html[data-mode="light"] .subnav-btn.active,
+html[data-mode="light"] .subnav-btn:hover {
+    color: #ffffff !important;
+    background-color: var(--accent-color, #0f172a) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-mode="light"] .btn-cv,
+html[data-mode="light"] .print-button,
+html[data-mode="light"] .submit-button {
+    background-color: #ffffff !important;
+    color: #1d1d1f !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-mode="light"] .btn-cv:hover,
+html[data-mode="light"] .print-button:hover,
+html[data-mode="light"] .submit-button:hover {
+    background-color: var(--accent-color, #0f172a) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-color, #0f172a) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-mode="light"] .social-link-item {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    color: #475569 !important;
+}
+
+html[data-mode="light"] .social-link-item:hover {
+    background-color: var(--accent-color, #0f172a) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-color, #0f172a) !important;
+}
+
+html[data-mode="light"] .email-action-btn {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #1d1d1f !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-mode="light"] .email-action-btn:hover {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+    border-color: #10b981 !important;
+}
+
+html[data-mode="light"] .upload-placeholder-box {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+    border-color: var(--border-color, rgba(0, 0, 0, 0.15)) !important;
+}
+
+html[data-mode="light"] .upload-placeholder-box:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border-color: var(--accent-color, #0f172a) !important;
+}
+/* [ REVISI LOGIKA PEWARNAAN KONTRAS SKEMA DARK/LIGHT MODE - SELESAI ] */

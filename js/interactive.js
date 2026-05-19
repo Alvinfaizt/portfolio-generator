@@ -151,27 +151,27 @@ function resetPreviewPlaceholder(container) {
 }
 
 /* ==========================================================================
-   [ LOGIKA ANIMASI PRELOADER & AUTO TYPEWRITER - MULAI ]
+   [ REVISI OPENING PRELOADER & TYPEWRITER EXCLUSIVES - MULAI ]
    ========================================================================== */
 function initPreloaderAndTypewriter() {
     const preloader = document.getElementById("preloader");
     if (preloader) {
         setTimeout(() => {
-            preloader.classList.add("fade-out");
+            preloader.classList.add("slide-down");
             setTimeout(() => {
                 preloader.style.display = "none";
                 startTypewriter();
-            }, 800); // Durasi fade-out transisi CSS
-        }, 2000); // Tampil selama 2 detik sebelum memudar
+            }, 800); // Durasi transisi geser kebawah CSS
+        }, 2000); // Tampil selama 2 detik sebelum bergeser
     } else {
         startTypewriter();
     }
 }
 
 function startTypewriter() {
-    const element = document.getElementById("typewriter-title");
+    const element = document.getElementById("typewriter-subhero");
     if (!element) return;
-    const text = "Frontend Developer";
+    const text = "↓ explore my work / ↗ open to full-time opportunities";
     let index = 0;
     element.textContent = "";
     
@@ -184,4 +184,4 @@ function startTypewriter() {
     }
     type();
 }
-/* [ LOGIKA ANIMASI PRELOADER & AUTO TYPEWRITER - SELESAI ] */
+/* [ REVISI OPENING PRELOADER & TYPEWRITER EXCLUSIVES - SELESAI ] */
