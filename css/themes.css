@@ -20,8 +20,8 @@ html[data-theme="minimalist"] {
     --font-heading: 'Space Grotesk', sans-serif;
     
     /* Ambient Glow & Grid Color */
-    --glow-1: rgba(255, 255, 255, 0.03);
-    --glow-2: rgba(255, 255, 255, 0.015);
+    --glow-1: rgba(255, 255, 255, 0.08);
+    --glow-2: rgba(255, 255, 255, 0.04);
     --grid-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -39,8 +39,8 @@ html[data-theme="tech"] {
     --font-heading: 'Space Grotesk', sans-serif;
     
     /* Ambient Glow & Grid Color */
-    --glow-1: rgba(56, 189, 248, 0.07);
-    --glow-2: rgba(56, 189, 248, 0.03);
+    --glow-1: rgba(56, 189, 248, 0.16);
+    --glow-2: rgba(56, 189, 248, 0.08);
     --grid-color: rgba(56, 189, 248, 0.08);
 }
 
@@ -58,8 +58,8 @@ html[data-theme="monochrome"] {
     --font-heading: 'Space Grotesk', sans-serif;
     
     /* Ambient Glow & Grid Color */
-    --glow-1: rgba(255, 255, 255, 0.04);
-    --glow-2: rgba(255, 255, 255, 0.02);
+    --glow-1: rgba(255, 255, 255, 0.12);
+    --glow-2: rgba(255, 255, 255, 0.06);
     --grid-color: rgba(255, 255, 255, 0.06);
 }
 

@@ -22,7 +22,7 @@ body {
     overflow-x: hidden; /* Mencegah luapan partikel di sumbu X */
 }
 
-/* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & GLOW PARTIKEL - MULAI ] */
+/* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & KABUT GLOW - MULAI ] */
 body::before {
     content: '';
     position: fixed;
@@ -31,8 +31,8 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 10% 20%, var(--glow-1, rgba(255, 255, 255, 0.03)) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, var(--glow-2, rgba(255, 255, 255, 0.015)) 0%, transparent 45%);
+        radial-gradient(circle at 10% 20%, var(--glow-1, rgba(255, 255, 255, 0.08)) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, var(--glow-2, rgba(255, 255, 255, 0.04)) 0%, transparent 45%);
     pointer-events: none;
     z-index: -1;
     transition: background 0.5s ease;
@@ -70,11 +70,11 @@ body::after {
     position: absolute;
     top: -10%;
     left: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, var(--glow-1, rgba(255, 255, 255, 0.03)) 0%, transparent 70%);
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, var(--glow-1, rgba(255, 255, 255, 0.08)) 0%, transparent 70%);
     border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(50px);
     animation: breatheGlow1 20s infinite ease-in-out alternate;
 }
 
@@ -82,115 +82,52 @@ body::after {
     position: absolute;
     bottom: -10%;
     right: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, var(--glow-2, rgba(255, 255, 255, 0.015)) 0%, transparent 70%);
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, var(--glow-2, rgba(255, 255, 255, 0.04)) 0%, transparent 70%);
     border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(50px);
     animation: breatheGlow2 25s infinite ease-in-out alternate;
-}
-
-.ambient-particle {
-    position: absolute;
-    bottom: -20px;
-    background-color: var(--accent-color, #ffffff);
-    border-radius: 50%;
-    filter: blur(1px);
-    opacity: 0;
-    animation: floatParticles infinite linear;
-}
-
-.ambient-particle:nth-child(3) {
-    width: 4px;
-    height: 4px;
-    left: 15%;
-    animation-duration: 25s;
-    animation-delay: 0s;
-}
-
-.ambient-particle:nth-child(4) {
-    width: 6px;
-    height: 6px;
-    left: 45%;
-    animation-duration: 35s;
-    animation-delay: -8s;
-}
-
-.ambient-particle:nth-child(5) {
-    width: 3px;
-    height: 3px;
-    left: 75%;
-    animation-duration: 20s;
-    animation-delay: -4s;
-}
-
-.ambient-particle:nth-child(6) {
-    width: 5px;
-    height: 5px;
-    left: 90%;
-    animation-duration: 30s;
-    animation-delay: -12s;
 }
 
 @keyframes breatheGlow1 {
     0% {
         transform: translate(0, 0) scale(1);
-        opacity: 0.8;
+        opacity: 0.85;
     }
     50% {
-        transform: translate(8vw, 4vh) scale(1.1);
+        transform: translate(6vw, 3vh) scale(1.1);
         opacity: 1;
     }
     100% {
-        transform: translate(-4vw, 8vh) scale(0.95);
-        opacity: 0.7;
+        transform: translate(-3vw, 6vh) scale(0.95);
+        opacity: 0.75;
     }
 }
 
 @keyframes breatheGlow2 {
     0% {
         transform: translate(0, 0) scale(1);
-        opacity: 0.7;
+        opacity: 0.75;
     }
     50% {
-        transform: translate(-6vw, -8vh) scale(1.15);
-        opacity: 0.9;
+        transform: translate(-5vw, -6vh) scale(1.15);
+        opacity: 0.95;
     }
     100% {
-        transform: translate(4vw, 4vh) scale(0.9);
-        opacity: 0.6;
+        transform: translate(3vw, 3vh) scale(0.9);
+        opacity: 0.65;
     }
 }
-
-@keyframes floatParticles {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.25;
-    }
-    90% {
-        opacity: 0.25;
-    }
-    100% {
-        transform: translateY(-105vh) translateX(40px);
-        opacity: 0;
-    }
-}
-/* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & GLOW PARTIKEL - SELESAI ] */
+/* [ SISTEM ANIMASI LATAR BELAKANG CYBER-GRID & KABUT GLOW - SELESAI ] */
 
 .app-container {
     width: 100%;
-    perspective: 1000px;
-    transform-style: preserve-3d;
 }
 
 .page-section {
     min-height: 100vh;
     width: 100%;
-    perspective: 1000px;
-    transform-style: preserve-3d;
 }
 
 /* ==========================================================================
@@ -586,7 +523,7 @@ legend {
     text-align: left;
 }
 
-/* [ EFEK HOVER 3D FOTO PROFIL - MULAI ] */
+/* [ EFEK HOVER POP-OUT FOTO PROFIL - MULAI ] */
 .about-photo {
     flex-shrink: 0;
     width: 250px;
@@ -598,8 +535,7 @@ legend {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s;
 }
 
 .about-photo img {
@@ -607,19 +543,19 @@ legend {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .about-photo:hover {
-    transform: translateY(-8px) translateZ(20px) rotateX(10deg) rotateY(-10deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-color, rgba(255, 255, 255, 0.2));
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--glow-1, rgba(255, 255, 255, 0.15));
 }
 
 .about-photo:hover img {
     filter: grayscale(0%);
-    transform: scale(1.05) translateZ(10px);
+    transform: scale(1.05);
 }
-/* [ EFEK HOVER 3D FOTO PROFIL - SELESAI ] */
+/* [ EFEK HOVER POP-OUT FOTO PROFIL - SELESAI ] */
 
 .about-label {
     display: block;
@@ -697,12 +633,11 @@ legend {
 }
 
 /* Sub-Navigasi 3 Kolom (Satu wadah kontainer horizontal) */
-/* [ EFEK HOVER 3D SUB-NAVBAR - MULAI ] */
+/* [ EFEK HOVER POP-OUT SUB-NAVBAR - MULAI ] */
 .about-subnav-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 3.5rem;
-    perspective: 1000px;
 }
 
 .about-subnav {
@@ -714,13 +649,12 @@ legend {
     padding: 0.25rem; /* Lebih padat agar minimalis */
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s;
 }
 
 .about-subnav:hover {
-    transform: translateY(-4px) translateZ(15px) rotateX(6deg);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--glow-1, rgba(255, 255, 255, 0.1));
 }
 
 .subnav-btn {
@@ -732,17 +666,16 @@ legend {
     cursor: pointer;
     padding: 0.4rem 2.2rem; /* Padatkan padding internal */
     border-radius: 50px;
-    transition: all 0.2s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: translateZ(5px);
+    transition: all 0.3s ease;
 }
 
 .subnav-btn.active,
 .subnav-btn:hover {
     color: #0d0e10;
     background-color: #ffffff;
-    transform: translateZ(10px) scale(1.02);
+    transform: scale(1.03);
 }
-/* [ EFEK HOVER 3D SUB-NAVBAR - SELESAI ] */
+/* [ EFEK HOVER POP-OUT SUB-NAVBAR - SELESAI ] */
 
 /* [ ARSITEKTUR TATA LETAK: PORTFOLIO SHOWCASE SECTION - MULAI ] */
 #portfolio {
@@ -771,27 +704,20 @@ legend {
     gap: 1.5rem;
 }
 
-/* [ EFEK HOVER 3D KARTU DOKUMEN - MULAI ] */
+/* [ EFEK HOVER POP-OUT KARTU DOKUMEN - MULAI ] */
 .achievement-card {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 12px;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.6s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.4s;
 }
 
 .achievement-card:hover {
     background-color: rgba(255, 255, 255, 0.05);
     border-color: var(--accent-color, rgba(255, 255, 255, 0.15));
-    transform: translateY(-8px) translateZ(20px) rotateX(8deg) rotateY(-8deg);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--glow-1, rgba(255, 255, 255, 0.05));
-}
-
-.achievement-card h4, 
-.achievement-card p,
-.achievement-card .view-cert-label {
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--glow-1, rgba(255, 255, 255, 0.15));
 }
 
 .achievement-card h4 {
@@ -801,23 +727,11 @@ legend {
     margin-bottom: 0.5rem;
 }
 
-.achievement-card:hover h4 {
-    transform: translateZ(15px);
-}
-
 .achievement-card p {
     font-size: 0.85rem;
     color: #8e94a0;
 }
-
-.achievement-card:hover p {
-    transform: translateZ(10px);
-}
-
-.achievement-card:hover .view-cert-label {
-    transform: translateZ(12px);
-}
-/* [ EFEK HOVER 3D KARTU DOKUMEN - SELESAI ] */
+/* [ EFEK HOVER POP-OUT KARTU DOKUMEN - SELESAI ] */
 
 /* Certificate Preview Lightbox Interactivity */
 .cert-card {
@@ -948,13 +862,12 @@ legend {
 }
 /* [ ARSITEKTUR TATA LETAK: MAIN CONTACT SECTION TITLE SPACE GROTESK - SELESAI ] */
 
-/* [ EFEK HOVER 3D KOTAK KEMBAR KONTAK & KOMENTAR - MULAI ] */
+/* [ EFEK HOVER POP-OUT KOTAK KEMBAR KONTAK & KOMENTAR - MULAI ] */
 .contact-twin-layout {
     display: flex; /* Menggunakan Flexbox */
     align-items: stretch; /* Tinggi kolom sama sejajar */
     gap: 2rem;
     width: 100%;
-    perspective: 1000px;
 }
 
 .contact-col {
@@ -965,29 +878,13 @@ legend {
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.6s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.4s;
 }
 
 .contact-col:hover {
     border-color: var(--accent-color, rgba(255, 255, 255, 0.15));
-    transform: translateY(-8px) translateZ(20px) rotateX(6deg) rotateY(-4deg);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px var(--glow-1, rgba(255, 255, 255, 0.05));
-}
-
-.contact-col-title,
-.contact-form,
-.connect-section {
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.contact-col:hover .contact-col-title {
-    transform: translateZ(15px);
-}
-
-.contact-col:hover .contact-form,
-.contact-col:hover .connect-section {
-    transform: translateZ(10px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--glow-1, rgba(255, 255, 255, 0.15));
 }
 
 /* [ ARSITEKTUR TATA LETAK: TWIN COLUMN COMPONENT TITLE SPACE GROTESK - MULAI ] */
@@ -1000,7 +897,7 @@ legend {
     text-transform: uppercase; /* Kapital penuh bergaya Web3 */
     font-weight: 700;
 }
-/* [ EFEK HOVER 3D KOTAK KEMBAR KONTAK & KOMENTAR - SELESAI ] */
+/* [ EFEK HOVER POP-OUT KOTAK KEMBAR KONTAK & KOMENTAR - SELESAI ] */
 
 /* Form Styles dalam Kolom */
 .contact-form {
