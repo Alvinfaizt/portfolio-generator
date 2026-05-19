@@ -151,27 +151,59 @@ function resetPreviewPlaceholder(container) {
 }
 
 /* ==========================================================================
-   [ REVISI OPENING PRELOADER & TYPEWRITER EXCLUSIVES - MULAI ]
+   [ REVISI OPENING PRELOADER TIRAI SIBER & TYPEWRITER CEPAT - MULAI ]
    ========================================================================== */
 function initPreloaderAndTypewriter() {
     const preloader = document.getElementById("preloader");
-    if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add("slide-down");
-            setTimeout(() => {
-                preloader.style.display = "none";
-                startTypewriter();
-            }, 800); // Durasi transisi geser kebawah CSS
-        }, 2000); // Tampil selama 2 detik sebelum bergeser
+    const brandEl = document.getElementById("preloader-brand-text");
+    const subtitleEl = document.getElementById("preloader-subtitle-text");
+
+    if (preloader && brandEl && subtitleEl) {
+        // Jalankan typewriter cepat pada teks preloader
+        typewriteFast(brandEl, "Programmer 3", 55, () => {
+            // Setelah brand selesai, ketik subtitle
+            typewriteFast(subtitleEl, "Web Developer", 45, () => {
+                // Jeda sesaat agar user sempat membaca, lalu geser ke atas
+                setTimeout(() => {
+                    preloader.classList.add("slide-up");
+                    setTimeout(() => {
+                        preloader.style.display = "none";
+                        startSubheroTypewriter();
+                    }, 700); // Durasi transisi geser keatas CSS
+                }, 400); // Jeda baca setelah pengetikan selesai
+            });
+        });
     } else {
-        startTypewriter();
+        startSubheroTypewriter();
     }
 }
 
-function startTypewriter() {
+/**
+ * Fungsi typewriter cepat tanpa kursor untuk elemen preloader.
+ * @param {HTMLElement} el - Elemen target teks
+ * @param {string} text - Teks yang akan diketik
+ * @param {number} speed - Kecepatan per karakter (ms)
+ * @param {Function} callback - Fungsi panggilan balik setelah selesai
+ */
+function typewriteFast(el, text, speed, callback) {
+    let index = 0;
+    el.textContent = "";
+    function type() {
+        if (index < text.length) {
+            el.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        } else if (callback) {
+            callback();
+        }
+    }
+    type();
+}
+
+function startSubheroTypewriter() {
     const element = document.getElementById("typewriter-subhero");
     if (!element) return;
-    const text = "↓ explore my work / ↗ open to full-time opportunities";
+    const text = "\u2193 explore my work / \u2197 open to full-time opportunities";
     let index = 0;
     element.textContent = "";
     
@@ -179,9 +211,9 @@ function startTypewriter() {
         if (index < text.length) {
             element.textContent += text.charAt(index);
             index++;
-            setTimeout(type, 100); // Jeda antar huruf 100ms
+            setTimeout(type, 100); // Jeda antar huruf 100ms (standar sub-hero)
         }
     }
     type();
 }
-/* [ REVISI OPENING PRELOADER & TYPEWRITER EXCLUSIVES - SELESAI ] */
+/* [ REVISI OPENING PRELOADER TIRAI SIBER & TYPEWRITER CEPAT - SELESAI ] */

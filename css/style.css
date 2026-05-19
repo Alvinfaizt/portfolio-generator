@@ -1283,7 +1283,7 @@ legend {
 }
 /* [ CUSTOM SCROLLBAR - SELESAI ] */
 
-/* [ REVISI OPENING PRELOADER CINEMATIC SLIDE-DOWN - MULAI ] */
+/* [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - MULAI ] */
 .preloader-overlay {
     position: fixed;
     top: 0;
@@ -1296,11 +1296,11 @@ legend {
     align-items: center;
     z-index: 9999;
     transform: translateY(0);
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.preloader-overlay.slide-down {
-    transform: translateY(100%);
+.preloader-overlay.slide-up {
+    transform: translateY(-100%);
 }
 
 .preloader-content {
@@ -1320,7 +1320,13 @@ legend {
 .preloader-icon {
     font-size: 2.5rem;
     color: var(--accent-color, #ffffff);
-    animation: pulseGlow 1.5s infinite ease-in-out alternate;
+    opacity: 0;
+    animation: preloaderIconReveal 0.4s 0.2s ease-out forwards;
+}
+
+@keyframes preloaderIconReveal {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .preloader-brand {
@@ -1329,7 +1335,6 @@ legend {
     font-weight: 700;
     letter-spacing: 0.1rem;
     color: #ffffff;
-    animation: pulseGlow 1.5s infinite ease-in-out alternate;
 }
 
 .preloader-subtitle {
@@ -1339,48 +1344,7 @@ legend {
     letter-spacing: 0.2rem;
     text-transform: uppercase;
 }
-
-.preloader-bar {
-    width: 180px;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    border-radius: 2px;
-    margin-top: 1rem;
-}
-
-.preloader-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    background-color: var(--accent-color, #ffffff);
-    animation: loadingBar 1.5s infinite ease-in-out;
-}
-
-@keyframes pulseGlow {
-    0% {
-        opacity: 0.4;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    }
-    100% {
-        opacity: 1;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-    }
-}
-
-@keyframes loadingBar {
-    0% {
-        left: -40%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-/* [ REVISI OPENING PRELOADER CINEMATIC SLIDE-DOWN - SELESAI ] */
+/* [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - SELESAI ] */
 
 /* [ SAKELAR DARK/LIGHT MODE - MULAI ] */
 .theme-toggle-btn {
@@ -1501,37 +1465,43 @@ html[data-mode="light"] .submit-button:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
-html[data-mode="light"] .social-link-item {
-    background-color: rgba(0, 0, 0, 0.03) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    color: #475569 !important;
+/* [ REVISI VISIBILITAS KOLOM KONTAK MODE CAHAYA - MULAI ] */
+html[data-mode="light"] .contact-col {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
 }
 
-html[data-mode="light"] .social-link-item:hover {
-    background-color: var(--accent-color, #0f172a) !important;
-    color: #ffffff !important;
+html[data-mode="light"] .contact-col:hover {
     border-color: var(--accent-color, #0f172a) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(15, 23, 42, 0.06) !important;
 }
 
-html[data-mode="light"] .email-action-btn {
-    background-color: rgba(0, 0, 0, 0.05) !important;
+html[data-mode="light"] .contact-form .form-group input,
+html[data-mode="light"] .contact-form .form-group textarea {
+    background-color: #f0f1f3 !important;
+    border: 1px solid #c5c8ce !important;
     color: #1d1d1f !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-html[data-mode="light"] .email-action-btn:hover {
-    background-color: #10b981 !important;
-    color: #ffffff !important;
-    border-color: #10b981 !important;
+html[data-mode="light"] .contact-form .form-group input::placeholder,
+html[data-mode="light"] .contact-form .form-group textarea::placeholder {
+    color: #94a3b8 !important;
 }
 
-html[data-mode="light"] .upload-placeholder-box {
-    background-color: rgba(0, 0, 0, 0.02) !important;
-    border-color: var(--border-color, rgba(0, 0, 0, 0.15)) !important;
-}
-
-html[data-mode="light"] .upload-placeholder-box:hover {
-    background-color: rgba(0, 0, 0, 0.04) !important;
+html[data-mode="light"] .contact-form .form-group input:focus,
+html[data-mode="light"] .contact-form .form-group textarea:focus {
+    background-color: #ffffff !important;
     border-color: var(--accent-color, #0f172a) !important;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08), 0 0 12px rgba(15, 23, 42, 0.06) !important;
 }
-/* [ REVISI LOGIKA PEWARNAAN KONTRAS SKEMA DARK/LIGHT MODE - SELESAI ] */
+
+html[data-mode="light"] .connect-section {
+    border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-mode="light"] .modern-navbar {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+/* [ REVISI VISIBILITAS KOLOM KONTAK MODE CAHAYA - SELESAI ] */
