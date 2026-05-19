@@ -145,10 +145,10 @@ body::after {
     align-items: center;
     padding: 0.8rem 3rem; /* Proporsional dan nyaman dilihat */
     z-index: 1000 !important;
-    background-color: rgba(13, 14, 16, 0.98); /* Gelap tebal mendekati solid */
+    background-color: var(--card-bg, rgba(13, 14, 16, 0.98)); /* Gelap tebal mendekati solid */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
     border-radius: 50px; /* Ujung membulat penuh */
     width: 85%;
     max-width: 1200px;
