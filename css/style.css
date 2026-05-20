@@ -175,7 +175,7 @@ body::after {
 .nav-status-indicator .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #22c55e;
+    background-color: #52525b; /* Dark grey */
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -267,33 +267,57 @@ body::after {
     text-align: center;
 }
 
-/* [ REVISI: STYLING BADGE AVAILABLE FOR WORK DI HERO - MULAI ] */
+/* [ REVISI MONOKROM: Badge Available For Work - Putih Bersih ] */
 .hero-status-indicator {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
-    padding: 0.5rem 1rem;
-    background-color: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    border-radius: 50px;
-}
-
-.hero-status-indicator .status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+    padding: 0.5rem 1rem; /* keep spacing */
+    background-color: transparent;
+    border: none;
+    /* No border/background; pure text */
 }
 
 .hero-status-indicator .status-text {
-    font-size: 0.75rem;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: bold;
+    /* Dark grey for both modes */
+    color: #52525b;
+    font-weight: 600;
+}
+
+/* Typewriter text color (dark grey) */
+.hero-typewriter {
+    color: #52525b;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.3rem;
+    height: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+}
+
+/* Footer status badge – default neutral */
+.footer-status-badge {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-shadow: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+html[data-mode="dark"] .footer-status-badge,
+html[data-mode="light"] .footer-status-badge {
+    color: #16a34a; /* Cyber green neon */
+}
+
+html[data-mode="dark"] .footer-status-badge .status-dot,
+html[data-mode="light"] .footer-status-badge .status-dot {
+    background-color: #16a34a;
+    box-shadow: 0 0 4px rgba(22, 163, 74, 0.4);
 }
 /* [ REVISI: STYLING BADGE AVAILABLE FOR WORK DI HERO - SELESAI ] */
 
@@ -307,6 +331,8 @@ body::after {
     text-transform: uppercase;
     margin-bottom: 1.5rem;
 }
+/* Light mode hero title color override */
+html[data-mode="light"] .hero-title span:first-child { color: #1D1D1F !important; }
 /* [ REVISI: IMPLEMENTASI FONT EXTENDED SANS-SERIF BOLD - SELESAI ] */
 
 .hero-bio {
@@ -320,7 +346,7 @@ body::after {
 /* [ REVISI STYLING HERO TYPEWRITER EFFECT LOOPING - MULAI ] */
 .hero-typewriter {
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #52525b;
     font-family: 'Share Tech Mono', monospace;
     height: 1.8rem;
     margin-bottom: 1.5rem;
@@ -341,25 +367,26 @@ body::after {
     margin-bottom: 2rem;
 }
 
+/* [ REVISI MONOKROM: Status Dot & Pulse Animation - Putih Bersih ] */
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #10b981;
+    background-color: #ffffff;
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
 
@@ -369,10 +396,11 @@ body::after {
     letter-spacing: 0.1em;
 }
 
+/* [ REVISI MONOKROM: Warna teks dekoratif abu-abu siber ] */
 .decorative-text {
     margin-top: 4rem;
     font-size: 0.8rem;
-    color: #64748b;
+    color: #a1a1aa;
     font-family: 'Share Tech Mono', monospace;
     letter-spacing: 0.05em;
 }
@@ -1857,20 +1885,20 @@ html[data-mode="light"] .submit-button:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* [ REVISI STYLING TOMBOL VIEW PROJECT DI LIGHT MODE - MULAI ] */
+/* [ REVISI MONOKROM: TOMBOL VIEW PROJECT DI LIGHT MODE - MULAI ] */
 html[data-mode="light"] .btn-view-project {
-    color: #22c55e !important;
-    border: 2px solid #22c55e !important;
+    color: #0f172a !important;
+    border: 2px solid #0f172a !important;
     background-color: transparent !important;
 }
 
 html[data-mode="light"] .btn-view-project:hover {
-    background-color: #22c55e !important;
+    background-color: #0f172a !important;
     color: #ffffff !important;
-    border-color: #22c55e !important;
-    box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3) !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
 }
-/* [ REVISI STYLING TOMBOL VIEW PROJECT DI LIGHT MODE - SELESAI ] */
+/* [ REVISI MONOKROM: TOMBOL VIEW PROJECT DI LIGHT MODE - SELESAI ] */
 
 /* Kartu Konten Showcase (Certificates, Projects, Achievements) */
 html[data-mode="light"] .achievement-card {
@@ -1889,13 +1917,13 @@ html[data-mode="light"] .achievement-card p {
     color: #64748b !important;
 }
 
-/* Perbaikan Teks Hover View Credential */
+/* [ REVISI MONOKROM: Teks View Credential di Light Mode ] */
 html[data-mode="light"] .view-cert-label {
-    color: #10b981 !important;
+    color: #374151 !important;
 }
 
 html[data-mode="light"] .cert-card:hover .view-cert-label {
-    color: #059669 !important;
+    color: #0f172a !important;
 }
 
 /* Kolom Kontak Twin-Layout */
@@ -1963,10 +1991,11 @@ html[data-mode="light"] .email-action-btn {
     border: 1px solid var(--accent-color, #0f172a) !important;
 }
 
+/* [ REVISI MONOKROM: Email Action Btn Hover di Light Mode ] */
 html[data-mode="light"] .email-action-btn:hover {
-    background-color: #10b981 !important;
+    background-color: #27272a !important;
     color: #ffffff !important;
-    border-color: #10b981 !important;
+    border-color: #27272a !important;
 }
 
 /* Upload Placeholder Box */
@@ -1991,16 +2020,17 @@ html[data-mode="light"] .cyber-footer {
     border-top-color: rgba(0, 0, 0, 0.08) !important;
 }
 
+/* [ REVISI MONOKROM: Footer Status Badge di Light Mode ] */
 html[data-mode="light"] .footer-status-badge {
-    color: #16a34a !important;
-    border-color: rgba(22, 163, 74, 0.25) !important;
-    background-color: rgba(22, 163, 74, 0.06) !important;
+    color: #374151 !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(0, 0, 0, 0.04) !important;
     text-shadow: none !important;
 }
 
 html[data-mode="light"] .footer-status-badge .status-dot {
-    background-color: #16a34a !important;
-    box-shadow: 0 0 4px rgba(22, 163, 74, 0.4) !important;
+    background-color: #374151 !important;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
 }
 
 html[data-mode="light"] .footer-copyright {

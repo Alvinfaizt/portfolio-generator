@@ -105,10 +105,10 @@ html[data-mode="light"] {
     --tag-bg: rgba(0, 0, 0, 0.05);
     --tag-text: #1d1d1f;
 
-    /* Pendaran Kabut Cahaya Siber Hijau Dramatis (Ambient Glow Neon Terang) */
-    --glow-1: rgba(34, 197, 94, 0.25); /* Neon green glow utama — lebih tebal */
-    --glow-2: rgba(74, 222, 128, 0.2); /* Mint green glow sekunder — lebih tebal */
-    --grid-color: rgba(34, 197, 94, 0.12); /* Grid siber hijau tegas */
+    /* [ REVISI MONOKROM: Glow netral abu-abu — hilangkan pendaran hijau ] */
+    --glow-1: rgba(0, 0, 0, 0.06);
+    --glow-2: rgba(0, 0, 0, 0.03);
+    --grid-color: rgba(0, 0, 0, 0.06);
 
     /* Variabel Tambahan Terikat Untuk Mode Cahaya */
     --text-primary: #1d1d1f;
