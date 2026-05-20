@@ -163,12 +163,10 @@ function initPreloaderAndTypewriter() {
             setTimeout(() => {
                 preloader.style.display = "none";
                 startHeroTypewriterLooping();
-                startSubheroTypewriter();
             }, 700); // Durasi transisi slide-up CSS
         }, 1500); // Durasi animasi preloader (icons + text) selesai
     } else {
         startHeroTypewriterLooping();
-        startSubheroTypewriter();
     }
 }
 
@@ -228,20 +226,5 @@ function startHeroTypewriterLooping() {
     typewriterLoop();
 }
 
-function startSubheroTypewriter() {
-    const element = document.getElementById("typewriter-subhero");
-    if (!element) return;
-    const text = "\u2193 explore my work / \u2197 open to full-time opportunities";
-    let index = 0;
-    element.textContent = "";
-    
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 100); // Jeda antar huruf 100ms (standar sub-hero)
-        }
-    }
-    type();
-}
+
 /* [ REVISI TOTAL PRELOADER CINEMATIC SHUTTER & TYPEWRITER LOOPING - SELESAI ] */

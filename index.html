@@ -46,7 +46,10 @@
             </div>
             <!-- [ BARIS 2: TEKS WELCOME & PORTFOLIO WEB DENGAN VARIASI ANIMASI ] -->
             <div class="preloader-text-row">
-                <span class="preloader-text-line" id="preloader-welcome">Welcome to my</span>
+                <div class="preloader-welcome-container">
+                    <span class="preloader-text-line" id="preloader-welcome">Welcome</span>
+                    <span class="preloader-text-line" id="preloader-tomy">to my</span>
+                </div>
                 <span class="preloader-text-line" id="preloader-portfolio">portfolio web</span>
             </div>
         </div>
@@ -69,10 +72,6 @@
     <nav class="modern-navbar">
         <div class="nav-brand">alvin.dev</div>
         <!-- [ REVISI RELOKASI BADGE AVAILABLE FOR WORK KE NAVBAR - MULAI ] -->
-        <div class="nav-status-indicator">
-            <span class="status-dot"></span>
-            <span class="status-text">✦ AVAILABLE FOR WORK</span>
-        </div>
         <!-- [ REVISI RELOKASI BADGE AVAILABLE FOR WORK KE NAVBAR - SELESAI ] -->
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
@@ -90,8 +89,18 @@
         <section id="home" class="page-section">
             <div class="home-layout reveal">
                 <div class="home-content">
+                    <!-- [ REVISI: BADGE AVAILABLE FOR WORK DI HERO SECTION - MULAI ] -->
+                    <div class="hero-status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">✦ AVAILABLE FOR WORK</span>
+                    </div>
+                    <!-- [ REVISI: BADGE AVAILABLE FOR WORK DI HERO SECTION - SELESAI ] -->
+
                     <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - MULAI ] -->
-                    <h1 class="hero-title">Frontend Developer</h1>
+                    <h1 class="hero-title" style="line-height: 1.1;">
+                        <span style="color: #ffffff; display: block;">Frontend</span>
+                        <span style="color: #a1a1aa; display: block;">Developer</span>
+                    </h1>
                     <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - SELESAI ] -->
 
                     <!-- [ REVISI KONTAINER TYPEWRITER EFFECT DINAMIS LOOPING - MULAI ] -->
@@ -102,9 +111,9 @@
                         murni yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
                 </div>
 
-                <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) SUB-HERO - MULAI ] -->
-                <div class="decorative-text" id="typewriter-subhero"></div>
-                <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) SUB-HERO - SELESAI ] -->
+                <!-- [ REVISI: HAPUS EFEK TYPEWRITER SUB-HERO - MULAI ] -->
+                <div class="decorative-text">↓ explore my work / ↗ open to full-time opportunities</div>
+                <!-- [ REVISI: HAPUS EFEK TYPEWRITER SUB-HERO - SELESAI ] -->
             </div>
         </section>
         <!-- SECTION HOME END -->
@@ -226,14 +235,14 @@
                                 <div class="form-group">
                                     <label>Your Name</label>
                                     <div class="input-group">
-                                        <input type="text" placeholder="" required>
+                                        <input type="text" placeholder="John Doe" required>
                                         <i class='bx bx-user input-icon'></i>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Email</label>
                                     <div class="input-group">
-                                        <input type="email" placeholder="" required>
+                                        <input type="email" placeholder="john@example.com" required>
                                         <i class='bx bx-envelope input-icon'></i>
                                     </div>
                                 </div>
@@ -277,13 +286,13 @@
                                 <div class="form-group">
                                     <label>Your Name</label>
                                     <div class="input-group">
-                                        <input type="text" placeholder="" required>
+                                        <input type="text" placeholder="John Doe" required>
                                         <i class='bx bx-user input-icon'></i>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Comment</label>
-                                    <textarea placeholder="Share your thoughts..." rows="3" required></textarea>
+                                    <textarea placeholder="Share your thoughts..." rows="6" required></textarea>
                                 </div>
 
                                 <!-- UPLOAD IMAGE FITUR -->
