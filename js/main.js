@@ -136,6 +136,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // 7. LOGIKA EVENT: Sakelar Terapung Dark/Light Mode
     initThemeToggle();
 
+    // [ REVISI: HANDLER DIRECT TARGET FILTER TOMBOL "VIEW PROJECT" - MULAI ]
+    const viewProjectBtn = document.getElementById("btn-view-projects");
+    if (viewProjectBtn) {
+        viewProjectBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            // Trigger filter "Projects" secara otomatis di latar belakang
+            const projectsFilterBtn = document.querySelector('.subnav-btn[data-target="panel-projects"]');
+            if (projectsFilterBtn) {
+                projectsFilterBtn.click();
+            }
+
+            // Jalankan Smooth Scroll langsung mengarah tepat ke baris grid item projects
+            setTimeout(() => {
+                const targetPanel = document.getElementById("panel-projects");
+                if (targetPanel) {
+                    // Kalkulasi offset agar sedikit di atas elemen untuk kenyamanan visual
+                    const yOffset = -50; 
+                    const y = targetPanel.getBoundingClientRect().top + window.scrollY + yOffset;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                }
+            }, 150); // Jeda singkat agar transisi tab berjalan dulu
+        });
+    }
+    // [ REVISI: HANDLER DIRECT TARGET FILTER TOMBOL "VIEW PROJECT" - SELESAI ]
+
 });
 
 /* ==========================================================================

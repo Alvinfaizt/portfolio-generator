@@ -27,22 +27,34 @@
 
     <!-- Boxicons CDN -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- [ REVISI PENAMBAHAN FONT AWESOME CDN UNTUK IKON FA-CODE - MULAI ] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usRg5+c1g5q84W3gsnO5T8M4VJbDbfvHsDNgWP08M0xC8k9KSKuZeFQz+Ybu+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- [ REVISI PENAMBAHAN FONT AWESOME CDN UNTUK IKON FA-CODE - SELESAI ] -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
 </head>
 
 <body>
-    <!-- [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - MULAI ] -->
+    <!-- [ REVISI TOTAL PRELOADER CINEMATIC SHUTTER TRIPLE BOTTOM-UP ICONS - MULAI ] -->
     <div id="preloader" class="preloader-overlay">
         <div class="preloader-content">
-            <div class="preloader-brand-wrapper">
-                <i class='bx bx-code-alt preloader-icon'></i>
-                <span class="preloader-brand" id="preloader-brand-text"></span>
+            <!-- [ BARIS 1: TIGA IKON FA-CODE BERDAMPINGAN BOTTOM-UP STAGGERED ] -->
+            <div class="preloader-icons-row">
+                <i class="fa-solid fa-code preloader-icon-triple" id="code-icon-1"></i>
+                <i class="fa-solid fa-code preloader-icon-triple" id="code-icon-2"></i>
+                <i class="fa-solid fa-code preloader-icon-triple" id="code-icon-3"></i>
             </div>
-            <span class="preloader-subtitle" id="preloader-subtitle-text"></span>
+            <!-- [ BARIS 2: TEKS WELCOME & PORTFOLIO WEB DENGAN VARIASI ANIMASI ] -->
+            <div class="preloader-text-row">
+                <div class="preloader-welcome-container">
+                    <span class="preloader-text-line" id="preloader-welcome">Welcome</span>
+                    <span class="preloader-text-line" id="preloader-tomy">to my</span>
+                </div>
+                <span class="preloader-text-line" id="preloader-portfolio">portfolio web</span>
+            </div>
         </div>
     </div>
-    <!-- [ REVISI OPENING PRELOADER TIRAI SIBER SLIDE-UP - SELESAI ] -->
+    <!-- [ REVISI TOTAL PRELOADER CINEMATIC SHUTTER TRIPLE BOTTOM-UP ICONS - SELESAI ] -->
 
     <!-- [ SAKELAR DARK/LIGHT MODE - MULAI ] -->
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
@@ -59,6 +71,8 @@
 
     <nav class="modern-navbar">
         <div class="nav-brand">alvin.dev</div>
+        <!-- [ REVISI RELOKASI BADGE AVAILABLE FOR WORK KE NAVBAR - MULAI ] -->
+        <!-- [ REVISI RELOKASI BADGE AVAILABLE FOR WORK KE NAVBAR - SELESAI ] -->
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -75,24 +89,31 @@
         <section id="home" class="page-section">
             <div class="home-layout reveal">
                 <div class="home-content">
-                    <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - MULAI ] -->
-                    <h1 class="hero-title">Frontend Developer</h1>
-                    <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - SELESAI ] -->
-
-                    <!-- STATUS INDICATOR START -->
-                    <div class="status-indicator">
+                    <!-- [ REVISI: BADGE AVAILABLE FOR WORK DI HERO SECTION - MULAI ] -->
+                    <div class="hero-status-indicator">
                         <span class="status-dot"></span>
                         <span class="status-text">✦ AVAILABLE FOR WORK</span>
                     </div>
-                    <!-- STATUS INDICATOR END -->
+                    <!-- [ REVISI: BADGE AVAILABLE FOR WORK DI HERO SECTION - SELESAI ] -->
+
+                    <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - MULAI ] -->
+                    <h1 class="hero-title" style="line-height: 1.1;">
+                        <span style="color: #ffffff; display: block;">Frontend</span>
+                        <span style="color: #a1a1aa; display: block;">Developer</span>
+                    </h1>
+                    <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) - SELESAI ] -->
+
+                    <!-- [ REVISI KONTAINER TYPEWRITER EFFECT DINAMIS LOOPING - MULAI ] -->
+                    <div class="hero-typewriter" id="hero-typewriter"></div>
+                    <!-- [ REVISI KONTAINER TYPEWRITER EFFECT DINAMIS LOOPING - SELESAI ] -->
 
                     <p class="hero-bio">Membangun antarmuka digital yang dinamis dan minimalis. Berfokus pada arsitektur
                         murni yang bersih dan pengalaman pengguna (UX) tingkat lanjut.</p>
                 </div>
 
-                <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) SUB-HERO - MULAI ] -->
-                <div class="decorative-text" id="typewriter-subhero"></div>
-                <!-- [ REVISI TARGET AUTO TYPEWRITER EFFECT (CURSORLESS) SUB-HERO - SELESAI ] -->
+                <!-- [ REVISI: HAPUS EFEK TYPEWRITER SUB-HERO - MULAI ] -->
+                <div class="decorative-text">↓ explore my work / ↗ open to full-time opportunities</div>
+                <!-- [ REVISI: HAPUS EFEK TYPEWRITER SUB-HERO - SELESAI ] -->
             </div>
         </section>
         <!-- SECTION HOME END -->
@@ -110,7 +131,12 @@
                             <p class="about-desc">Mahasiswa Teknik Informatika Universitas Muhammadiyah Makassar. Fokus
                                 mendalam pada Frontend Web Development dengan pendekatan arsitektur murni (Vanilla JS)
                                 serta ekosistem teknologi Web3 terdesentralisasi.</p>
-                            <a href="#" class="btn-cv">Download CV <i class='bx bx-download'></i></a>
+                            <!-- [ REVISI PENAMBAHAN TOMBOL "VIEW PROJECT" DI SAMPING "DOWNLOAD CV" - MULAI ] -->
+                            <div class="about-hero-buttons">
+                                <a href="#" class="btn-cv">Download CV <i class='bx bx-download'></i></a>
+                                <a href="#portfolio" class="btn-view-project" id="btn-view-projects">View Project <i class='bx bx-arrow-to-right'></i></a>
+                            </div>
+                            <!-- [ REVISI PENAMBAHAN TOMBOL "VIEW PROJECT" DI SAMPING "DOWNLOAD CV" - SELESAI ] -->
                         </div>
                         <div class="about-photo">
                             <img src="https://ui-avatars.com/api/?name=Akhmad+Alvin&background=0d0e10&color=fff&size=300"
@@ -209,14 +235,14 @@
                                 <div class="form-group">
                                     <label>Your Name</label>
                                     <div class="input-group">
-                                        <input type="text" placeholder="" required>
+                                        <input type="text" placeholder="John Doe" required>
                                         <i class='bx bx-user input-icon'></i>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Email</label>
                                     <div class="input-group">
-                                        <input type="email" placeholder="" required>
+                                        <input type="email" placeholder="john@example.com" required>
                                         <i class='bx bx-envelope input-icon'></i>
                                     </div>
                                 </div>
@@ -260,13 +286,13 @@
                                 <div class="form-group">
                                     <label>Your Name</label>
                                     <div class="input-group">
-                                        <input type="text" placeholder="" required>
+                                        <input type="text" placeholder="John Doe" required>
                                         <i class='bx bx-user input-icon'></i>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Your Comment</label>
-                                    <textarea placeholder="Share your thoughts..." rows="3" required></textarea>
+                                    <textarea placeholder="Share your thoughts..." rows="6" required></textarea>
                                 </div>
 
                                 <!-- UPLOAD IMAGE FITUR -->

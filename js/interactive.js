@@ -155,65 +155,76 @@ function resetPreviewPlaceholder(container) {
    ========================================================================== */
 function initPreloaderAndTypewriter() {
     const preloader = document.getElementById("preloader");
-    const brandEl = document.getElementById("preloader-brand-text");
-    const subtitleEl = document.getElementById("preloader-subtitle-text");
 
-    if (preloader && brandEl && subtitleEl) {
-        // Jalankan typewriter cepat pada teks preloader
-        typewriteFast(brandEl, "Programmer 3", 55, () => {
-            // Setelah brand selesai, ketik subtitle
-            typewriteFast(subtitleEl, "Web Developer", 45, () => {
-                // Jeda sesaat agar user sempat membaca, lalu geser ke atas
-                setTimeout(() => {
-                    preloader.classList.add("slide-up");
-                    setTimeout(() => {
-                        preloader.style.display = "none";
-                        startSubheroTypewriter();
-                    }, 700); // Durasi transisi geser keatas CSS
-                }, 400); // Jeda baca setelah pengetikan selesai
-            });
-        });
+    if (preloader) {
+        // Jeda untuk memastikan animasi CSS sudah siap, lalu geser ke atas
+        setTimeout(() => {
+            preloader.classList.add("slide-up");
+            setTimeout(() => {
+                preloader.style.display = "none";
+                startHeroTypewriterLooping();
+            }, 700); // Durasi transisi slide-up CSS
+        }, 1500); // Durasi animasi preloader (icons + text) selesai
     } else {
-        startSubheroTypewriter();
+        startHeroTypewriterLooping();
     }
 }
 
 /**
- * Fungsi typewriter cepat tanpa kursor untuk elemen preloader.
- * @param {HTMLElement} el - Elemen target teks
- * @param {string} text - Teks yang akan diketik
- * @param {number} speed - Kecepatan per karakter (ms)
- * @param {Function} callback - Fungsi panggilan balik setelah selesai
+ * Fungsi looping typewriter effect dengan 3 kalimat profesional bergantian
+ * Berjalan terus-menerus di hero section setelah preloader selesai
  */
-function typewriteFast(el, text, speed, callback) {
-    let index = 0;
-    el.textContent = "";
-    function type() {
-        if (index < text.length) {
-            el.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, speed);
-        } else if (callback) {
-            callback();
+function startHeroTypewriterLooping() {
+    const typewriterElement = document.getElementById("hero-typewriter");
+    if (!typewriterElement) return;
+
+    const sentences = [
+        "Membangun ekosistem web yang skalabel.",
+        "Mentransformasi ide menjadi kode presisi.",
+        "Menyederhanakan kompleksitas melalui desain."
+    ];
+
+    let currentSentenceIndex = 0;
+    let isErasing = false;
+
+    /* [ FUNGSI TYPING DENGAN KECEPATAN ALAMI ] */
+    function typewriterLoop() {
+        const currentSentence = sentences[currentSentenceIndex];
+        let charIndex = 0;
+
+        if (!isErasing) {
+            /* Mode ketik: tampilkan karakter satu per satu */
+            function typeChar() {
+                if (charIndex < currentSentence.length) {
+                    typewriterElement.textContent += currentSentence.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, 50); // Kecepatan ketik 50ms per karakter
+                } else {
+                    /* Selesai ketik, jeda baca 2 detik sebelum hapus */
+                    isErasing = true;
+                    setTimeout(typewriterLoop, 2000);
+                }
+            }
+            typeChar();
+        } else {
+            /* Mode hapus: hilangkan karakter satu per satu */
+            function eraseChar() {
+                if (typewriterElement.textContent.length > 0) {
+                    typewriterElement.textContent = typewriterElement.textContent.slice(0, -1);
+                    setTimeout(eraseChar, 30); // Kecepatan hapus 30ms per karakter
+                } else {
+                    /* Selesai hapus, lanjut ke kalimat berikutnya */
+                    currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+                    isErasing = false;
+                    setTimeout(typewriterLoop, 300); // Jeda sebelum mulai ketik kalimat baru
+                }
+            }
+            eraseChar();
         }
     }
-    type();
+
+    typewriterLoop();
 }
 
-function startSubheroTypewriter() {
-    const element = document.getElementById("typewriter-subhero");
-    if (!element) return;
-    const text = "\u2193 explore my work / \u2197 open to full-time opportunities";
-    let index = 0;
-    element.textContent = "";
-    
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 100); // Jeda antar huruf 100ms (standar sub-hero)
-        }
-    }
-    type();
-}
-/* [ REVISI OPENING PRELOADER TIRAI SIBER & TYPEWRITER CEPAT - SELESAI ] */
+
+/* [ REVISI TOTAL PRELOADER CINEMATIC SHUTTER & TYPEWRITER LOOPING - SELESAI ] */
