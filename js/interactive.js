@@ -179,9 +179,9 @@ function startHeroTypewriterLooping() {
     if (!typewriterElement) return;
 
     const sentences = [
-        "Membangun ekosistem web yang skalabel.",
-        "Mentransformasi ide menjadi kode presisi.",
-        "Menyederhanakan kompleksitas melalui desain."
+        "Building a scalable web ecosystem.",
+        "Transforming ideas into precise code.",
+        "Simplifying complexity through design."
     ];
 
     let currentSentenceIndex = 0;
