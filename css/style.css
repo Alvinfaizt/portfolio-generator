@@ -1870,32 +1870,32 @@ html[data-mode="light"] .subnav-btn:hover {
 html[data-mode="light"] .btn-cv,
 html[data-mode="light"] .print-button,
 html[data-mode="light"] .submit-button {
-    background-color: #ffffff !important;
-    color: #1d1d1f !important;
-    border: 1px solid rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    background-color: #1d1d1f !important;
+    color: #ffffff !important;
+    border: 1px solid #1d1d1f !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 html[data-mode="light"] .btn-cv:hover,
 html[data-mode="light"] .print-button:hover,
 html[data-mode="light"] .submit-button:hover {
-    background-color: var(--accent-color, #0f172a) !important;
+    background-color: #3f3f46 !important;
     color: #ffffff !important;
-    border-color: var(--accent-color, #0f172a) !important;
+    border-color: #3f3f46 !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* [ REVISI MONOKROM: TOMBOL VIEW PROJECT DI LIGHT MODE - MULAI ] */
 html[data-mode="light"] .btn-view-project {
-    color: #0f172a !important;
-    border: 2px solid #0f172a !important;
-    background-color: transparent !important;
+    background-color: #1d1d1f !important;
+    color: #ffffff !important;
+    border: 2px solid #1d1d1f !important;
 }
 
 html[data-mode="light"] .btn-view-project:hover {
-    background-color: #0f172a !important;
+    background-color: #3f3f46 !important;
     color: #ffffff !important;
-    border-color: #0f172a !important;
+    border-color: #3f3f46 !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
 }
 /* [ REVISI MONOKROM: TOMBOL VIEW PROJECT DI LIGHT MODE - SELESAI ] */
@@ -2042,3 +2042,21 @@ html[data-mode="light"] .footer-author {
 }
 
 /* [ REVISI TOTAL BUG FIX VISIBILITAS KOMPONEN LIGHT MODE - SELESAI ] */
+
+/* [ REVISI MONOKROM: Status Dot & Pulse Animation Light Mode ] */
+html[data-mode="light"] .status-dot {
+    background-color: #1d1d1f !important;
+    animation: pulse-light 2s infinite !important;
+}
+
+@keyframes pulse-light {
+    0% {
+        box-shadow: 0 0 0 0 rgba(29, 29, 31, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(29, 29, 31, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(29, 29, 31, 0);
+    }
+}
