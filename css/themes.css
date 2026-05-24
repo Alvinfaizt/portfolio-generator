@@ -220,7 +220,7 @@ html[data-theme="monochrome"] #portfolio-preview .skill-tag:hover {
     color: #000000;
 }
 
-/* --- MOBILE RESPONSIVE ADAPTATION --- */
+/* --- MOBILE RESPONSIVE FUSED NAVIGATION --- */
 @media screen and (max-width: 768px) {
     /* Pastikan tombol aksi Light Mode tetap hitam pekat (#1D1D1F) di mobile */
     html[data-mode="light"] {
