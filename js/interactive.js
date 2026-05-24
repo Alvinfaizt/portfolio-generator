@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCertificateModal();
     initCommentImageUpload();
     initRevealAnimations();
+    initMobileNavigation();
 });
 
 /* ==========================================================================
@@ -228,3 +229,43 @@ function startHeroTypewriterLooping() {
 
 
 /* [ REVISI TOTAL PRELOADER CINEMATIC SHUTTER & TYPEWRITER LOOPING - SELESAI ] */
+
+/* ==========================================================================
+   [ MOBILE ONE-BUTTON DROPDOWN NAVIGATION - LOGIC ]
+   ========================================================================== */
+function initMobileNavigation() {
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const navMenu = document.getElementById("nav-menu");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    if (mobileMenuBtn && navMenu) {
+        // Toggle menu dropdown saat tombol diklik
+        mobileMenuBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // Mencegah klik menyebar ke document
+            navMenu.classList.toggle("active");
+            
+            // Ubah teks tombol secara dinamis
+            if (navMenu.classList.contains("active")) {
+                mobileMenuBtn.innerHTML = "CLOSE ▴";
+            } else {
+                mobileMenuBtn.innerHTML = "MENU ▾";
+            }
+        });
+
+        // Tutup menu saat layar diklik di luar area menu
+        document.addEventListener("click", (e) => {
+            if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navMenu.classList.remove("active");
+                mobileMenuBtn.innerHTML = "MENU ▾";
+            }
+        });
+
+        // Tutup menu otomatis setelah memilih opsi navigasi (smooth scroll diatur oleh CSS bawaan)
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                mobileMenuBtn.innerHTML = "MENU ▾";
+            });
+        });
+    }
+}

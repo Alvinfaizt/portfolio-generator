@@ -2061,14 +2061,20 @@ html[data-mode="light"] .status-dot {
     }
 }
 
-/* --- MOBILE RESPONSIVE FUSED NAVIGATION --- */
+/* Sembunyikan tombol mobile di desktop */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* --- MOBILE ONE-BUTTON DROPDOWN NAVIGATION --- */
 @media screen and (max-width: 768px) {
-    /* 1. ULTRA-MINIMALIST FUSED NAVBAR */
+    /* 1. ONE-BUTTON INTERACTIVE NAVBAR */
     .modern-navbar {
         width: 100%;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         background: transparent !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -2079,24 +2085,65 @@ html[data-mode="light"] .status-dot {
     }
     
     .nav-brand {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-color, #ffffff);
+        padding: 0.4rem 0.8rem;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    html[data-mode="light"] .mobile-menu-btn {
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #1d1d1f;
     }
 
     .nav-menu {
-        flex-direction: row;
-        gap: 0.6rem;
-        width: auto;
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 1.5rem;
+        flex-direction: column;
+        background-color: var(--card-bg, #0d0e10);
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: var(--border-style, 1px solid rgba(255, 255, 255, 0.1));
+        gap: 1rem;
+        min-width: 150px;
+        z-index: 1001;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        animation: dropDownFade 0.3s ease forwards;
+    }
+
+    @keyframes dropDownFade {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     
     .nav-menu li {
-        width: auto;
+        width: 100%;
+        text-align: right;
     }
     
     .nav-menu li a {
-        font-size: 13px;
-        padding: 0.2rem 0;
-        letter-spacing: 0;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        display: block;
     }
+
 
     /* 2. HERO SECTION & STACKED TITLE OPTIMIZATION (MOBILE) */
     .home-layout {
