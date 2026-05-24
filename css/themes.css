@@ -219,3 +219,11 @@ html[data-theme="monochrome"] #portfolio-preview .skill-tag:hover {
     background-color: #ffffff;
     color: #000000;
 }
+
+/* --- MOBILE RESPONSIVE ADAPTATION --- */
+@media screen and (max-width: 768px) {
+    /* Pastikan tombol aksi Light Mode tetap hitam pekat (#1D1D1F) di mobile */
+    html[data-mode="light"] {
+        --text-color: #1d1d1f;
+    }
+}
