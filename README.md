@@ -1,6 +1,7 @@
 # Cyber-Minimalist Professional Web Portfolio
 
-A high-contrast, performance-optimized, ultra-minimalist single-page web portfolio tailored for showcasing engineering projects, academic achievements, and technical credentials. Built with a strict focus on pure frontend performance, lightweight architecture, and premium dark/light mode aesthetics.
+### Developed by Akhmad Alvin Faizt
+_Informatics Engineering Student | Focused on High-Contrast Minimalist Web Systems & Open Source Development_
 
 ---
 
@@ -27,7 +28,7 @@ An active filter showcase system driven by Vanilla JavaScript. Visitors can inst
 The contact section features an intuitive input field mechanism where interface icons dynamically adjust visibility (`opacity: 0`) the moment a user begins typing, maximizing workspace cleanliness. Includes a fully local, real-time reactive comment module.
 
 ### 3. Preloader Shutter System
-An custom animated entry preloader utilizing a vertical "Slide-Up" shutter effect. Includes a synchronized bottom-up stagger for code icons and a centered typography reveal transition.
+A custom animated entry preloader utilizing a vertical "Slide-Up" shutter effect. Includes a synchronized bottom-up stagger for code icons and a centered typography reveal transition.
 
 ### 4. Fully Responsive Fluid Layout
 Engineered with strict native CSS Media Queries. Includes an interactive single-button dropdown navigation system tailored specifically for mobile viewports, ensuring complete visual symmetry across desktop and mobile devices.
